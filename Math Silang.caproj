@@ -93,12 +93,30 @@
         <object-type name="BoxDebug" sid="3742263535468368">
             <plugin id="Text" />
         </object-type>
+        <object-type name="LineMultiply" sid="9967494894143159">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3060623135643444" speed="5">
+                    <frame duration="1" hotspotX="1" hotspotY="1" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="LinePlus" sid="2830312470754028">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3477661590617337" speed="5">
+                    <frame duration="1" hotspotX="1" hotspotY="1" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Object" plugin-id="Sprite" sid="8802063782826458">
             <members>
                 <member>Block</member>
                 <member>DotBlack</member>
+                <member>LineMultiply</member>
+                <member>LinePlus</member>
             </members>
             <instance-variables>
                 <instance-variable name="id" sid="3970075428301715" type="number" />

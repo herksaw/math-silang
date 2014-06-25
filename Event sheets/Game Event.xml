@@ -198,11 +198,29 @@
                         <action id="0" name="Set text" sid="67451210421812" type="BoxDebug">
                             <param id="0" name="Text">floor(touchStartX) &amp; &quot; &quot; &amp; floor(touchStartY)</param>
                         </action>
-                        <action id="0" name="Call function" sid="7726863897530259" type="Function">
-                            <param id="0" name="Name">&quot;ChangeBlock&quot;</param>
-                            <param id="1" name="Parameter {n}">touchStartX{###}touchStartY{###}direction</param>
-                        </action>
                     </actions>
+                    <sub-events>
+                        <event-block any="1" sid="9887277027502834">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="1094180616870652" type="System">
+                                    <param id="0" name="First value">abs(distanceX)</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">50</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="4008795930441248" type="System">
+                                    <param id="0" name="First value">abs(distanceY)</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">50</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="7726863897530259" type="Function">
+                                    <param id="0" name="Name">&quot;ChangeBlock&quot;</param>
+                                    <param id="1" name="Parameter {n}">touchStartX{###}touchStartY{###}direction</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>

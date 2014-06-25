@@ -226,11 +226,11 @@
                 </condition>
             </conditions>
             <actions>
-                <action disabled="1" id="-9" name="Set value" sid="7928294089046439" type="System">
+                <action id="-9" name="Set value" sid="7928294089046439" type="System">
                     <param id="0" name="Variable">blockRow</param>
                     <param id="1" name="Value">-1</param>
                 </action>
-                <action disabled="1" id="-9" name="Set value" sid="6992684141806679" type="System">
+                <action id="-9" name="Set value" sid="6992684141806679" type="System">
                     <param id="0" name="Variable">blockColumn</param>
                     <param id="1" name="Value">-1</param>
                 </action>
@@ -263,10 +263,10 @@
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">-1</param>
                                         </condition>
-                                        <condition id="1" name="Compare parameter" sid="9170136144332635" type="Function">
-                                            <param id="0" name="Index">0</param>
-                                            <param id="1" name="Comparison">5</param>
-                                            <param id="2" name="Value">160 + (loopindex(&quot;changeBlockX&quot;) * Block.Width)</param>
+                                        <condition id="-8" name="Compare two values" sid="6321962364630874" type="System">
+                                            <param id="0" name="First value">Function.Param(0) - (160 + loopindex(&quot;changeBlockX&quot;) * Block.Width)</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">80</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -283,10 +283,10 @@
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">-1</param>
                                         </condition>
-                                        <condition id="1" name="Compare parameter" sid="825695434219306" type="Function">
-                                            <param id="0" name="Index">1</param>
-                                            <param id="1" name="Comparison">5</param>
-                                            <param id="2" name="Value">loopindex(&quot;changeBlockY&quot;) * Block.Height</param>
+                                        <condition id="-8" name="Compare two values" sid="2884041823500039" type="System">
+                                            <param id="0" name="First value">Function.Param(1) - (loopindex(&quot;changeBlockY&quot;) * Block.Height)</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">80</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -300,10 +300,267 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <variable constant="0" name="currentBlockId" sid="971943867785554" static="0" type="number">-1</variable>
+                <variable constant="0" name="targetBlockId" sid="1959439747622041" static="0" type="number">-1</variable>
+                <variable constant="0" name="tempBlockId" sid="7709418309212307" static="0" type="number">-1</variable>
+                <event-block collapsed="1" sid="1653118877762106">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="4806833455958038" type="System">
+                            <param id="0" name="Variable">direction</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;up&quot;</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="8680459658159616" type="System">
+                            <param id="0" name="Variable">blockRow</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="4429744288712605" type="System">
+                            <param id="0" name="Variable">blockRow</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="8206851108713546" type="System">
+                            <param id="0" name="Variable">currentBlockId</param>
+                            <param id="1" name="Value">blockColumn + (blockRow * 6)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8883330722799947" type="System">
+                            <param id="0" name="Variable">targetBlockId</param>
+                            <param id="1" name="Value">blockColumn + ((blockRow - 1) * 6)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8508768969011381">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="1539608169808777" type="Block">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">targetBlockId</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="9627613371936512" type="TextBlock">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">targetBlockId</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="1802616372478776" type="Block">
+                                    <param id="0" name="X">160 + (blockColumn * Block.Width)</param>
+                                    <param id="1" name="Y">blockRow * Block.Height</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="1479623001730494" type="TextBlock">
+                                    <param id="0" name="X">160 + (blockColumn * Block.Width)</param>
+                                    <param id="1" name="Y">blockRow * Block.Height</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="5283440092189678" type="Block">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">tempBlockId</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="3334362873938441" type="TextBlock">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">tempBlockId</param>
+                                </action>
+                                <action disabled="1" id="14" name="Log" sid="1354315414881547" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">currentBlockId</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7118033965748427">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="5105307607855269" type="Block">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">currentBlockId</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="8144961240458823" type="TextBlock">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">currentBlockId</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="5574227633021712" type="Block">
+                                    <param id="0" name="X">160 + (blockColumn * Block.Width)</param>
+                                    <param id="1" name="Y">(blockRow - 1) * Block.Height</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="644361098427649" type="TextBlock">
+                                    <param id="0" name="X">160 + (blockColumn * Block.Width)</param>
+                                    <param id="1" name="Y">(blockRow - 1) * Block.Height</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="4629608583878462" type="Block">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">targetBlockId</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="8984068825526713" type="TextBlock">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">targetBlockId</param>
+                                </action>
+                                <action disabled="1" id="14" name="Log" sid="7307153737496506" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">targetBlockId</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1278910482128724">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="1797942078179866" type="Block">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">tempBlockId</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="4063221385899942" type="TextBlock">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">tempBlockId</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="4370390574295071" type="Block">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">blockColumn + (blockRow * 6)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="9809079423865072" type="TextBlock">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">blockColumn + (blockRow * 6)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block collapsed="1" sid="5451748425918">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="4972305594865504" type="System">
+                            <param id="0" name="Variable">direction</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;up&quot;</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="3363347799728857" type="System">
+                            <param id="0" name="Variable">blockRow</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="2823964883294873" type="System">
+                            <param id="0" name="Variable">blockRow</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="740252228086078" type="System">
+                            <param id="0" name="Variable">currentBlockId</param>
+                            <param id="1" name="Value">blockColumn + (blockRow * 6)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1005565650638774" type="System">
+                            <param id="0" name="Variable">targetBlockId</param>
+                            <param id="1" name="Value">blockColumn + ((blockRow - 1) * 6)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="2441939834496504">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="1430518636294395" type="Block">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">targetBlockId</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="3238324343043111" type="TextBlock">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">targetBlockId</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="4560469321493805" type="Block">
+                                    <param id="0" name="X">160 + (blockColumn * Block.Width)</param>
+                                    <param id="1" name="Y">blockRow * Block.Height</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="9389816753409977" type="TextBlock">
+                                    <param id="0" name="X">160 + (blockColumn * Block.Width)</param>
+                                    <param id="1" name="Y">blockRow * Block.Height</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="8551569645040954" type="Block">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">tempBlockId</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="9048287881383539" type="TextBlock">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">tempBlockId</param>
+                                </action>
+                                <action disabled="1" id="14" name="Log" sid="6802799444560028" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">currentBlockId</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7621634971713894">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="5431544936852298" type="Block">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">currentBlockId</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="4136812372486607" type="TextBlock">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">currentBlockId</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="8534715369909961" type="Block">
+                                    <param id="0" name="X">160 + (blockColumn * Block.Width)</param>
+                                    <param id="1" name="Y">(blockRow - 1) * Block.Height</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="1150712748096681" type="TextBlock">
+                                    <param id="0" name="X">160 + (blockColumn * Block.Width)</param>
+                                    <param id="1" name="Y">(blockRow - 1) * Block.Height</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="1204687929933106" type="Block">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">targetBlockId</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="5611229569856027" type="TextBlock">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">targetBlockId</param>
+                                </action>
+                                <action disabled="1" id="14" name="Log" sid="6402082980934251" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">targetBlockId</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6811360253640706">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="2352377410028371" type="Block">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">tempBlockId</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="9087462754233013" type="TextBlock">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">tempBlockId</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="9210383242107044" type="Block">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">blockColumn + (blockRow * 6)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="8293114252222995" type="TextBlock">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">blockColumn + (blockRow * 6)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <event-block sid="8845726279376774">
                     <conditions />
                     <actions>
-                        <action id="14" name="Log" sid="4873494658725" type="Browser">
+                        <action disabled="1" id="14" name="Log" sid="4873494658725" type="Browser">
                             <param id="0" name="Type">0</param>
                             <param id="1" name="Message">blockRow &amp; &quot; &quot; &amp; blockColumn</param>
                         </action>
