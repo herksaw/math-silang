@@ -122,6 +122,15 @@
                 <instance-variable name="id" sid="3970075428301715" type="number" />
             </instance-variables>
         </family>
+        <family name="Line" plugin-id="Sprite" sid="2196679196811219">
+            <members>
+                <member>LineMultiply</member>
+                <member>LinePlus</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="posDirection" sid="7793736433815257" type="number" />
+            </instance-variables>
+        </family>
     </families>
     <layout-folder expanded="1">
         <layout>Game Layout.xml</layout>

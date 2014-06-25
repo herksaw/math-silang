@@ -16,25 +16,9 @@
                 <condition id="-2" name="On start of layout" sid="590984716947016" type="System" />
             </conditions>
             <actions>
-                <action id="-3" name="Create object" sid="2380160011174221" type="System">
-                    <param id="0" name="Object to create">DotBlack</param>
-                    <param id="1" name="Layer">&quot;Game&quot;</param>
-                    <param id="2" name="X">-500</param>
-                    <param id="3" name="Y">-500</param>
-                </action>
-                <action id="-10" name="Set value" sid="6400439669346095" type="DotBlack">
-                    <param id="0" name="Instance variable">id</param>
-                    <param id="1" name="Value">100</param>
-                </action>
-                <action id="-3" name="Create object" sid="9090118491832828" type="System">
-                    <param id="0" name="Object to create">DotBlack</param>
-                    <param id="1" name="Layer">&quot;Game&quot;</param>
-                    <param id="2" name="X">-500</param>
-                    <param id="3" name="Y">-500</param>
-                </action>
-                <action id="-10" name="Set value" sid="4008386484976053" type="DotBlack">
-                    <param id="0" name="Instance variable">id</param>
-                    <param id="1" name="Value">101</param>
+                <action disabled="1" id="0" name="Call function" sid="6807320562052301" type="Function">
+                    <param id="0" name="Name">&quot;CreateLine&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
                 </action>
                 <action id="0" name="Call function" sid="4645244719022489" type="Function">
                     <param id="0" name="Name">&quot;ResetCell&quot;</param>
@@ -97,48 +81,8 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="6522022210876391" title="Level">
+        <event-group description="" sid="6522022210876391" title="Level">
             <sub-events>
-                <event-block sid="8410501974632634">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="4999957842168204" type="DotBlack">
-                            <param id="0" name="Instance variable">id</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">100</param>
-                        </condition>
-                        <condition id="-4" name="Is outside layout" sid="7176882136526678" type="DotBlack" />
-                    </conditions>
-                    <actions>
-                        <action id="-7" name="Set size" sid="4063445225842941" type="DotBlack">
-                            <param id="0" name="Width">800</param>
-                            <param id="1" name="Height">1</param>
-                        </action>
-                        <action id="-3" name="Set position" sid="1979878812916486" type="DotBlack">
-                            <param id="0" name="X">LayoutWidth</param>
-                            <param id="1" name="Y">LayoutHeight / 2</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="1072206483651101">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="2333277261147305" type="DotBlack">
-                            <param id="0" name="Instance variable">id</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">101</param>
-                        </condition>
-                        <condition id="-4" name="Is outside layout" sid="2039911211377905" type="DotBlack" />
-                    </conditions>
-                    <actions>
-                        <action id="-7" name="Set size" sid="7226191679563291" type="DotBlack">
-                            <param id="0" name="Width">1</param>
-                            <param id="1" name="Height">480</param>
-                        </action>
-                        <action id="-3" name="Set position" sid="4773474590770613" type="DotBlack">
-                            <param id="0" name="X">LayoutWidth / 2</param>
-                            <param id="1" name="Y">LayoutHeight</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <event-block sid="396564465240762">
                     <conditions>
                         <condition id="-1" name="Every tick" sid="4622912606029074" type="System" />

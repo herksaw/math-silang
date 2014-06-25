@@ -117,6 +117,7 @@
                     </properties>
                     <instance-variables>
                         <id>0</id>
+                        <posDirection>0</posDirection>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -142,6 +143,7 @@
                     </properties>
                     <instance-variables>
                         <id>0</id>
+                        <posDirection>0</posDirection>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
