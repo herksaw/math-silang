@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Game Event</name>
+    <events>
+        <include>Function Event</include>
+        <variable constant="0" name="touchStartX" sid="4734919703263125" static="0" type="number">0</variable>
+        <variable constant="0" name="touchStartY" sid="7304870029195949" static="0" type="number">0</variable>
+        <variable constant="0" name="touchEndX" sid="4805963581048163" static="0" type="number">0</variable>
+        <variable constant="0" name="touchEndY" sid="9884433629911958" static="0" type="number">0</variable>
+        <variable constant="0" name="distanceX" sid="7570782192528223" static="0" type="number">0</variable>
+        <variable constant="0" name="distanceY" sid="4364953730700091" static="0" type="number">0</variable>
+        <variable constant="0" name="direction" sid="3308149336012261" static="0" type="text"></variable>
+        <event-block sid="6039830122921812">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="590984716947016" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="2380160011174221" type="System">
+                    <param id="0" name="Object to create">DotBlack</param>
+                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                    <param id="2" name="X">-500</param>
+                    <param id="3" name="Y">-500</param>
+                </action>
+                <action id="-10" name="Set value" sid="6400439669346095" type="DotBlack">
+                    <param id="0" name="Instance variable">id</param>
+                    <param id="1" name="Value">100</param>
+                </action>
+                <action id="-3" name="Create object" sid="9090118491832828" type="System">
+                    <param id="0" name="Object to create">DotBlack</param>
+                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                    <param id="2" name="X">-500</param>
+                    <param id="3" name="Y">-500</param>
+                </action>
+                <action id="-10" name="Set value" sid="4008386484976053" type="DotBlack">
+                    <param id="0" name="Instance variable">id</param>
+                    <param id="1" name="Value">101</param>
+                </action>
+                <action id="0" name="Call function" sid="4645244719022489" type="Function">
+                    <param id="0" name="Name">&quot;ResetCell&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="8920755218209829" type="Function">
+                    <param id="0" name="Name">&quot;PutBlock&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="388560003563882" type="Function">
+                    <param id="0" name="Name">&quot;PutNumber&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group collapsed="1" description="" sid="3552136046705503" title="System">
+            <sub-events>
+                <event-block sid="3241485817860823">
+                    <conditions>
+                        <condition id="-32" name="Is on platform" sid="5184683579561707" type="System">
+                            <param id="0" name="Platform">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="7217872447771695" type="BoxUpdate">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4952266530828485">
+                    <conditions>
+                        <condition id="5" name="Is downloading update" sid="1302924713834448" type="Browser" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="2695006686434876" type="BoxUpdate">
+                            <param id="0" name="Text">&quot;Downloading updates...&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7029122297162694">
+                    <conditions>
+                        <condition id="5" inverted="1" name="Is downloading update" sid="9727641130341722" type="Browser" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="1039706263759409" type="BoxUpdate">
+                            <param id="0" name="Text">&quot;No updates found.&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7588567968951094">
+                    <conditions>
+                        <condition id="6" name="On update ready" sid="7200767584759452" type="Browser" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Alert" sid="3820639701663758" type="Browser">
+                            <param id="0" name="Message">&quot;Mad Monyet has installed the updates, it will reload your game now.&quot;</param>
+                        </action>
+                        <action id="9" name="Reload" sid="6173868428439071" type="Browser" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" sid="6522022210876391" title="Level">
+            <sub-events>
+                <event-block sid="8410501974632634">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="4999957842168204" type="DotBlack">
+                            <param id="0" name="Instance variable">id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">100</param>
+                        </condition>
+                        <condition id="-4" name="Is outside layout" sid="7176882136526678" type="DotBlack" />
+                    </conditions>
+                    <actions>
+                        <action id="-7" name="Set size" sid="4063445225842941" type="DotBlack">
+                            <param id="0" name="Width">800</param>
+                            <param id="1" name="Height">1</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="1979878812916486" type="DotBlack">
+                            <param id="0" name="X">LayoutWidth</param>
+                            <param id="1" name="Y">LayoutHeight / 2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1072206483651101">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="2333277261147305" type="DotBlack">
+                            <param id="0" name="Instance variable">id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">101</param>
+                        </condition>
+                        <condition id="-4" name="Is outside layout" sid="2039911211377905" type="DotBlack" />
+                    </conditions>
+                    <actions>
+                        <action id="-7" name="Set size" sid="7226191679563291" type="DotBlack">
+                            <param id="0" name="Width">1</param>
+                            <param id="1" name="Height">480</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="4773474590770613" type="DotBlack">
+                            <param id="0" name="X">LayoutWidth / 2</param>
+                            <param id="1" name="Y">LayoutHeight</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="396564465240762">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="4622912606029074" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-24" name="Move to top" sid="4871525698444316" type="TextBlock" />
+                        <action id="-24" name="Move to top" sid="1738494274692516" type="DotBlack" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="2573442541814332" title="Control">
+            <sub-events>
+                <event-block sid="2651411911507296">
+                    <conditions>
+                        <condition id="0" name="On any touch start" sid="2416678696814894" type="Touch" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="9742728489009176" type="System">
+                            <param id="0" name="Variable">touchStartX</param>
+                            <param id="1" name="Value">Touch.X</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6647882957548864" type="System">
+                            <param id="0" name="Variable">touchStartY</param>
+                            <param id="1" name="Value">Touch.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8407065580960217">
+                    <conditions>
+                        <condition id="1" name="On any touch end" sid="6043342869046073" type="Touch" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4298604665007164" type="System">
+                            <param id="0" name="Variable">touchEndX</param>
+                            <param id="1" name="Value">Touch.X</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="9406981400243847" type="System">
+                            <param id="0" name="Variable">touchEndY</param>
+                            <param id="1" name="Value">Touch.Y</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8061634948819224" type="System">
+                            <param id="0" name="Variable">distanceX</param>
+                            <param id="1" name="Value">touchEndX - touchStartX</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="74572744410304" type="System">
+                            <param id="0" name="Variable">distanceY</param>
+                            <param id="1" name="Value">touchEndY - touchStartY</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4371978163931556" type="System">
+                            <param id="0" name="Variable">direction</param>
+                            <param id="1" name="Value">Function.Call(&quot;GetDirection&quot;, distanceX, distanceY)</param>
+                        </action>
+                        <action disabled="1" id="0" name="Set text" sid="883579351196103" type="BoxDebug">
+                            <param id="0" name="Text">floor(distanceX) &amp; &quot; &quot; &amp; floor(distanceY)</param>
+                        </action>
+                        <action id="0" name="Set text" sid="67451210421812" type="BoxDebug">
+                            <param id="0" name="Text">floor(touchStartX) &amp; &quot; &quot; &amp; floor(touchStartY)</param>
+                        </action>
+                        <action id="0" name="Call function" sid="7726863897530259" type="Function">
+                            <param id="0" name="Name">&quot;ChangeBlock&quot;</param>
+                            <param id="1" name="Parameter {n}">touchStartX{###}touchStartY{###}direction</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

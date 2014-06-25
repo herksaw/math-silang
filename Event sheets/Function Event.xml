@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Function Event</name>
+    <events>
+        <event-block collapsed="1" sid="3177114849783795">
+            <conditions>
+                <condition id="0" name="On function" sid="4759895970707982" type="Function">
+                    <param id="0" name="Name">&quot;ResetCell&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="1448825433121687">
+                    <conditions>
+                        <condition id="3" name="For each element" sid="8196636356713914" type="Array">
+                            <param id="0" name="Axes">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Set at X" sid="6903950233734208" type="Array">
+                            <param id="0" name="X">Array.CurX</param>
+                            <param id="1" name="Value">floor(random(1, 3))</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block collapsed="1" sid="6009579964405382">
+            <conditions>
+                <condition id="0" name="On function" sid="258729592730322" type="Function">
+                    <param id="0" name="Name">&quot;PutBlock&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="6434676557174054">
+                    <conditions>
+                        <condition id="-10" name="For" sid="6342455932557569" type="System">
+                            <param id="0" name="Name">&quot;putBlockY&quot;</param>
+                            <param id="1" name="Start index">0</param>
+                            <param id="2" name="End index">5</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="9615980314992503">
+                            <conditions>
+                                <condition id="-10" name="For" sid="6666366496781223" type="System">
+                                    <param id="0" name="Name">&quot;putBlockX&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="7173233427626213" type="System">
+                                    <param id="0" name="Object to create">Block</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">-500</param>
+                                    <param id="3" name="Y">-500</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="2149293465291752" type="Block">
+                                    <param id="0" name="X">160 + (loopindex(&quot;putBlockX&quot;) * Block.Width)</param>
+                                    <param id="1" name="Y">loopindex(&quot;putBlockY&quot;) * Block.Height</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="7105876684484604" type="Block">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">loopindex(&quot;putBlockX&quot;) + (loopindex(&quot;putBlockY&quot;) * 6)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block collapsed="1" sid="1211309765573146">
+            <conditions>
+                <condition id="0" name="On function" sid="3700190765769105" type="Function">
+                    <param id="0" name="Name">&quot;PutNumber&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="3554420878025569">
+                    <conditions>
+                        <condition id="-10" name="For" sid="5390971760092878" type="System">
+                            <param id="0" name="Name">&quot;putNumberY&quot;</param>
+                            <param id="1" name="Start index">0</param>
+                            <param id="2" name="End index">5</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="4852635584726988">
+                            <conditions>
+                                <condition id="-10" name="For" sid="7907159102469092" type="System">
+                                    <param id="0" name="Name">&quot;putNumberX&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="9095182747096189" type="System">
+                                    <param id="0" name="Object to create">TextBlock</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">-500</param>
+                                    <param id="3" name="Y">-500</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="3202788982721753" type="TextBlock">
+                                    <param id="0" name="Instance variable">number</param>
+                                    <param id="1" name="Value">floor(random(1, 3))</param>
+                                </action>
+                                <action id="0" name="Set text" sid="5976224479582048" type="TextBlock">
+                                    <param id="0" name="Text">Self.number</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="6345622175506408" type="TextBlock">
+                                    <param id="0" name="X">160 + (loopindex(&quot;putNumberX&quot;) * TextBlock.Width)</param>
+                                    <param id="1" name="Y">loopindex(&quot;putNumberY&quot;) * TextBlock.Height</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="3647814674196119" type="TextBlock">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">loopindex(&quot;putNumberX&quot;) + (loopindex(&quot;putNumberY&quot;) * 6)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block collapsed="1" sid="7357239474811459">
+            <conditions>
+                <condition id="0" name="On function" sid="565248254949784" type="Function">
+                    <param id="0" name="Name">&quot;GetDirection&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="8001368994781235">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="7716559025901807" type="System">
+                            <param id="0" name="First value">abs(Function.Param(0))</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">abs(Function.Param(1))</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="4062960263381832">
+                            <conditions>
+                                <condition id="1" name="Compare parameter" sid="2327506237762603" type="Function">
+                                    <param id="0" name="Index">0</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="6531232049140476" type="Function">
+                                    <param id="0" name="Value">&quot;right&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3439403327256149">
+                            <conditions>
+                                <condition id="1" name="Compare parameter" sid="2928634304203848" type="Function">
+                                    <param id="0" name="Index">0</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="9924632830997873" type="Function">
+                                    <param id="0" name="Value">&quot;left&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="9985763233874309">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="312987230702346" type="System">
+                            <param id="0" name="First value">abs(Function.Param(0))</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">abs(Function.Param(1))</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7685988374119153">
+                            <conditions>
+                                <condition id="1" name="Compare parameter" sid="1498363624030432" type="Function">
+                                    <param id="0" name="Index">1</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="1202876558488241" type="Function">
+                                    <param id="0" name="Value">&quot;down&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1557835487261033">
+                            <conditions>
+                                <condition id="1" name="Compare parameter" sid="4165849685322066" type="Function">
+                                    <param id="0" name="Index">1</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="3247782031603609" type="Function">
+                                    <param id="0" name="Value">&quot;up&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <variable constant="0" name="blockRow" sid="852267258038902" static="0" type="number">-1</variable>
+        <variable constant="0" name="blockColumn" sid="2466969391573748" static="0" type="number">-1</variable>
+        <event-block sid="5302144927856665">
+            <conditions>
+                <condition id="0" name="On function" sid="4494684434117577" type="Function">
+                    <param id="0" name="Name">&quot;ChangeBlock&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action disabled="1" id="-9" name="Set value" sid="7928294089046439" type="System">
+                    <param id="0" name="Variable">blockRow</param>
+                    <param id="1" name="Value">-1</param>
+                </action>
+                <action disabled="1" id="-9" name="Set value" sid="6992684141806679" type="System">
+                    <param id="0" name="Variable">blockColumn</param>
+                    <param id="1" name="Value">-1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="6382583389885105">
+                    <conditions>
+                        <condition id="-10" name="For" sid="427462840374083" type="System">
+                            <param id="0" name="Name">&quot;changeBlockY&quot;</param>
+                            <param id="1" name="Start index">0</param>
+                            <param id="2" name="End index">5</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7793852561830854">
+                            <conditions>
+                                <condition id="-10" name="For" sid="5726984079065675" type="System">
+                                    <param id="0" name="Name">&quot;changeBlockX&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">5</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="3672074950755592">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="4329747813845463" type="System">
+                                            <param id="0" name="Variable">blockColumn</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">-1</param>
+                                        </condition>
+                                        <condition id="1" name="Compare parameter" sid="9170136144332635" type="Function">
+                                            <param id="0" name="Index">0</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">160 + (loopindex(&quot;changeBlockX&quot;) * Block.Width)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="2312768788894216" type="System">
+                                            <param id="0" name="Variable">blockColumn</param>
+                                            <param id="1" name="Value">loopindex(&quot;changeBlockX&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="2474241324351598">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="1617465099833763" type="System">
+                                            <param id="0" name="Variable">blockRow</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">-1</param>
+                                        </condition>
+                                        <condition id="1" name="Compare parameter" sid="825695434219306" type="Function">
+                                            <param id="0" name="Index">1</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">loopindex(&quot;changeBlockY&quot;) * Block.Height</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="7916186050078496" type="System">
+                                            <param id="0" name="Variable">blockRow</param>
+                                            <param id="1" name="Value">loopindex(&quot;changeBlockY&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="8845726279376774">
+                    <conditions />
+                    <actions>
+                        <action id="14" name="Log" sid="4873494658725" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">blockRow &amp; &quot; &quot; &amp; blockColumn</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

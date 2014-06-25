@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Math Silang</name>
+    <description>A project for LRK 2014.</description>
+    <version>1.0.0.0</version>
+    <author>Donicom</author>
+    <author-email>herksaw@gmail.com</author-email>
+    <author-website>http://www.herksaw.com/</author-website>
+    <app-id>com.donicom.madmonyet</app-id>
+    <unique-id>16w06lp6jdgf9</unique-id>
+    <saved-with-version>17300</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+    </used-plugins>
+    <used-behaviors />
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>800</width>
+        <height>480</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <first-layout>Game Layout</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D web</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder expanded="1">
+        <object-type name="DotBlack" sid="2872302571358676">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3418559018296889" speed="5">
+                    <frame duration="1" hotspotX="1" hotspotY="1" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mouse" sid="9601757437341936">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Touch" sid="1595788032086351">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="Keyboard" sid="3460474654619341">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type global="1" name="Array" sid="6913934530528296">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="Function" sid="5667957012975135">
+            <plugin id="Function" />
+        </object-type>
+        <object-type name="Browser" sid="6920248943283664">
+            <plugin id="Browser" />
+        </object-type>
+        <object-type name="BoxUpdate" sid="2360758205553261">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Block" sid="9363911953344155">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8392800649205474" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TextBlock" sid="9664938851114536">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="id" sid="1126913367550049" type="number" />
+                <instance-variable name="number" sid="7201465013280273" type="number" />
+            </instance-variables>
+        </object-type>
+        <object-type name="BoxDebug" sid="3742263535468368">
+            <plugin id="Text" />
+        </object-type>
+    </object-folder>
+    <families>
+        <family name="Object" plugin-id="Sprite" sid="8802063782826458">
+            <members>
+                <member>Block</member>
+                <member>DotBlack</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="id" sid="3970075428301715" type="number" />
+            </instance-variables>
+        </family>
+    </families>
+    <layout-folder expanded="1">
+        <layout>Game Layout.xml</layout>
+        <layout>Spawn Layout.xml</layout>
+    </layout-folder>
+    <event-folder expanded="1">
+        <event-sheet>Game Event.xml</event-sheet>
+        <event-sheet>Function Event.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Mouse" uid="1" />
+        <global-instance type="Touch" uid="2">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Keyboard" uid="3" />
+        <global-instance type="Function" uid="5" />
+        <global-instance type="Browser" uid="6" />
+    </global-instances>
+    <sounds-folder expanded="1" />
+    <music-folder expanded="1" />
+    <files-folder expanded="1">
+        <file-folder expanded="0" name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>
