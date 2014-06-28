@@ -16,7 +16,7 @@
                 <condition id="-2" name="On start of layout" sid="590984716947016" type="System" />
             </conditions>
             <actions>
-                <action disabled="1" id="0" name="Call function" sid="6807320562052301" type="Function">
+                <action id="0" name="Call function" sid="6807320562052301" type="Function">
                     <param id="0" name="Name">&quot;CreateLine&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
@@ -26,10 +26,6 @@
                 </action>
                 <action id="0" name="Call function" sid="8920755218209829" type="Function">
                     <param id="0" name="Name">&quot;PutBlock&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
-                </action>
-                <action id="0" name="Call function" sid="388560003563882" type="Function">
-                    <param id="0" name="Name">&quot;PutNumber&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
             </actions>
@@ -89,7 +85,10 @@
                     </conditions>
                     <actions>
                         <action id="-24" name="Move to top" sid="4871525698444316" type="TextBlock" />
-                        <action id="-24" name="Move to top" sid="1738494274692516" type="DotBlack" />
+                        <action id="-29" name="Move to object" sid="6703355010426032" type="Line">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Object">TextBlock</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>

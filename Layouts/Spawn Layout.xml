@@ -61,6 +61,7 @@
                     </properties>
                     <instance-variables>
                         <id>0</id>
+                        <number>0</number>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -117,7 +118,7 @@
                     </properties>
                     <instance-variables>
                         <id>0</id>
-                        <posDirection>0</posDirection>
+                        <type>0</type>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -143,13 +144,39 @@
                     </properties>
                     <instance-variables>
                         <id>0</id>
-                        <posDirection>0</posDirection>
+                        <type>0</type>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>228</x>
                         <y>270</y>
+                        <z>0</z>
+                        <width>1</width>
+                        <height>1</height>
+                        <depth>0</depth>
+                        <hotspotX>1</hotspotX>
+                        <hotspotY>1</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Line" uid="13">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <id>0</id>
+                        <type>0</type>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>343</x>
+                        <y>279</y>
                         <z>0</z>
                         <width>1</width>
                         <height>1</height>

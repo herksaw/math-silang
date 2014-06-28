@@ -4,78 +4,107 @@
     <name>Function Event</name>
     <events>
         <variable constant="0" name="linePosModifier" sid="4578956710133967" static="0" type="number">-1</variable>
-        <event-block sid="7847704301276059">
+        <event-block collapsed="1" sid="7847704301276059">
             <conditions>
                 <condition id="0" name="On function" sid="1660230770847467" type="Function">
                     <param id="0" name="Name">&quot;CreateLine&quot;</param>
                 </condition>
             </conditions>
-            <actions>
-                <action id="-3" name="Create object" sid="265261795652517" type="System">
-                    <param id="0" name="Object to create">LineMultiply</param>
-                    <param id="1" name="Layer">&quot;Game&quot;</param>
-                    <param id="2" name="X">-500</param>
-                    <param id="3" name="Y">-500</param>
-                </action>
-                <action id="-10" name="Set value" sid="8720043938014598" type="LineMultiply">
-                    <param id="0" name="Instance variable">id</param>
-                    <param id="1" name="Value">100</param>
-                </action>
-                <action id="-3" name="Create object" sid="1198232345756021" type="System">
-                    <param id="0" name="Object to create">LineMultiply</param>
-                    <param id="1" name="Layer">&quot;Game&quot;</param>
-                    <param id="2" name="X">-500</param>
-                    <param id="3" name="Y">-500</param>
-                </action>
-                <action id="-10" name="Set value" sid="2806965718844246" type="LineMultiply">
-                    <param id="0" name="Instance variable">id</param>
-                    <param id="1" name="Value">101</param>
-                </action>
-                <action id="-3" name="Create object" sid="3455007556416077" type="System">
-                    <param id="0" name="Object to create">LinePlus</param>
-                    <param id="1" name="Layer">&quot;Game&quot;</param>
-                    <param id="2" name="X">-500</param>
-                    <param id="3" name="Y">-500</param>
-                </action>
-                <action id="-10" name="Set value" sid="8239139386976866" type="LinePlus">
-                    <param id="0" name="Instance variable">id</param>
-                    <param id="1" name="Value">102</param>
-                </action>
-                <action id="-3" name="Create object" sid="8508534713971912" type="System">
-                    <param id="0" name="Object to create">LinePlus</param>
-                    <param id="1" name="Layer">&quot;Game&quot;</param>
-                    <param id="2" name="X">-500</param>
-                    <param id="3" name="Y">-500</param>
-                </action>
-                <action id="-10" name="Set value" sid="4155875277837021" type="LinePlus">
-                    <param id="0" name="Instance variable">id</param>
-                    <param id="1" name="Value">103</param>
-                </action>
-            </actions>
+            <actions />
             <sub-events>
-                <event-block sid="8268724960021715">
+                <event-block collapsed="1" sid="4096116694758613">
                     <conditions>
-                        <condition id="-10" name="For" sid="8555698104178303" type="System">
+                        <condition id="-10" name="For" sid="1275225305712797" type="System">
                             <param id="0" name="Name">&quot;createLine&quot;</param>
                             <param id="1" name="Start index">100</param>
                             <param id="2" name="End index">103</param>
                         </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="-3" name="Create object" sid="7508991403575765" type="System">
+                            <param id="0" name="Object to create">Line</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="X">LayoutWidth / 2</param>
+                            <param id="3" name="Y">LayoutHeight / 2</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="4818062841682851" type="Line">
+                            <param id="0" name="Instance variable">id</param>
+                            <param id="1" name="Value">loopindex(&quot;createLine&quot;)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="97970804358969" type="Line">
+                            <param id="0" name="Instance variable">type</param>
+                            <param id="1" name="Value">floor(random(0, 2))</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="7473033914208479" type="Line">
+                            <param id="0" name="Frame number">Self.type</param>
+                        </action>
+                    </actions>
                     <sub-events>
-                        <event-block sid="3195436834130278">
+                        <event-block sid="5191608887785445">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="7532956706185386" type="LineMultiply">
-                                    <param id="0" name="Instance variable">id</param>
+                                <condition id="-8" name="Compare two values" sid="2902659985183628" type="System">
+                                    <param id="0" name="First value">loopindex(&quot;createLine&quot;)</param>
                                     <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">loopindex(&quot;createLine&quot;)</param>
+                                    <param id="2" name="Second value">100</param>
                                 </condition>
-                                <condition id="-4" name="Is outside layout" sid="5062062966755298" type="LineMultiply" />
                             </conditions>
                             <actions>
-                                <action id="-10" name="Set value" sid="5633017772965494" type="LineMultiply">
-                                    <param id="0" name="Instance variable">posDirection</param>
-                                    <param id="1" name="Value">floor(random(0, 4))</param>
+                                <action id="-7" name="Set size" sid="6702379261794759" type="Line">
+                                    <param id="0" name="Width">(LayoutWidth / 2) - 160</param>
+                                    <param id="1" name="Height">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7042336872670534">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="177450902802688" type="System">
+                                    <param id="0" name="First value">loopindex(&quot;createLine&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">101</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-7" name="Set size" sid="9870769955543549" type="Line">
+                                    <param id="0" name="Width">1</param>
+                                    <param id="1" name="Height">LayoutHeight / 2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1375974388147796">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="5916449071582296" type="System">
+                                    <param id="0" name="First value">loopindex(&quot;createLine&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">102</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="1122676729223096" type="Line">
+                                    <param id="0" name="X">(LayoutWidth / 2) + (LayoutHeight / 2)</param>
+                                    <param id="1" name="Y">LayoutHeight / 2</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="7783049453825542" type="Line">
+                                    <param id="0" name="Width">(LayoutWidth / 2) - 160</param>
+                                    <param id="1" name="Height">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4348613717283613">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="4938798394982694" type="System">
+                                    <param id="0" name="First value">loopindex(&quot;createLine&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">103</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="8582588772532647" type="Line">
+                                    <param id="0" name="X">LayoutWidth / 2</param>
+                                    <param id="1" name="Y">LayoutHeight</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="6910444514011066" type="Line">
+                                    <param id="0" name="Width">1</param>
+                                    <param id="1" name="Height">LayoutHeight / 2</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -133,53 +162,6 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-3" name="Create object" sid="7173233427626213" type="System">
-                                    <param id="0" name="Object to create">Block</param>
-                                    <param id="1" name="Layer">&quot;Game&quot;</param>
-                                    <param id="2" name="X">-500</param>
-                                    <param id="3" name="Y">-500</param>
-                                </action>
-                                <action id="-3" name="Set position" sid="2149293465291752" type="Block">
-                                    <param id="0" name="X">160 + (loopindex(&quot;putBlockX&quot;) * Block.Width)</param>
-                                    <param id="1" name="Y">loopindex(&quot;putBlockY&quot;) * Block.Height</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="7105876684484604" type="Block">
-                                    <param id="0" name="Instance variable">id</param>
-                                    <param id="1" name="Value">loopindex(&quot;putBlockX&quot;) + (loopindex(&quot;putBlockY&quot;) * 6)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block collapsed="1" sid="1211309765573146">
-            <conditions>
-                <condition id="0" name="On function" sid="3700190765769105" type="Function">
-                    <param id="0" name="Name">&quot;PutNumber&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="3554420878025569">
-                    <conditions>
-                        <condition id="-10" name="For" sid="5390971760092878" type="System">
-                            <param id="0" name="Name">&quot;putNumberY&quot;</param>
-                            <param id="1" name="Start index">0</param>
-                            <param id="2" name="End index">5</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="4852635584726988">
-                            <conditions>
-                                <condition id="-10" name="For" sid="7907159102469092" type="System">
-                                    <param id="0" name="Name">&quot;putNumberX&quot;</param>
-                                    <param id="1" name="Start index">0</param>
-                                    <param id="2" name="End index">5</param>
-                                </condition>
-                            </conditions>
-                            <actions>
                                 <action id="-3" name="Create object" sid="9095182747096189" type="System">
                                     <param id="0" name="Object to create">TextBlock</param>
                                     <param id="1" name="Layer">&quot;Game&quot;</param>
@@ -194,12 +176,30 @@
                                     <param id="0" name="Text">Self.number</param>
                                 </action>
                                 <action id="-3" name="Set position" sid="6345622175506408" type="TextBlock">
-                                    <param id="0" name="X">160 + (loopindex(&quot;putNumberX&quot;) * TextBlock.Width)</param>
-                                    <param id="1" name="Y">loopindex(&quot;putNumberY&quot;) * TextBlock.Height</param>
+                                    <param id="0" name="X">160 + (loopindex(&quot;putBlockX&quot;) * TextBlock.Width)</param>
+                                    <param id="1" name="Y">loopindex(&quot;putBlockY&quot;) * TextBlock.Height</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="3647814674196119" type="TextBlock">
                                     <param id="0" name="Instance variable">id</param>
-                                    <param id="1" name="Value">loopindex(&quot;putNumberX&quot;) + (loopindex(&quot;putNumberY&quot;) * 6)</param>
+                                    <param id="1" name="Value">loopindex(&quot;putBlockX&quot;) + (loopindex(&quot;putBlockY&quot;) * 6)</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="7173233427626213" type="System">
+                                    <param id="0" name="Object to create">Block</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">-500</param>
+                                    <param id="3" name="Y">-500</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="2149293465291752" type="Block">
+                                    <param id="0" name="X">160 + (loopindex(&quot;putBlockX&quot;) * Block.Width)</param>
+                                    <param id="1" name="Y">loopindex(&quot;putBlockY&quot;) * Block.Height</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="7105876684484604" type="Block">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">loopindex(&quot;putBlockX&quot;) + (loopindex(&quot;putBlockY&quot;) * 6)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="1210772325857049" type="Block">
+                                    <param id="0" name="Instance variable">number</param>
+                                    <param id="1" name="Value">TextBlock.number</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -215,7 +215,7 @@
             </conditions>
             <actions />
             <sub-events>
-                <event-block sid="8001368994781235">
+                <event-block collapsed="1" sid="8001368994781235">
                     <conditions>
                         <condition id="-8" name="Compare two values" sid="7716559025901807" type="System">
                             <param id="0" name="First value">abs(Function.Param(0))</param>
@@ -255,7 +255,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="9985763233874309">
+                <event-block collapsed="1" sid="9985763233874309">
                     <conditions>
                         <condition id="-8" name="Compare two values" sid="312987230702346" type="System">
                             <param id="0" name="First value">abs(Function.Param(0))</param>
@@ -299,80 +299,80 @@
         </event-block>
         <variable constant="0" name="blockRow" sid="852267258038902" static="0" type="number">-1</variable>
         <variable constant="0" name="blockColumn" sid="2466969391573748" static="0" type="number">-1</variable>
-        <event-block sid="5302144927856665">
+        <event-block sid="9472336806188433">
             <conditions>
-                <condition id="0" name="On function" sid="4494684434117577" type="Function">
-                    <param id="0" name="Name">&quot;ChangeBlock&quot;</param>
+                <condition id="0" name="On function" sid="9757280716908549" type="Function">
+                    <param id="0" name="Name">&quot;GetRowColumn&quot;</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-9" name="Set value" sid="7928294089046439" type="System">
+                <action id="-9" name="Set value" sid="6568408811812168" type="System">
                     <param id="0" name="Variable">blockRow</param>
                     <param id="1" name="Value">-1</param>
                 </action>
-                <action id="-9" name="Set value" sid="6992684141806679" type="System">
+                <action id="-9" name="Set value" sid="1613667308083781" type="System">
                     <param id="0" name="Variable">blockColumn</param>
                     <param id="1" name="Value">-1</param>
                 </action>
             </actions>
             <sub-events>
-                <event-block sid="6382583389885105">
+                <event-block sid="8362603785409979">
                     <conditions>
-                        <condition id="-10" name="For" sid="427462840374083" type="System">
-                            <param id="0" name="Name">&quot;changeBlockY&quot;</param>
+                        <condition id="-10" name="For" sid="7171640656520749" type="System">
+                            <param id="0" name="Name">&quot;getRowColumnY&quot;</param>
                             <param id="1" name="Start index">0</param>
                             <param id="2" name="End index">5</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="7793852561830854">
+                        <event-block sid="3900931562878052">
                             <conditions>
-                                <condition id="-10" name="For" sid="5726984079065675" type="System">
-                                    <param id="0" name="Name">&quot;changeBlockX&quot;</param>
+                                <condition id="-10" name="For" sid="7806552221880085" type="System">
+                                    <param id="0" name="Name">&quot;getRowColumnX&quot;</param>
                                     <param id="1" name="Start index">0</param>
                                     <param id="2" name="End index">5</param>
                                 </condition>
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="3672074950755592">
+                                <event-block sid="3989589166556018">
                                     <conditions>
-                                        <condition id="-14" name="Compare variable" sid="4329747813845463" type="System">
+                                        <condition id="-14" name="Compare variable" sid="7049346289430774" type="System">
                                             <param id="0" name="Variable">blockColumn</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">-1</param>
                                         </condition>
-                                        <condition id="-8" name="Compare two values" sid="6321962364630874" type="System">
-                                            <param id="0" name="First value">Function.Param(0) - (160 + loopindex(&quot;changeBlockX&quot;) * Block.Width)</param>
+                                        <condition id="-8" name="Compare two values" sid="7967975831614351" type="System">
+                                            <param id="0" name="First value">Function.Param(0) - (160 + loopindex(&quot;getRowColumnX&quot;) * Block.Width)</param>
                                             <param id="1" name="Comparison">2</param>
                                             <param id="2" name="Second value">80</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-9" name="Set value" sid="2312768788894216" type="System">
+                                        <action id="-9" name="Set value" sid="131076961765532" type="System">
                                             <param id="0" name="Variable">blockColumn</param>
-                                            <param id="1" name="Value">loopindex(&quot;changeBlockX&quot;)</param>
+                                            <param id="1" name="Value">loopindex(&quot;getRowColumnX&quot;)</param>
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="2474241324351598">
+                                <event-block sid="4067218769741658">
                                     <conditions>
-                                        <condition id="-14" name="Compare variable" sid="1617465099833763" type="System">
+                                        <condition id="-14" name="Compare variable" sid="4525151183869683" type="System">
                                             <param id="0" name="Variable">blockRow</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">-1</param>
                                         </condition>
-                                        <condition id="-8" name="Compare two values" sid="2884041823500039" type="System">
-                                            <param id="0" name="First value">Function.Param(1) - (loopindex(&quot;changeBlockY&quot;) * Block.Height)</param>
+                                        <condition id="-8" name="Compare two values" sid="3682888047985257" type="System">
+                                            <param id="0" name="First value">Function.Param(1) - (loopindex(&quot;getRowColumnY&quot;) * Block.Height)</param>
                                             <param id="1" name="Comparison">2</param>
                                             <param id="2" name="Second value">80</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-9" name="Set value" sid="7916186050078496" type="System">
+                                        <action id="-9" name="Set value" sid="6693829803530577" type="System">
                                             <param id="0" name="Variable">blockRow</param>
-                                            <param id="1" name="Value">loopindex(&quot;changeBlockY&quot;)</param>
+                                            <param id="1" name="Value">loopindex(&quot;getRowColumnY&quot;)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -380,6 +380,21 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="5302144927856665">
+            <conditions>
+                <condition id="0" name="On function" sid="4494684434117577" type="Function">
+                    <param id="0" name="Name">&quot;ChangeBlock&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="1802598748799552" type="Function">
+                    <param id="0" name="Name">&quot;GetRowColumn&quot;</param>
+                    <param id="1" name="Parameter {n}">Function.Param(0){###}Function.Param(1)</param>
+                </action>
+            </actions>
+            <sub-events>
                 <variable constant="0" name="currentBlockId" sid="971943867785554" static="0" type="number">-1</variable>
                 <variable constant="0" name="targetBlockId" sid="1959439747622041" static="0" type="number">-1</variable>
                 <variable constant="0" name="tempBlockId" sid="7709418309212307" static="0" type="number">-1</variable>
@@ -510,7 +525,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="5451748425918">
+                <event-block sid="5451748425918">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="4972305594865504" type="System">
                             <param id="0" name="Variable">direction</param>
@@ -539,6 +554,28 @@
                         </action>
                     </actions>
                     <sub-events>
+                        <event-block sid="3542018811593621">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="4638221452053158" type="System">
+                                    <param id="0" name="Variable">blockColumn</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block bookmark="1" sid="5307309769222766">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="4189448746863621" type="LineMultiply">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">100</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                </event-block>
+                            </sub-events>
+                        </event-block>
                         <event-block sid="2441939834496504">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="1430518636294395" type="Block">

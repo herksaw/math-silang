@@ -77,6 +77,9 @@
         </object-type>
         <object-type name="Block" sid="9363911953344155">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="number" sid="1608883233827489" type="number" />
+            </instance-variables>
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8392800649205474" speed="5">
                     <frame duration="1" hotspotX="0" hotspotY="0" />
@@ -109,12 +112,22 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Line" sid="9226603644732136">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="9965454245260725" speed="0">
+                    <frame duration="1" hotspotX="1" hotspotY="1" />
+                    <frame duration="1" hotspotX="1" hotspotY="1" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
-        <family name="Object" plugin-id="Sprite" sid="8802063782826458">
+        <family name="Objects" plugin-id="Sprite" sid="8802063782826458">
             <members>
                 <member>Block</member>
                 <member>DotBlack</member>
+                <member>Line</member>
                 <member>LineMultiply</member>
                 <member>LinePlus</member>
             </members>
@@ -122,13 +135,14 @@
                 <instance-variable name="id" sid="3970075428301715" type="number" />
             </instance-variables>
         </family>
-        <family name="Line" plugin-id="Sprite" sid="2196679196811219">
+        <family name="Lines" plugin-id="Sprite" sid="2196679196811219">
             <members>
+                <member>Line</member>
                 <member>LineMultiply</member>
                 <member>LinePlus</member>
             </members>
             <instance-variables>
-                <instance-variable name="posDirection" sid="7793736433815257" type="number" />
+                <instance-variable name="type" sid="8565267408775596" type="number" />
             </instance-variables>
         </family>
     </families>
