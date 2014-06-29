@@ -26,7 +26,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <active-layer name="Main Menu" />
     <layers>
         <layer locked="0" name="Background" parallax-in-editor="0" visible="1" />
-        <layer locked="0" name="Background" parallax-in-editor="0" visible="1" />
         <layer locked="0" name="Main Menu" parallax-in-editor="0" visible="1" />
         <layer locked="0" name="Start Menu" parallax-in-editor="0" visible="1" />
         <layer locked="0" name="Help Menu" parallax-in-editor="0" visible="1" />
