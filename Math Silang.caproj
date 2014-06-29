@@ -18,6 +18,7 @@
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
     </used-plugins>
     <used-behaviors />
     <used-effects />
@@ -46,14 +47,6 @@
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder expanded="1">
-        <object-type name="DotBlack" sid="2872302571358676">
-            <plugin id="Sprite" />
-            <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3418559018296889" speed="5">
-                    <frame duration="1" hotspotX="1" hotspotY="1" />
-                </animation>
-            </animation-folder>
-        </object-type>
         <object-type name="Mouse" sid="9601757437341936">
             <plugin id="Mouse" />
         </object-type>
@@ -96,22 +89,6 @@
         <object-type name="BoxDebug" sid="3742263535468368">
             <plugin id="Text" />
         </object-type>
-        <object-type name="LineMultiply" sid="9967494894143159">
-            <plugin id="Sprite" />
-            <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3060623135643444" speed="5">
-                    <frame duration="1" hotspotX="1" hotspotY="1" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="LinePlus" sid="2830312470754028">
-            <plugin id="Sprite" />
-            <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3477661590617337" speed="5">
-                    <frame duration="1" hotspotX="1" hotspotY="1" />
-                </animation>
-            </animation-folder>
-        </object-type>
         <object-type name="Line" sid="9226603644732136">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
@@ -121,15 +98,85 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="BoxAnswer" sid="1909386478949985">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="number" sid="3642494793545415" type="number" />
+            </instance-variables>
+        </object-type>
+        <object-type name="TextGeneral" sid="2762839963469271">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="id" sid="3407060211736965" type="number" />
+            </instance-variables>
+        </object-type>
+        <object-type name="ButtonText" sid="3846348462621637">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="9352783836313601" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.510204" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.511111" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ButtonBack" sid="8118618177720441">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7653518685315425" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="WebStorage" sid="7675119025388056">
+            <plugin id="WebStorage" />
+        </object-type>
+        <object-type name="ButtonPause" sid="5515387875562181">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6656413454316326" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ButtonPlay" sid="8119760520644606">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3615620091548248" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ButtonOption" sid="8237949225078411">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1606215943571406" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ButtonMenu" sid="3607204928493236">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4450276939231133" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ButtonFullscreen" sid="3411714537868907">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1989460354868599" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Objects" plugin-id="Sprite" sid="8802063782826458">
             <members>
                 <member>Block</member>
-                <member>DotBlack</member>
+                <member>ButtonText</member>
                 <member>Line</member>
-                <member>LineMultiply</member>
-                <member>LinePlus</member>
             </members>
             <instance-variables>
                 <instance-variable name="id" sid="3970075428301715" type="number" />
@@ -138,8 +185,6 @@
         <family name="Lines" plugin-id="Sprite" sid="2196679196811219">
             <members>
                 <member>Line</member>
-                <member>LineMultiply</member>
-                <member>LinePlus</member>
             </members>
             <instance-variables>
                 <instance-variable name="type" sid="8565267408775596" type="number" />
@@ -149,10 +194,12 @@
     <layout-folder expanded="1">
         <layout>Game Layout.xml</layout>
         <layout>Spawn Layout.xml</layout>
+        <layout>Main Menu Layout.xml</layout>
     </layout-folder>
     <event-folder expanded="1">
         <event-sheet>Game Event.xml</event-sheet>
         <event-sheet>Function Event.xml</event-sheet>
+        <event-sheet>Main Menu Event.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Mouse" uid="1" />
@@ -164,6 +211,7 @@
         <global-instance type="Keyboard" uid="3" />
         <global-instance type="Function" uid="5" />
         <global-instance type="Browser" uid="6" />
+        <global-instance type="WebStorage" uid="34" />
     </global-instances>
     <sounds-folder expanded="1" />
     <music-folder expanded="1" />

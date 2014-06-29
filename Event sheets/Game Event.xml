@@ -3,6 +3,11 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Game Event</name>
     <events>
+        <variable constant="0" name="isPaused" sid="5507302813669492" static="0" type="number">0</variable>
+        <variable constant="0" name="isWon" sid="1989419679740459" static="0" type="number">0</variable>
+        <variable constant="0" name="isGameover" sid="6640467369470852" static="0" type="number">0</variable>
+        <variable constant="0" name="timer" sid="2593887183713088" static="0" type="number">0</variable>
+        <variable constant="0" name="steps" sid="8461907686888552" static="0" type="number">0</variable>
         <include>Function Event</include>
         <variable constant="0" name="touchStartX" sid="4734919703263125" static="0" type="number">0</variable>
         <variable constant="0" name="touchStartY" sid="7304870029195949" static="0" type="number">0</variable>
@@ -11,13 +16,25 @@
         <variable constant="0" name="distanceX" sid="7570782192528223" static="0" type="number">0</variable>
         <variable constant="0" name="distanceY" sid="4364953730700091" static="0" type="number">0</variable>
         <variable constant="0" name="direction" sid="3308149336012261" static="0" type="text"></variable>
+        <variable bookmark="1" constant="0" name="firstTouchX" sid="4331412688418789" static="0" type="number">-1</variable>
+        <variable constant="0" name="firstTouchY" sid="101122076549826" static="0" type="number">-1</variable>
+        <variable constant="0" name="secondTouchX" sid="459282258962976" static="0" type="number">-1</variable>
+        <variable constant="0" name="secondTouchY" sid="1318365746310663" static="0" type="number">-1</variable>
         <event-block sid="6039830122921812">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="590984716947016" type="System" />
             </conditions>
             <actions>
+                <action id="-4" name="Set layer visible" sid="6236665304088218" type="System">
+                    <param id="0" name="Layer">2</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
                 <action id="0" name="Call function" sid="6807320562052301" type="Function">
                     <param id="0" name="Name">&quot;CreateLine&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="8469524193033694" type="Function">
+                    <param id="0" name="Name">&quot;SetHUD&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
                 <action id="0" name="Call function" sid="4645244719022489" type="Function">
@@ -29,8 +46,42 @@
                     <param id="1" name="Parameter {n}"></param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="6398314431708674">
+                    <conditions>
+                        <condition id="6" name="Compare key value (as text)" sid="7587875458904831" type="WebStorage">
+                            <param id="0" name="Key">&quot;gameMode&quot;</param>
+                            <param id="1" name="Text to compare">&quot;time&quot;</param>
+                            <param id="2" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="3750419784205209" type="System">
+                            <param id="0" name="Variable">timer</param>
+                            <param id="1" name="Value">180</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
-        <event-group collapsed="1" description="" sid="3552136046705503" title="System">
+        <event-group description="" sid="2761475922112337" title="Debug">
+            <sub-events>
+                <event-block sid="4301242349881267">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="9658135417599296" type="Keyboard">
+                            <param id="0" name="Key">80 (P)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="6278267555115482" type="System">
+                            <param id="0" name="Variable">isGameover</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="3552136046705503" title="System">
             <sub-events>
                 <event-block sid="3241485817860823">
                     <conditions>
@@ -89,79 +140,532 @@
                             <param id="0" name="Where">0</param>
                             <param id="1" name="Object">TextBlock</param>
                         </action>
+                        <action id="-29" name="Move to object" sid="8717832178568966" type="TextGeneral">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Object">Line</param>
+                        </action>
+                        <action id="0" name="Call function" sid="2492556411273664" type="Function">
+                            <param id="0" name="Name">&quot;CheckAnswer&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="5250676322768534">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="8306395143008729" type="TextGeneral">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="5317758127302952" type="TextGeneral">
+                                    <param id="0" name="Text">&quot;Steps: &quot; &amp; Steps</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block collapsed="1" sid="439582491080078">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="400992520618074" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="8954930403393413">
+                            <conditions>
+                                <condition id="6" name="Compare key value (as text)" sid="3069267494197767" type="WebStorage">
+                                    <param id="0" name="Key">&quot;gameMode&quot;</param>
+                                    <param id="1" name="Text to compare">&quot;time&quot;</param>
+                                    <param id="2" name="Case sensitivity">0</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="6195507034554167" type="System">
+                                    <param id="0" name="Variable">timer</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Subtract from" sid="6232069609740694" type="System">
+                                    <param id="0" name="Variable">timer</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="6510271782827772">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="9454918960059335" type="TextGeneral">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="6324305194144266" type="TextGeneral">
+                                            <param id="0" name="Text">&quot;Time: &quot; &amp; floor(timer / 60 % 60) &amp; &quot; : &quot; &amp; floor(timer % 60)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="1669815329488331">
+                    <conditions>
+                        <condition id="6" name="Compare key value (as text)" sid="2924965062781544" type="WebStorage">
+                            <param id="0" name="Key">&quot;gameMode&quot;</param>
+                            <param id="1" name="Text to compare">&quot;time&quot;</param>
+                            <param id="2" name="Case sensitivity">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="6435990300753201" type="System">
+                            <param id="0" name="Variable">timer</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="9858130167926236" type="System">
+                            <param id="0" name="Variable">isGameover</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3967943741099934">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="7810420929680753" type="System">
+                            <param id="0" name="Variable">isGameover</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="3112747069767587" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="155653546831479" type="System">
+                            <param id="0" name="Object to create">TextGeneral</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="X">-500</param>
+                            <param id="3" name="Y">-500</param>
+                        </action>
+                        <action id="0" name="Set text" sid="9571209736208457" type="TextGeneral">
+                            <param id="0" name="Text">&quot;Game over&quot;</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="5456587491771517" type="TextGeneral">
+                            <param id="0" name="Width">400</param>
+                            <param id="1" name="Height">100</param>
+                        </action>
+                        <action id="3" name="Set font size" sid="626785621840467" type="TextGeneral">
+                            <param id="0" name="Size (pt)">48</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="3265393553597318" type="TextGeneral">
+                            <param id="0" name="X">LayoutWidth / 2 - (Self.Width / 2)</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                        <action id="-13" name="Set time scale" sid="6576688869493608" type="System">
+                            <param id="0" name="Time scale">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1221031406106654" type="System">
+                            <param id="0" name="Variable">isPaused</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="3974032740850416" type="System">
+                            <param id="0" name="Layer">2</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-18" name="Set layer opacity" sid="9758409875511642" type="System">
+                            <param id="0" name="Layer">1</param>
+                            <param id="1" name="Opacity">75</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7585832146009593">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="1054472057346371" type="System">
+                            <param id="0" name="Variable">isWon</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="8277248465386213" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="9590239825304602" type="System">
+                            <param id="0" name="Object to create">TextGeneral</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="X">-500</param>
+                            <param id="3" name="Y">-500</param>
+                        </action>
+                        <action id="0" name="Set text" sid="8867996241005497" type="TextGeneral">
+                            <param id="0" name="Text">&quot;You won!&quot;</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="4890129100548998" type="TextGeneral">
+                            <param id="0" name="Width">400</param>
+                            <param id="1" name="Height">100</param>
+                        </action>
+                        <action id="3" name="Set font size" sid="7448064820387868" type="TextGeneral">
+                            <param id="0" name="Size (pt)">48</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="1880633954308917" type="TextGeneral">
+                            <param id="0" name="X">LayoutWidth / 2 - (Self.Width / 2)</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                        <action id="-13" name="Set time scale" sid="8318193255455292" type="System">
+                            <param id="0" name="Time scale">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7998339098467281" type="System">
+                            <param id="0" name="Variable">isPaused</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="8304243172337031" type="System">
+                            <param id="0" name="Layer">2</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-18" name="Set layer opacity" sid="1647083940581936" type="System">
+                            <param id="0" name="Layer">1</param>
+                            <param id="1" name="Opacity">75</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="2573442541814332" title="Control">
             <sub-events>
-                <event-block sid="2651411911507296">
+                <event-block sid="2097328427452983">
                     <conditions>
-                        <condition id="0" name="On any touch start" sid="2416678696814894" type="Touch" />
+                        <condition id="-14" name="Compare variable" sid="6957265180176769" type="System">
+                            <param id="0" name="Variable">isPaused</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                     </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="9742728489009176" type="System">
-                            <param id="0" name="Variable">touchStartX</param>
-                            <param id="1" name="Value">Touch.X</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="6647882957548864" type="System">
-                            <param id="0" name="Variable">touchStartY</param>
-                            <param id="1" name="Value">Touch.Y</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="8407065580960217">
-                    <conditions>
-                        <condition id="1" name="On any touch end" sid="6043342869046073" type="Touch" />
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="4298604665007164" type="System">
-                            <param id="0" name="Variable">touchEndX</param>
-                            <param id="1" name="Value">Touch.X</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="9406981400243847" type="System">
-                            <param id="0" name="Variable">touchEndY</param>
-                            <param id="1" name="Value">Touch.Y</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="8061634948819224" type="System">
-                            <param id="0" name="Variable">distanceX</param>
-                            <param id="1" name="Value">touchEndX - touchStartX</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="74572744410304" type="System">
-                            <param id="0" name="Variable">distanceY</param>
-                            <param id="1" name="Value">touchEndY - touchStartY</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="4371978163931556" type="System">
-                            <param id="0" name="Variable">direction</param>
-                            <param id="1" name="Value">Function.Call(&quot;GetDirection&quot;, distanceX, distanceY)</param>
-                        </action>
-                        <action disabled="1" id="0" name="Set text" sid="883579351196103" type="BoxDebug">
-                            <param id="0" name="Text">floor(distanceX) &amp; &quot; &quot; &amp; floor(distanceY)</param>
-                        </action>
-                        <action id="0" name="Set text" sid="67451210421812" type="BoxDebug">
-                            <param id="0" name="Text">floor(touchStartX) &amp; &quot; &quot; &amp; floor(touchStartY)</param>
-                        </action>
-                    </actions>
+                    <actions />
                     <sub-events>
-                        <event-block any="1" sid="9887277027502834">
+                        <event-block collapsed="1" sid="3067546140897311">
                             <conditions>
-                                <condition id="-8" name="Compare two values" sid="1094180616870652" type="System">
-                                    <param id="0" name="First value">abs(distanceX)</param>
-                                    <param id="1" name="Comparison">5</param>
-                                    <param id="2" name="Second value">50</param>
-                                </condition>
-                                <condition id="-8" name="Compare two values" sid="4008795930441248" type="System">
-                                    <param id="0" name="First value">abs(distanceY)</param>
-                                    <param id="1" name="Comparison">5</param>
-                                    <param id="2" name="Second value">50</param>
+                                <condition id="0" name="On any touch start" sid="3440405508262564" type="Touch" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="4787016354710988" type="System">
+                                    <param id="0" name="Variable">touchStartX</param>
+                                    <param id="1" name="Value">Touch.X</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="7056070651518606" type="System">
+                                    <param id="0" name="Variable">touchStartY</param>
+                                    <param id="1" name="Value">Touch.Y</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block disabled="1" sid="7804537669124049">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="5944462867045516" type="System">
+                                            <param id="0" name="Variable">firstTouchX</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">-1</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="3308823741232802" type="System">
+                                            <param id="0" name="Variable">firstTouchY</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="2742679538058065" type="System">
+                                            <param id="0" name="Variable">firstTouchX</param>
+                                            <param id="1" name="Value">Touch.X</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="7731494739020071" type="System">
+                                            <param id="0" name="Variable">firstTouchY</param>
+                                            <param id="1" name="Value">Touch.Y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="5219444572686608">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="970820008229546" type="System">
+                                            <param id="0" name="Variable">firstTouchX</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">-1</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="1104658560773947" type="System">
+                                            <param id="0" name="Variable">firstTouchY</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="2078924459018475" type="System">
+                                            <param id="0" name="Variable">secondTouchX</param>
+                                            <param id="1" name="Value">Touch.X</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="974206516088105" type="System">
+                                            <param id="0" name="Variable">secondTouchY</param>
+                                            <param id="1" name="Value">Touch.Y</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="9835785105951809" type="System">
+                                            <param id="0" name="Variable">distanceX</param>
+                                            <param id="1" name="Value">secondTouchX - firstTouchX</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="2935857360339435" type="System">
+                                            <param id="0" name="Variable">distanceY</param>
+                                            <param id="1" name="Value">secondTouchY - firstTouchY</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="710098835309528" type="System">
+                                            <param id="0" name="Variable">direction</param>
+                                            <param id="1" name="Value">Function.Call(&quot;GetDirection&quot;, distanceX, distanceY)</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block any="1" disabled="1" sid="1549231750032055">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="8040007807221032" type="System">
+                                                    <param id="0" name="First value">abs(distanceX)</param>
+                                                    <param id="1" name="Comparison">5</param>
+                                                    <param id="2" name="Second value">80</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="3994342121169656" type="System">
+                                                    <param id="0" name="First value">abs(distanceY)</param>
+                                                    <param id="1" name="Comparison">5</param>
+                                                    <param id="2" name="Second value">80</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="5214148037261284" type="Function">
+                                                    <param id="0" name="Name">&quot;ChangeBlock&quot;</param>
+                                                    <param id="1" name="Parameter {n}">firstTouchX{###}firstTouchY{###}direction</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block disabled="1" sid="312689173337041">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="4970507068893608" type="System">
+                                                    <param id="0" name="Variable">firstTouchX</param>
+                                                    <param id="1" name="Value">-1</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="7291053112722169" type="System">
+                                                    <param id="0" name="Variable">firstTouchY</param>
+                                                    <param id="1" name="Value">-1</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="5710762286144602" type="System">
+                                                    <param id="0" name="Variable">secondTouchX</param>
+                                                    <param id="1" name="Value">-1</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="9271485726876862" type="System">
+                                                    <param id="0" name="Variable">secondTouchY</param>
+                                                    <param id="1" name="Value">-1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block collapsed="1" sid="1591366850462473">
+                            <conditions>
+                                <condition id="1" name="On any touch end" sid="7011451624363636" type="Touch" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="314817016002974" type="System">
+                                    <param id="0" name="Variable">touchEndX</param>
+                                    <param id="1" name="Value">Touch.X</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="2141442813460359" type="System">
+                                    <param id="0" name="Variable">touchEndY</param>
+                                    <param id="1" name="Value">Touch.Y</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="8660339061703125" type="System">
+                                    <param id="0" name="Variable">distanceX</param>
+                                    <param id="1" name="Value">touchEndX - touchStartX</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="9484915531543789" type="System">
+                                    <param id="0" name="Variable">distanceY</param>
+                                    <param id="1" name="Value">touchEndY - touchStartY</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="548713362175749" type="System">
+                                    <param id="0" name="Variable">direction</param>
+                                    <param id="1" name="Value">Function.Call(&quot;GetDirection&quot;, distanceX, distanceY)</param>
+                                </action>
+                                <action disabled="1" id="0" name="Set text" sid="3642574270795431" type="BoxDebug">
+                                    <param id="0" name="Text">floor(distanceX) &amp; &quot; &quot; &amp; floor(distanceY)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="5401652318388602" type="BoxDebug">
+                                    <param id="0" name="Text">floor(touchStartX) &amp; &quot; &quot; &amp; floor(touchStartY)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block any="1" sid="2775946005819681">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="1951052180211714" type="System">
+                                            <param id="0" name="First value">abs(distanceX)</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Second value">40</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="9512247533929833" type="System">
+                                            <param id="0" name="First value">abs(distanceY)</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Second value">40</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="7202446483798257" type="Function">
+                                            <param id="0" name="Name">&quot;ChangeBlock&quot;</param>
+                                            <param id="1" name="Parameter {n}">touchStartX{###}touchStartY{###}direction</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="1878564704987665" type="System">
+                                            <param id="0" name="Variable">steps</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="9036091658905196">
+                            <conditions>
+                                <condition id="3" name="On touched object" sid="4906000912044501" type="Touch">
+                                    <param id="0" name="Object">ButtonPause</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Call function" sid="7726863897530259" type="Function">
-                                    <param id="0" name="Name">&quot;ChangeBlock&quot;</param>
-                                    <param id="1" name="Parameter {n}">touchStartX{###}touchStartY{###}direction</param>
+                                <action id="-13" name="Set time scale" sid="5749290769663418" type="System">
+                                    <param id="0" name="Time scale">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="7369079523349701" type="System">
+                                    <param id="0" name="Variable">isPaused</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="7286349839897894" type="System">
+                                    <param id="0" name="Layer">2</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
+                                <action id="-18" name="Set layer opacity" sid="152906984046966" type="System">
+                                    <param id="0" name="Layer">1</param>
+                                    <param id="1" name="Opacity">75</param>
                                 </action>
                             </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="6938788220537071">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="9067842593743003" type="System">
+                            <param id="0" name="Variable">isPaused</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7026385866983446">
+                            <conditions>
+                                <condition id="3" name="On touched object" sid="3420674450396114" type="Touch">
+                                    <param id="0" name="Object">ButtonMenu</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set time scale" sid="2842724103207562" type="System">
+                                    <param id="0" name="Time scale">1.0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="8296181713170716" type="System">
+                                    <param id="0" name="Variable">isPaused</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="1632821897626778" type="System">
+                                    <param id="0" name="Layer">2</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="-18" name="Set layer opacity" sid="4234850417588316" type="System">
+                                    <param id="0" name="Layer">1</param>
+                                    <param id="1" name="Opacity">100</param>
+                                </action>
+                                <action id="-21" name="Reset global variables" sid="4222365122904599" type="System" />
+                                <action id="-2" name="Go to layout" sid="3660815115091096" type="System">
+                                    <param id="0" name="Layout">Main Menu Layout</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8899894132179821">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="8157432552323484" type="System">
+                                    <param id="0" name="Variable">isGameover</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="2143240966189166" type="System">
+                                    <param id="0" name="Variable">isWon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="2173921917504285">
+                                    <conditions>
+                                        <condition id="3" name="On touched object" sid="7803175394055744" type="Touch">
+                                            <param id="0" name="Object">ButtonPlay</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set time scale" sid="2423087393185981" type="System">
+                                            <param id="0" name="Time scale">1.0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="834560072300007" type="System">
+                                            <param id="0" name="Variable">isPaused</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-4" name="Set layer visible" sid="9764970359396911" type="System">
+                                            <param id="0" name="Layer">2</param>
+                                            <param id="1" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-18" name="Set layer opacity" sid="7589699418999066" type="System">
+                                            <param id="0" name="Layer">1</param>
+                                            <param id="1" name="Opacity">100</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block any="1" sid="4027050181868834">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="2445850125251168" type="System">
+                                    <param id="0" name="Variable">isGameover</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="1256282581739682" type="System">
+                                    <param id="0" name="Variable">isWon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="1915845443516909">
+                                    <conditions>
+                                        <condition id="3" name="On touched object" sid="7505333410095143" type="Touch">
+                                            <param id="0" name="Object">ButtonPlay</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set time scale" sid="3497398127361863" type="System">
+                                            <param id="0" name="Time scale">1.0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="3528311789753392" type="System">
+                                            <param id="0" name="Variable">isPaused</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-4" name="Set layer visible" sid="2032822407633949" type="System">
+                                            <param id="0" name="Layer">2</param>
+                                            <param id="1" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-18" name="Set layer opacity" sid="7400294445984043" type="System">
+                                            <param id="0" name="Layer">1</param>
+                                            <param id="1" name="Opacity">100</param>
+                                        </action>
+                                        <action id="-21" name="Reset global variables" sid="4792278811847686" type="System" />
+                                        <action id="-26" name="Restart layout" sid="3564027978149946" type="System" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>

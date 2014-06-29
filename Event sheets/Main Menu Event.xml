@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Main Menu Event</name>
+    <events>
+        <variable constant="0" name="fadeRate" sid="520185246054441" static="0" type="number">5</variable>
+        <event-block sid="1841280723655441">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="9612791999538457" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="3161610187628237" type="System">
+                    <param id="0" name="Layer">1</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="4768708806935126" type="System">
+                    <param id="0" name="Layer">2</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="9001622074542109" type="System">
+                    <param id="0" name="Layer">3</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="3310068816830386" type="ButtonBack">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-40" name="Set fullscreen scaling" sid="4236933953955193" type="System">
+                    <param id="0" name="Fullscreen scaling">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="8711640007353172">
+                    <conditions>
+                        <condition id="3" inverted="1" name="Local key exists" sid="3549977617165952" type="WebStorage">
+                            <param id="0" name="Key">&quot;gameMode&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="6512671076723941" type="WebStorage">
+                            <param id="0" name="Key">&quot;gameMode&quot;</param>
+                            <param id="1" name="Value">&quot;free&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="3825419819951351">
+            <conditions>
+                <condition id="-32" name="Is on platform" sid="7877649063376794" type="System">
+                    <param id="0" name="Platform">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="6538341571213891" type="ButtonFullscreen">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3677974758795238">
+            <conditions>
+                <condition id="3" name="On touched object" sid="3125456570330072" type="Touch">
+                    <param id="0" name="Object">ButtonText</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="8534570717173166" type="ButtonText">
+                    <param id="0" name="Instance variable">id</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="632984401093009" type="System">
+                    <param id="0" name="Layer">1</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="4136642302747622" type="System">
+                    <param id="0" name="Layer">2</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="6613166546259607" type="System">
+                    <param id="0" name="Layer">3</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="2474444871002736" type="ButtonBack">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="8532227486465028" type="ButtonBack">
+                    <param id="0" name="Layer">2</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="3349053995835491" type="ButtonFullscreen">
+                    <param id="0" name="Layer">2</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="6649486979576036">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="9618767171506937" type="TextGeneral">
+                            <param id="0" name="Instance variable">id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">-1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-26" name="Move to layer" sid="8881977045454137" type="TextGeneral">
+                            <param id="0" name="Layer">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="3214969366867213">
+            <conditions>
+                <condition id="3" name="On touched object" sid="4641615648988324" type="Touch">
+                    <param id="0" name="Object">ButtonText</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="3559486585648934" type="ButtonText">
+                    <param id="0" name="Instance variable">id</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="8825514264508375" type="System">
+                    <param id="0" name="Layer">1</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="3479942323761992" type="System">
+                    <param id="0" name="Layer">2</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="9053242757982776" type="System">
+                    <param id="0" name="Layer">3</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="1464965396886116" type="ButtonBack">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="6464268497967829" type="ButtonBack">
+                    <param id="0" name="Layer">3</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="3554047853129411" type="ButtonFullscreen">
+                    <param id="0" name="Layer">3</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="81255460666124">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="170558066761692" type="TextGeneral">
+                            <param id="0" name="Instance variable">id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">-1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-26" name="Move to layer" sid="2824486810190416" type="TextGeneral">
+                            <param id="0" name="Layer">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="775098991803137">
+            <conditions>
+                <condition id="3" name="On touched object" sid="9823046873824726" type="Touch">
+                    <param id="0" name="Object">ButtonText</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="3115338677042611" type="ButtonText">
+                    <param id="0" name="Instance variable">id</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="4577148841546341">
+                    <conditions>
+                        <condition id="-32" name="Is on platform" sid="5735260414509543" type="System">
+                            <param id="0" name="Platform">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Close" sid="5318779378016213" type="Browser" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="6784941957732256">
+            <conditions>
+                <condition id="3" name="On touched object" sid="4702995306799718" type="Touch">
+                    <param id="0" name="Object">ButtonText</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="3258743473795393" type="ButtonText">
+                    <param id="0" name="Instance variable">id</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set local value" sid="5205841388735193" type="WebStorage">
+                    <param id="0" name="Key">&quot;gameMode&quot;</param>
+                    <param id="1" name="Value">&quot;free&quot;</param>
+                </action>
+                <action id="-21" name="Reset global variables" sid="9120849376931849" type="System" />
+                <action id="-2" name="Go to layout" sid="1438264882104068" type="System">
+                    <param id="0" name="Layout">Game Layout</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4857456854791405">
+            <conditions>
+                <condition id="3" name="On touched object" sid="8182633884197606" type="Touch">
+                    <param id="0" name="Object">ButtonText</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="5762129416997631" type="ButtonText">
+                    <param id="0" name="Instance variable">id</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set local value" sid="8690503770521515" type="WebStorage">
+                    <param id="0" name="Key">&quot;gameMode&quot;</param>
+                    <param id="1" name="Value">&quot;time&quot;</param>
+                </action>
+                <action id="-21" name="Reset global variables" sid="8478616886569529" type="System" />
+                <action id="-2" name="Go to layout" sid="8077494545782299" type="System">
+                    <param id="0" name="Layout">Game Layout</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9809444763135972">
+            <conditions>
+                <condition id="3" name="On touched object" sid="1797960796434508" type="Touch">
+                    <param id="0" name="Object">ButtonText</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="5948368245605501" type="ButtonText">
+                    <param id="0" name="Instance variable">id</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">6</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set local value" sid="8706729011834492" type="WebStorage">
+                    <param id="0" name="Key">&quot;gameMode&quot;</param>
+                    <param id="1" name="Value">&quot;challenge&quot;</param>
+                </action>
+                <action id="-21" name="Reset global variables" sid="4718887168967946" type="System" />
+                <action id="-2" name="Go to layout" sid="3377185669265799" type="System">
+                    <param id="0" name="Layout">Game Layout</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block collapsed="1" sid="2153708671185777">
+            <conditions>
+                <condition id="3" name="On touched object" sid="5291473353290271" type="Touch">
+                    <param id="0" name="Object">ButtonBack</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="2201062829506466" type="ButtonBack" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="8462374755440335" type="System">
+                    <param id="0" name="Layer">1</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="4163144677098707" type="System">
+                    <param id="0" name="Layer">2</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="4871793110946571" type="System">
+                    <param id="0" name="Layer">3</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="6973339829667959" type="ButtonBack">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="5047215046306118" type="ButtonBack">
+                    <param id="0" name="Layer">1</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="9867239906479576" type="ButtonFullscreen">
+                    <param id="0" name="Layer">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="6206381308701181">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="342880758353732" type="TextGeneral">
+                            <param id="0" name="Instance variable">id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">-1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-26" name="Move to layer" sid="8018678988883735" type="TextGeneral">
+                            <param id="0" name="Layer">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="5082573559132163">
+            <conditions>
+                <condition id="3" name="On touched object" sid="8144312702440828" type="Touch">
+                    <param id="0" name="Object">ButtonFullscreen</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="5057493872943862" type="ButtonFullscreen" />
+            </conditions>
+            <actions>
+                <action id="10" name="Request fullscreen" sid="9948043806678341" type="Browser">
+                    <param id="0" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
