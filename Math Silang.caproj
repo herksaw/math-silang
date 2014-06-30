@@ -84,6 +84,10 @@
             <instance-variables>
                 <instance-variable name="id" sid="1126913367550049" type="number" />
                 <instance-variable name="number" sid="7201465013280273" type="number" />
+                <instance-variable name="moveRate" sid="33873371554852" type="number" />
+                <instance-variable name="moveDirection" sid="8176660257410657" type="string" />
+                <instance-variable name="speed" sid="3122469166297046" type="number" />
+                <instance-variable name="isEmpty" sid="5737215226726087" type="number" />
             </instance-variables>
         </object-type>
         <object-type name="BoxDebug" sid="3742263535468368">

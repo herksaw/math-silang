@@ -68,6 +68,10 @@
                     <instance-variables>
                         <id>0</id>
                         <number>0</number>
+                        <moveRate>0</moveRate>
+                        <moveDirection></moveDirection>
+                        <speed>5</speed>
+                        <isEmpty>0</isEmpty>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>

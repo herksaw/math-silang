@@ -121,7 +121,7 @@
                     </conditions>
                     <actions>
                         <action id="0" name="Alert" sid="3820639701663758" type="Browser">
-                            <param id="0" name="Message">&quot;Mad Monyet has installed the updates, it will reload your game now.&quot;</param>
+                            <param id="0" name="Message">&quot;Math Silang has installed the updates, it will reload your game now.&quot;</param>
                         </action>
                         <action id="9" name="Reload" sid="6173868428439071" type="Browser" />
                     </actions>
@@ -130,107 +130,229 @@
         </event-group>
         <event-group description="" sid="6522022210876391" title="Level">
             <sub-events>
-                <event-block sid="396564465240762">
+                <event-block sid="2912411878224558">
                     <conditions>
-                        <condition id="-1" name="Every tick" sid="4622912606029074" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="-24" name="Move to top" sid="4871525698444316" type="TextBlock" />
-                        <action id="-29" name="Move to object" sid="6703355010426032" type="Line">
-                            <param id="0" name="Where">0</param>
-                            <param id="1" name="Object">TextBlock</param>
-                        </action>
-                        <action id="-29" name="Move to object" sid="8717832178568966" type="TextGeneral">
-                            <param id="0" name="Where">0</param>
-                            <param id="1" name="Object">Line</param>
-                        </action>
-                        <action id="0" name="Call function" sid="2492556411273664" type="Function">
-                            <param id="0" name="Name">&quot;CheckAnswer&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
-                    <sub-events>
-                        <event-block sid="5250676322768534">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="8306395143008729" type="TextGeneral">
-                                    <param id="0" name="Instance variable">id</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">2</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Set text" sid="5317758127302952" type="TextGeneral">
-                                    <param id="0" name="Text">&quot;Steps: &quot; &amp; Steps</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block collapsed="1" sid="439582491080078">
-                    <conditions>
-                        <condition id="-6" name="Every X seconds" sid="400992520618074" type="System">
-                            <param id="0" name="Interval (seconds)">1.0</param>
+                        <condition id="-14" name="Compare variable" sid="9376531668784264" type="System">
+                            <param id="0" name="Variable">isPaused</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="8954930403393413">
+                        <event-block sid="9123782079584055">
                             <conditions>
-                                <condition id="6" name="Compare key value (as text)" sid="3069267494197767" type="WebStorage">
+                                <condition id="-1" name="Every tick" sid="8261238289877939" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-24" name="Move to top" sid="4681128807328871" type="TextBlock" />
+                                <action id="-29" name="Move to object" sid="2564339791251848" type="Line">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Object">TextBlock</param>
+                                </action>
+                                <action id="-29" name="Move to object" sid="1520357885469767" type="TextGeneral">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Object">Line</param>
+                                </action>
+                                <action id="0" name="Call function" sid="5289539639136945" type="Function">
+                                    <param id="0" name="Name">&quot;CheckAnswer&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="9879927050572966">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="2602501414231675" type="TextGeneral">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="5374763467653411" type="TextGeneral">
+                                            <param id="0" name="Text">&quot;Steps: &quot; &amp; Steps</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="5436868387816064">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="6072752969836237" type="TextBlock">
+                                            <param id="0" name="Instance variable">moveRate</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="8228981318317277">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="3504736884132354" type="TextBlock">
+                                                    <param id="0" name="Instance variable">moveDirection</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;up&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-2" name="Set Y" sid="4299525115309879" type="TextBlock">
+                                                    <param id="0" name="Y">Self.Y - Self.speed</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="8908747191248856" type="TextBlock">
+                                                    <param id="0" name="Instance variable">moveRate</param>
+                                                    <param id="1" name="Value">Self.moveRate - Self.speed</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="1202092096151352">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="2728816903123296" type="TextBlock">
+                                                    <param id="0" name="Instance variable">moveDirection</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;down&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-2" name="Set Y" sid="5299953522153648" type="TextBlock">
+                                                    <param id="0" name="Y">Self.Y + Self.speed</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="9491966469758818" type="TextBlock">
+                                                    <param id="0" name="Instance variable">moveRate</param>
+                                                    <param id="1" name="Value">Self.moveRate - Self.speed</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="4334692030938577">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="2143421530651921" type="TextBlock">
+                                                    <param id="0" name="Instance variable">moveDirection</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;left&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-1" name="Set X" sid="8838954023980131" type="TextBlock">
+                                                    <param id="0" name="X">Self.X - Self.speed</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="7789085292449274" type="TextBlock">
+                                                    <param id="0" name="Instance variable">moveRate</param>
+                                                    <param id="1" name="Value">Self.moveRate - Self.speed</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="1716344388830981">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="86207077190142" type="TextBlock">
+                                                    <param id="0" name="Instance variable">moveDirection</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;right&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-1" name="Set X" sid="1219372839737919" type="TextBlock">
+                                                    <param id="0" name="X">Self.X + Self.speed</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="5995810052500145" type="TextBlock">
+                                                    <param id="0" name="Instance variable">moveRate</param>
+                                                    <param id="1" name="Value">Self.moveRate - Self.speed</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="4200692861570582">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="5519876994334769" type="TextBlock">
+                                            <param id="0" name="Instance variable">moveRate</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="8406278156423662">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="6263579209023831" type="TextBlock">
+                                                    <param id="0" name="Instance variable">isEmpty</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Set text" sid="1851224873141408" type="TextBlock">
+                                                    <param id="0" name="Text">&quot;&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block collapsed="1" sid="9136474453391445">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="1540577374046509" type="System">
+                                    <param id="0" name="Interval (seconds)">1.0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="355972576525184">
+                                    <conditions>
+                                        <condition id="6" name="Compare key value (as text)" sid="1657267785130935" type="WebStorage">
+                                            <param id="0" name="Key">&quot;gameMode&quot;</param>
+                                            <param id="1" name="Text to compare">&quot;time&quot;</param>
+                                            <param id="2" name="Case sensitivity">0</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="7782400046302386" type="System">
+                                            <param id="0" name="Variable">timer</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" sid="6245771468910449" type="System">
+                                            <param id="0" name="Variable">timer</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="4697175770776302">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="6307158870574699" type="TextGeneral">
+                                                    <param id="0" name="Instance variable">id</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Set text" sid="4500828694981805" type="TextGeneral">
+                                                    <param id="0" name="Text">&quot;Time: &quot; &amp; floor(timer / 60 % 60) &amp; &quot; : &quot; &amp; floor(timer % 60)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="6911455447955805">
+                            <conditions>
+                                <condition id="6" name="Compare key value (as text)" sid="6219812296876278" type="WebStorage">
                                     <param id="0" name="Key">&quot;gameMode&quot;</param>
                                     <param id="1" name="Text to compare">&quot;time&quot;</param>
                                     <param id="2" name="Case sensitivity">0</param>
                                 </condition>
-                                <condition id="-14" name="Compare variable" sid="6195507034554167" type="System">
+                                <condition id="-14" name="Compare variable" sid="3776000072947094" type="System">
                                     <param id="0" name="Variable">timer</param>
-                                    <param id="1" name="Comparison">4</param>
+                                    <param id="1" name="Comparison">3</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-11" name="Subtract from" sid="6232069609740694" type="System">
-                                    <param id="0" name="Variable">timer</param>
+                                <action id="-9" name="Set value" sid="6901953921395535" type="System">
+                                    <param id="0" name="Variable">isGameover</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
-                            <sub-events>
-                                <event-block sid="6510271782827772">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="9454918960059335" type="TextGeneral">
-                                            <param id="0" name="Instance variable">id</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">3</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Set text" sid="6324305194144266" type="TextGeneral">
-                                            <param id="0" name="Text">&quot;Time: &quot; &amp; floor(timer / 60 % 60) &amp; &quot; : &quot; &amp; floor(timer % 60)</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
                         </event-block>
                     </sub-events>
-                </event-block>
-                <event-block sid="1669815329488331">
-                    <conditions>
-                        <condition id="6" name="Compare key value (as text)" sid="2924965062781544" type="WebStorage">
-                            <param id="0" name="Key">&quot;gameMode&quot;</param>
-                            <param id="1" name="Text to compare">&quot;time&quot;</param>
-                            <param id="2" name="Case sensitivity">0</param>
-                        </condition>
-                        <condition id="-14" name="Compare variable" sid="6435990300753201" type="System">
-                            <param id="0" name="Variable">timer</param>
-                            <param id="1" name="Comparison">3</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="9858130167926236" type="System">
-                            <param id="0" name="Variable">isGameover</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                    </actions>
                 </event-block>
                 <event-block sid="3967943741099934">
                     <conditions>
