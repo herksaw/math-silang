@@ -3,7 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Game Event</name>
     <events>
-        <variable constant="0" name="touched" sid="4326065733352562" static="0" type="number">0</variable>
+        <variable constant="0" name="changeOnce" sid="7352761405282317" static="0" type="number">1</variable>
         <variable constant="0" name="isPaused" sid="5507302813669492" static="0" type="number">0</variable>
         <variable constant="0" name="isWon" sid="1989419679740459" static="0" type="number">0</variable>
         <variable constant="0" name="isGameover" sid="6640467369470852" static="0" type="number">0</variable>
@@ -625,6 +625,11 @@
                                                     <param id="0" name="Variable">touchStartY</param>
                                                     <param id="1" name="Comparison">1</param>
                                                     <param id="2" name="Value">0</param>
+                                                </condition>
+                                                <condition id="-14" name="Compare variable" sid="3725199680319737" type="System">
+                                                    <param id="0" name="Variable">changeOnce</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
                                                 </condition>
                                             </conditions>
                                             <actions>

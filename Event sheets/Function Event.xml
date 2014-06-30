@@ -666,6 +666,10 @@
                     <param id="0" name="Name">&quot;GetRowColumn&quot;</param>
                     <param id="1" name="Parameter {n}">Function.Param(0){###}Function.Param(1)</param>
                 </action>
+                <action id="-9" name="Set value" sid="5057627118489231" type="System">
+                    <param id="0" name="Variable">changeOnce</param>
+                    <param id="1" name="Value">0</param>
+                </action>
             </actions>
             <sub-events>
                 <variable constant="0" name="currentBlockId" sid="971943867785554" static="0" type="number">-1</variable>
@@ -4104,6 +4108,15 @@
                             </sub-events>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block sid="3633522074122251">
+                    <conditions />
+                    <actions>
+                        <action id="-9" name="Set value" sid="7985773176239361" type="System">
+                            <param id="0" name="Variable">changeOnce</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-block>
