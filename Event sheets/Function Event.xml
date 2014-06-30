@@ -164,11 +164,11 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action disabled="1" id="-10" name="Set value" sid="9265636644506376" type="BoxAnswer">
+                        <action id="-10" name="Set value" sid="9265636644506376" type="BoxAnswer">
                             <param id="0" name="Instance variable">number</param>
                             <param id="1" name="Value">floor(random(50, 200))</param>
                         </action>
-                        <action id="-10" name="Set value" sid="5636400586290098" type="BoxAnswer">
+                        <action disabled="1" id="-10" name="Set value" sid="5636400586290098" type="BoxAnswer">
                             <param id="0" name="Instance variable">number</param>
                             <param id="1" name="Value">floor(random(3, 5))</param>
                         </action>
