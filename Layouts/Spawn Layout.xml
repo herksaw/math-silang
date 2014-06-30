@@ -70,7 +70,7 @@
                         <number>0</number>
                         <moveRate>0</moveRate>
                         <moveDirection></moveDirection>
-                        <speed>5</speed>
+                        <speed>10</speed>
                         <isEmpty>0</isEmpty>
                     </instance-variables>
                     <blend-mode>0</blend-mode>

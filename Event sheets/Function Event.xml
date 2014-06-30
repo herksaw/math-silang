@@ -164,9 +164,13 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="9265636644506376" type="BoxAnswer">
+                        <action disabled="1" id="-10" name="Set value" sid="9265636644506376" type="BoxAnswer">
                             <param id="0" name="Instance variable">number</param>
                             <param id="1" name="Value">floor(random(50, 200))</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="5636400586290098" type="BoxAnswer">
+                            <param id="0" name="Instance variable">number</param>
+                            <param id="1" name="Value">floor(random(3, 5))</param>
                         </action>
                     </actions>
                 </event-block>
@@ -344,7 +348,7 @@
                             <param id="1" name="Y">LayoutHeight - (Self.Height * 3)</param>
                         </action>
                         <action id="0" name="Set text" sid="1781275596300795" type="TextGeneral">
-                            <param id="0" name="Text">&quot;Steps&quot;</param>
+                            <param id="0" name="Text">&quot;Steps: Infinity&quot;</param>
                         </action>
                         <action id="3" name="Set font size" sid="5660324635677795" type="TextGeneral">
                             <param id="0" name="Size (pt)">20</param>
@@ -837,7 +841,7 @@
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block collapsed="1" sid="3542018811593621">
+                        <event-block sid="3542018811593621">
                             <conditions>
                                 <condition id="-14" name="Compare variable" sid="4638221452053158" type="System">
                                     <param id="0" name="Variable">blockColumn</param>
@@ -939,7 +943,12 @@
                                                             <param id="2" name="Value">1</param>
                                                         </condition>
                                                     </conditions>
-                                                    <actions />
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="3573761609635953" type="System">
+                                                            <param id="0" name="Variable">usedMultiply</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
                                                     <sub-events>
                                                         <event-block sid="4574555377507083">
                                                             <conditions>
@@ -1094,7 +1103,12 @@
                                                             <param id="2" name="Value">1</param>
                                                         </condition>
                                                     </conditions>
-                                                    <actions />
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="8822093135566538" type="System">
+                                                            <param id="0" name="Variable">usedPlus</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
                                                     <sub-events>
                                                         <event-block sid="5412798799622641">
                                                             <conditions>
@@ -1171,7 +1185,7 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block collapsed="1" sid="6032548957995462">
+                        <event-block sid="6032548957995462">
                             <conditions>
                                 <condition id="-14" name="Compare variable" sid="6009999283356921" type="System">
                                     <param id="0" name="Variable">blockColumn</param>
@@ -1273,7 +1287,12 @@
                                                             <param id="2" name="Value">1</param>
                                                         </condition>
                                                     </conditions>
-                                                    <actions />
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="9248171832104768" type="System">
+                                                            <param id="0" name="Variable">usedMultiply</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
                                                     <sub-events>
                                                         <event-block sid="4480985341013157">
                                                             <conditions>
@@ -1428,7 +1447,12 @@
                                                             <param id="2" name="Value">1</param>
                                                         </condition>
                                                     </conditions>
-                                                    <actions />
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="2228625862179993" type="System">
+                                                            <param id="0" name="Variable">usedPlus</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
                                                     <sub-events>
                                                         <event-block sid="3396915747918459">
                                                             <conditions>
@@ -1675,7 +1699,7 @@
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="2040048188389986">
+                        <event-block collapsed="1" sid="2040048188389986">
                             <conditions>
                                 <condition id="-14" name="Compare variable" sid="2298526400612099" type="System">
                                     <param id="0" name="Variable">blockColumn</param>
@@ -1777,7 +1801,12 @@
                                                             <param id="2" name="Value">1</param>
                                                         </condition>
                                                     </conditions>
-                                                    <actions />
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="3898524788325048" type="System">
+                                                            <param id="0" name="Variable">usedMultiply</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
                                                     <sub-events>
                                                         <event-block sid="1428278018001455">
                                                             <conditions>
@@ -1932,7 +1961,12 @@
                                                             <param id="2" name="Value">1</param>
                                                         </condition>
                                                     </conditions>
-                                                    <actions />
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="8888071601256708" type="System">
+                                                            <param id="0" name="Variable">usedPlus</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
                                                     <sub-events>
                                                         <event-block sid="4822200656314708">
                                                             <conditions>
@@ -2111,7 +2145,12 @@
                                                             <param id="2" name="Value">1</param>
                                                         </condition>
                                                     </conditions>
-                                                    <actions />
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="2061815480883641" type="System">
+                                                            <param id="0" name="Variable">usedMultiply</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
                                                     <sub-events>
                                                         <event-block sid="9486312325695769">
                                                             <conditions>
@@ -2266,7 +2305,12 @@
                                                             <param id="2" name="Value">1</param>
                                                         </condition>
                                                     </conditions>
-                                                    <actions />
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="9202096659797119" type="System">
+                                                            <param id="0" name="Variable">usedPlus</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
                                                     <sub-events>
                                                         <event-block sid="7862494944130593">
                                                             <conditions>
@@ -2615,7 +2659,12 @@
                                                             <param id="2" name="Value">1</param>
                                                         </condition>
                                                     </conditions>
-                                                    <actions />
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="5386228682893385" type="System">
+                                                            <param id="0" name="Variable">usedMultiply</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
                                                     <sub-events>
                                                         <event-block sid="5235822626863241">
                                                             <conditions>
@@ -2770,7 +2819,12 @@
                                                             <param id="2" name="Value">1</param>
                                                         </condition>
                                                     </conditions>
-                                                    <actions />
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="5768011522952283" type="System">
+                                                            <param id="0" name="Variable">usedPlus</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
                                                     <sub-events>
                                                         <event-block sid="2447661233643574">
                                                             <conditions>
@@ -2949,7 +3003,12 @@
                                                             <param id="2" name="Value">1</param>
                                                         </condition>
                                                     </conditions>
-                                                    <actions />
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="3632912022069474" type="System">
+                                                            <param id="0" name="Variable">usedMultiply</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
                                                     <sub-events>
                                                         <event-block sid="3470810910919359">
                                                             <conditions>
@@ -3104,7 +3163,12 @@
                                                             <param id="2" name="Value">1</param>
                                                         </condition>
                                                     </conditions>
-                                                    <actions />
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="6292353919926984" type="System">
+                                                            <param id="0" name="Variable">usedPlus</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
                                                     <sub-events>
                                                         <event-block sid="7190039318518314">
                                                             <conditions>
@@ -3453,7 +3517,12 @@
                                                             <param id="2" name="Value">1</param>
                                                         </condition>
                                                     </conditions>
-                                                    <actions />
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="2994908889440485" type="System">
+                                                            <param id="0" name="Variable">usedMultiply</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
                                                     <sub-events>
                                                         <event-block sid="3429381814995354">
                                                             <conditions>
@@ -3608,7 +3677,12 @@
                                                             <param id="2" name="Value">1</param>
                                                         </condition>
                                                     </conditions>
-                                                    <actions />
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="7458131055581018" type="System">
+                                                            <param id="0" name="Variable">usedPlus</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
                                                     <sub-events>
                                                         <event-block sid="657818749837622">
                                                             <conditions>
@@ -3787,7 +3861,12 @@
                                                             <param id="2" name="Value">1</param>
                                                         </condition>
                                                     </conditions>
-                                                    <actions />
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="4279751163412586" type="System">
+                                                            <param id="0" name="Variable">usedMultiply</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
                                                     <sub-events>
                                                         <event-block sid="7606317347059224">
                                                             <conditions>
@@ -3942,7 +4021,12 @@
                                                             <param id="2" name="Value">1</param>
                                                         </condition>
                                                     </conditions>
-                                                    <actions />
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="5883263068872037" type="System">
+                                                            <param id="0" name="Variable">usedPlus</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
                                                     <sub-events>
                                                         <event-block sid="3458327306726325">
                                                             <conditions>
@@ -4055,6 +4139,49 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <variable constant="0" name="usedMultiply" sid="7913014937763145" static="0" type="number">0</variable>
+        <variable constant="0" name="usedPlus" sid="1807757478244678" static="0" type="number">0</variable>
+        <variable constant="0" name="points" sid="3063185174432047" static="0" type="number">0</variable>
+        <event-block sid="5574821137427357">
+            <conditions>
+                <condition id="0" name="On function" sid="8546489305842212" type="Function">
+                    <param id="0" name="Name">&quot;CalcPoints&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="4548489192961624">
+                    <conditions>
+                        <condition id="6" name="Compare key value (as text)" sid="1225422108726484" type="WebStorage">
+                            <param id="0" name="Key">&quot;gameMode&quot;</param>
+                            <param id="1" name="Text to compare">&quot;free&quot;</param>
+                            <param id="2" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="8283098853499458" type="System">
+                            <param id="0" name="Variable">points</param>
+                            <param id="1" name="Value">(usedMultiply * 5) + (usedPlus * 10) - steps</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4877222222791408">
+                    <conditions>
+                        <condition id="6" name="Compare key value (as text)" sid="6647735514958341" type="WebStorage">
+                            <param id="0" name="Key">&quot;gameMode&quot;</param>
+                            <param id="1" name="Text to compare">&quot;time&quot;</param>
+                            <param id="2" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="6401251162073155" type="System">
+                            <param id="0" name="Variable">points</param>
+                            <param id="1" name="Value">(usedMultiply * 5) + (usedPlus * 10) - timer - steps</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-block>

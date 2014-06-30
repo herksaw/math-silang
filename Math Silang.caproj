@@ -11,6 +11,7 @@
     <saved-with-version>17300</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
@@ -174,6 +175,27 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="BackgroundImage" sid="9941759485502506">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="3740115004986449" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Audio" sid="7391822775234995">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="ButtonAudio" sid="9917766737796449">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="4154845470725125" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Objects" plugin-id="Sprite" sid="8802063782826458">
@@ -216,9 +238,38 @@
         <global-instance type="Function" uid="5" />
         <global-instance type="Browser" uid="6" />
         <global-instance type="WebStorage" uid="34" />
+        <global-instance type="Audio" uid="43">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+                <speed-of-sound>5000</speed-of-sound>
+                <doppler-factor>1</doppler-factor>
+            </properties>
+        </global-instance>
     </global-instances>
-    <sounds-folder expanded="1" />
-    <music-folder expanded="1" />
+    <sounds-folder expanded="1">
+        <file name="swap.m4a" />
+        <file name="swap.ogg" />
+        <file name="swap.wav" />
+        <file name="won.m4a" />
+        <file name="won.ogg" />
+        <file name="won.wav" />
+    </sounds-folder>
+    <music-folder expanded="1">
+        <file name="ingame.m4a" />
+        <file name="ingame.ogg" />
+        <file name="ingame.wav" />
+        <file name="menu.m4a" />
+        <file name="menu.ogg" />
+        <file name="menu.wav" />
+    </music-folder>
     <files-folder expanded="1">
         <file-folder expanded="0" name="Icons">
             <file name="icon-16.png" />

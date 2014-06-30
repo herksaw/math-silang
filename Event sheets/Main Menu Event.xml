@@ -9,6 +9,21 @@
                 <condition id="-2" name="On start of layout" sid="9612791999538457" type="System" />
             </conditions>
             <actions>
+                <action id="5" name="Set frame" sid="5107976888529107" type="BackgroundImage">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="4" name="Preload" sid="4179639746453231" type="Audio">
+                    <param id="0" name="Audio file">swap</param>
+                </action>
+                <action id="4" name="Preload" sid="2598984054557196" type="Audio">
+                    <param id="0" name="Audio file">won</param>
+                </action>
+                <action id="4" name="Preload" sid="3351717341899568" type="Audio">
+                    <param id="0" name="Audio file">ingame</param>
+                </action>
+                <action id="4" name="Preload" sid="8268791717335348" type="Audio">
+                    <param id="0" name="Audio file">menu</param>
+                </action>
                 <action id="-4" name="Set layer visible" sid="3161610187628237" type="System">
                     <param id="0" name="Layer">1</param>
                     <param id="1" name="Visibility">1</param>
@@ -27,6 +42,12 @@
                 <action id="-40" name="Set fullscreen scaling" sid="4236933953955193" type="System">
                     <param id="0" name="Fullscreen scaling">1</param>
                 </action>
+                <action id="0" name="Play" sid="7830203373887114" type="Audio">
+                    <param id="0" name="Audio file">ingame</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;looping&quot;</param>
+                </action>
             </actions>
             <sub-events>
                 <event-block sid="8711640007353172">
@@ -42,7 +63,80 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="2103321056759926">
+                    <conditions>
+                        <condition id="3" inverted="1" name="Local key exists" sid="1872464981032104" type="WebStorage">
+                            <param id="0" name="Key">&quot;audio&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="6213621271877642" type="WebStorage">
+                            <param id="0" name="Key">&quot;audio&quot;</param>
+                            <param id="1" name="Value">&quot;on&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9749250181910693">
+                    <conditions>
+                        <condition id="6" name="Compare key value (as text)" sid="9875181381497835" type="WebStorage">
+                            <param id="0" name="Key">&quot;audio&quot;</param>
+                            <param id="1" name="Text to compare">&quot;on&quot;</param>
+                            <param id="2" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="8" name="Set silent" sid="284834779080668" type="Audio">
+                            <param id="0" name="Mode">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="2070318681044674" type="ButtonAudio">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="14" name="Log" sid="6874058689251028" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;on&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6107888520720673">
+                    <conditions>
+                        <condition id="6" name="Compare key value (as text)" sid="1222886905404139" type="WebStorage">
+                            <param id="0" name="Key">&quot;audio&quot;</param>
+                            <param id="1" name="Text to compare">&quot;off&quot;</param>
+                            <param id="2" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="8" name="Set silent" sid="9335024601844591" type="Audio">
+                            <param id="0" name="Mode">0</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="3783017643532679" type="ButtonAudio">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="14" name="Log" sid="9725510989654635" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;off&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
+        </event-block>
+        <event-block sid="2230903389427932">
+            <conditions>
+                <condition id="4" inverted="1" name="Is any playing" sid="1923660910170369" type="Audio" />
+                <condition id="6" name="Compare key value (as text)" sid="8799958970459261" type="WebStorage">
+                    <param id="0" name="Key">&quot;audio&quot;</param>
+                    <param id="1" name="Text to compare">&quot;on&quot;</param>
+                    <param id="2" name="Case sensitivity">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="5556468001100131" type="Audio">
+                    <param id="0" name="Audio file">ingame</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;looping&quot;</param>
+                </action>
+            </actions>
         </event-block>
         <event-block sid="3825419819951351">
             <conditions>
@@ -66,6 +160,9 @@
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">0</param>
                 </condition>
+                <condition id="-9" name="Layer is visible" sid="6234830692190185" type="System">
+                    <param id="0" name="Layer">1</param>
+                </condition>
             </conditions>
             <actions>
                 <action id="-4" name="Set layer visible" sid="632984401093009" type="System">
@@ -87,6 +184,9 @@
                     <param id="0" name="Layer">2</param>
                 </action>
                 <action id="-26" name="Move to layer" sid="3349053995835491" type="ButtonFullscreen">
+                    <param id="0" name="Layer">2</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="9129432322707769" type="ButtonAudio">
                     <param id="0" name="Layer">2</param>
                 </action>
             </actions>
@@ -117,6 +217,9 @@
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">1</param>
                 </condition>
+                <condition id="-9" name="Layer is visible" sid="1926096459684065" type="System">
+                    <param id="0" name="Layer">1</param>
+                </condition>
             </conditions>
             <actions>
                 <action id="-4" name="Set layer visible" sid="8825514264508375" type="System">
@@ -138,6 +241,9 @@
                     <param id="0" name="Layer">3</param>
                 </action>
                 <action id="-26" name="Move to layer" sid="3554047853129411" type="ButtonFullscreen">
+                    <param id="0" name="Layer">3</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="8244943786588419" type="ButtonAudio">
                     <param id="0" name="Layer">3</param>
                 </action>
             </actions>
@@ -168,6 +274,9 @@
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">3</param>
                 </condition>
+                <condition id="-9" name="Layer is visible" sid="7131846852614491" type="System">
+                    <param id="0" name="Layer">1</param>
+                </condition>
             </conditions>
             <actions />
             <sub-events>
@@ -193,8 +302,12 @@
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">4</param>
                 </condition>
+                <condition id="-9" name="Layer is visible" sid="892215424221925" type="System">
+                    <param id="0" name="Layer">2</param>
+                </condition>
             </conditions>
             <actions>
+                <action id="33" name="Stop all" sid="5467269354742129" type="Audio" />
                 <action id="0" name="Set local value" sid="5205841388735193" type="WebStorage">
                     <param id="0" name="Key">&quot;gameMode&quot;</param>
                     <param id="1" name="Value">&quot;free&quot;</param>
@@ -215,8 +328,12 @@
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">5</param>
                 </condition>
+                <condition id="-9" name="Layer is visible" sid="6680489790853594" type="System">
+                    <param id="0" name="Layer">2</param>
+                </condition>
             </conditions>
             <actions>
+                <action id="33" name="Stop all" sid="9857748108598992" type="Audio" />
                 <action id="0" name="Set local value" sid="8690503770521515" type="WebStorage">
                     <param id="0" name="Key">&quot;gameMode&quot;</param>
                     <param id="1" name="Value">&quot;time&quot;</param>
@@ -237,8 +354,12 @@
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">6</param>
                 </condition>
+                <condition id="-9" name="Layer is visible" sid="1679264168605747" type="System">
+                    <param id="0" name="Layer">2</param>
+                </condition>
             </conditions>
             <actions>
+                <action id="33" name="Stop all" sid="9958434329885819" type="Audio" />
                 <action id="0" name="Set local value" sid="8706729011834492" type="WebStorage">
                     <param id="0" name="Key">&quot;gameMode&quot;</param>
                     <param id="1" name="Value">&quot;challenge&quot;</param>
@@ -278,6 +399,9 @@
                 <action id="-26" name="Move to layer" sid="9867239906479576" type="ButtonFullscreen">
                     <param id="0" name="Layer">1</param>
                 </action>
+                <action id="-26" name="Move to layer" sid="6899291638809291" type="ButtonAudio">
+                    <param id="0" name="Layer">1</param>
+                </action>
             </actions>
             <sub-events>
                 <event-block sid="6206381308701181">
@@ -308,6 +432,67 @@
                     <param id="0" name="Mode">0</param>
                 </action>
             </actions>
+        </event-block>
+        <event-block sid="2385229500288807">
+            <conditions>
+                <condition id="3" name="On touched object" sid="2012363176226863" type="Touch">
+                    <param id="0" name="Object">ButtonAudio</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="3516532400035471">
+                    <conditions>
+                        <condition id="6" name="Compare key value (as text)" sid="2436768014323617" type="WebStorage">
+                            <param id="0" name="Key">&quot;audio&quot;</param>
+                            <param id="1" name="Text to compare">&quot;on&quot;</param>
+                            <param id="2" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="2837993440117381" type="ButtonAudio">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="850615895752855" type="WebStorage">
+                            <param id="0" name="Key">&quot;audio&quot;</param>
+                            <param id="1" name="Value">&quot;off&quot;</param>
+                        </action>
+                        <action id="8" name="Set silent" sid="960103355898436" type="Audio">
+                            <param id="0" name="Mode">0</param>
+                        </action>
+                        <action id="14" name="Log" sid="1920274546558485" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;off&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6884585592949589">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="6607861052076885" type="System" />
+                        <condition id="6" name="Compare key value (as text)" sid="4072917530938171" type="WebStorage">
+                            <param id="0" name="Key">&quot;audio&quot;</param>
+                            <param id="1" name="Text to compare">&quot;off&quot;</param>
+                            <param id="2" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="6133296226111743" type="ButtonAudio">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="6388120453480911" type="WebStorage">
+                            <param id="0" name="Key">&quot;audio&quot;</param>
+                            <param id="1" name="Value">&quot;on&quot;</param>
+                        </action>
+                        <action id="8" name="Set silent" sid="6853183645567138" type="Audio">
+                            <param id="0" name="Mode">1</param>
+                        </action>
+                        <action id="14" name="Log" sid="3126213888852231" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;on&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>
