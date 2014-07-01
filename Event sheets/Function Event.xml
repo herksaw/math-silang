@@ -5,7 +5,7 @@
     <events>
         <variable constant="0" name="hasMultiply" sid="5393780986590095" static="0" type="number">0</variable>
         <variable constant="0" name="hasPlus" sid="7476899182527314" static="0" type="number">0</variable>
-        <event-block sid="7847704301276059">
+        <event-block collapsed="1" sid="7847704301276059">
             <conditions>
                 <condition id="0" name="On function" sid="1660230770847467" type="Function">
                     <param id="0" name="Name">&quot;CreateLine&quot;</param>
@@ -22,7 +22,7 @@
                 </action>
             </actions>
             <sub-events>
-                <event-block collapsed="1" sid="4096116694758613">
+                <event-block collapsed="1" disabled="1" sid="4096116694758613">
                     <conditions>
                         <condition id="-10" name="For" sid="1275225305712797" type="System">
                             <param id="0" name="Name">&quot;createLine&quot;</param>
@@ -150,6 +150,206 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block collapsed="1" sid="6163447326505219">
+                    <conditions>
+                        <condition id="-10" name="For" sid="4384017168776436" type="System">
+                            <param id="0" name="Name">&quot;createLine&quot;</param>
+                            <param id="1" name="Start index">100</param>
+                            <param id="2" name="End index">103</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="3315754104984706" type="System">
+                            <param id="0" name="Object to create">Line</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="X">LayoutWidth / 2</param>
+                            <param id="3" name="Y">LayoutHeight / 2</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="1106243499228467" type="Line">
+                            <param id="0" name="Instance variable">id</param>
+                            <param id="1" name="Value">loopindex(&quot;createLine&quot;)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="328783190056416" type="Line">
+                            <param id="0" name="Instance variable">type</param>
+                            <param id="1" name="Value">floor(random(0, 2))</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="1985866437045563" type="Line">
+                            <param id="0" name="Frame number">Self.type</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="1543448041805008">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="3626605192771565" type="Line">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="4374405254487275" type="System">
+                                    <param id="0" name="Variable">hasMultiply</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7073808870560496">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="9405971416684927" type="Line">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="3156422633892301" type="System">
+                                    <param id="0" name="Variable">hasPlus</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3726405130279296">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="6257681810288825" type="Line">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">100</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-7" name="Set size" sid="5184508947712914" type="Line">
+                                    <param id="0" name="Width">(LayoutWidth / 2) - 160</param>
+                                    <param id="1" name="Height">6</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="2357793658358761" type="Line">
+                                    <param id="0" name="X">(LayoutWidth / 2) - (Self.Width / 2)</param>
+                                    <param id="1" name="Y">LayoutHeight / 2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6829437812209611">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="2233354724041972" type="Line">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">101</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="3518558222588752">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="2493721469955699" type="Line">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="8196161470201303" type="Line">
+                                            <param id="0" name="Frame number">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="3653792617086211">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="2654337826490427" type="Line">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="8574713744595159" type="Line">
+                                            <param id="0" name="Frame number">3</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="4564185715968844">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-7" name="Set size" sid="1809775012481274" type="Line">
+                                            <param id="0" name="Width">6</param>
+                                            <param id="1" name="Height">LayoutHeight / 2</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="6507901292203678" type="Line">
+                                            <param id="0" name="X">LayoutWidth / 2</param>
+                                            <param id="1" name="Y">(LayoutHeight / 2) - (Self.Height / 2)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="8411081506231223">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="4151538853299978" type="Line">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">102</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-7" name="Set size" sid="2675611631867495" type="Line">
+                                    <param id="0" name="Width">(LayoutWidth / 2) - 160</param>
+                                    <param id="1" name="Height">6</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="8775519448343442" type="Line">
+                                    <param id="0" name="X">(LayoutWidth / 2) + (Self.Width / 2)</param>
+                                    <param id="1" name="Y">LayoutHeight / 2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4005693315733194">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="2239387549513309" type="Line">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">103</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="3412419820409297">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="5245478421572034" type="Line">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="5615959360932799" type="Line">
+                                            <param id="0" name="Frame number">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="6911352298274278">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="8723800367328877" type="Line">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="1839024286435436" type="Line">
+                                            <param id="0" name="Frame number">3</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="1275974383834597">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-7" name="Set size" sid="9552439189552209" type="Line">
+                                            <param id="0" name="Width">6</param>
+                                            <param id="1" name="Height">LayoutHeight / 2</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="5269909758834598" type="Line">
+                                            <param id="0" name="X">LayoutWidth / 2</param>
+                                            <param id="1" name="Y">(LayoutHeight / 2) + (Self.Height / 2)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <event-block sid="1016740128876782">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="2781679670112528" type="System">
@@ -242,7 +442,7 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-group collapsed="1" description="" sid="55345920831412" title="HUD">
+        <event-group description="" sid="55345920831412" title="HUD">
             <sub-events>
                 <event-block sid="5579713382432342">
                     <conditions>
@@ -257,16 +457,16 @@
                             <param id="2" name="X">-500</param>
                             <param id="3" name="Y">-500</param>
                         </action>
+                        <action id="5" name="Set frame" sid="184756422311647" type="Line">
+                            <param id="0" name="Frame number">2</param>
+                        </action>
                         <action id="-7" name="Set size" sid="5619284683079035" type="Line">
                             <param id="0" name="Width">40</param>
                             <param id="1" name="Height">40</param>
                         </action>
                         <action id="-3" name="Set position" sid="2657889923787251" type="Line">
-                            <param id="0" name="X">Self.Width</param>
-                            <param id="1" name="Y">160 + Self.Height</param>
-                        </action>
-                        <action id="5" name="Set frame" sid="184756422311647" type="Line">
-                            <param id="0" name="Frame number">0</param>
+                            <param id="0" name="X">Self.Width / 2</param>
+                            <param id="1" name="Y">160 + (Self.Height / 2)</param>
                         </action>
                         <action id="-3" name="Create object" sid="5275676273096734" type="System">
                             <param id="0" name="Object to create">Line</param>
@@ -274,114 +474,234 @@
                             <param id="2" name="X">-500</param>
                             <param id="3" name="Y">-500</param>
                         </action>
+                        <action id="5" name="Set frame" sid="5771177427516616" type="Line">
+                            <param id="0" name="Frame number">3</param>
+                        </action>
                         <action id="-7" name="Set size" sid="6809097985804905" type="Line">
                             <param id="0" name="Width">40</param>
                             <param id="1" name="Height">40</param>
                         </action>
                         <action id="-3" name="Set position" sid="9914912329693959" type="Line">
-                            <param id="0" name="X">Self.Width</param>
-                            <param id="1" name="Y">160 + (Self.Height * 2)</param>
-                        </action>
-                        <action id="5" name="Set frame" sid="5771177427516616" type="Line">
-                            <param id="0" name="Frame number">1</param>
-                        </action>
-                        <action id="-3" name="Create object" sid="1613756533628744" type="System">
-                            <param id="0" name="Object to create">TextGeneral</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="X">-500</param>
-                            <param id="3" name="Y">-500</param>
-                        </action>
-                        <action id="-7" name="Set size" sid="7841652174178641" type="TextGeneral">
-                            <param id="0" name="Width">120</param>
-                            <param id="1" name="Height">40</param>
-                        </action>
-                        <action id="-3" name="Set position" sid="292510874632233" type="TextGeneral">
-                            <param id="0" name="X">160 - (Self.Width)</param>
-                            <param id="1" name="Y">160</param>
-                        </action>
-                        <action id="0" name="Set text" sid="1440024136441599" type="TextGeneral">
-                            <param id="0" name="Text">&quot;Multiply&quot;</param>
-                        </action>
-                        <action id="3" name="Set font size" sid="2582915099360012" type="TextGeneral">
-                            <param id="0" name="Size (pt)">20</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="2483387001636693" type="TextGeneral">
-                            <param id="0" name="Instance variable">id</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="-3" name="Create object" sid="8831989393719226" type="System">
-                            <param id="0" name="Object to create">TextGeneral</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="X">-500</param>
-                            <param id="3" name="Y">-500</param>
-                        </action>
-                        <action id="-7" name="Set size" sid="1862118050741164" type="TextGeneral">
-                            <param id="0" name="Width">120</param>
-                            <param id="1" name="Height">40</param>
-                        </action>
-                        <action id="-3" name="Set position" sid="1514420023908182" type="TextGeneral">
-                            <param id="0" name="X">160 - Self.Width</param>
-                            <param id="1" name="Y">160 + Self.Height</param>
-                        </action>
-                        <action id="0" name="Set text" sid="7287466369880574" type="TextGeneral">
-                            <param id="0" name="Text">&quot;Plus&quot;</param>
-                        </action>
-                        <action id="3" name="Set font size" sid="6156740087157029" type="TextGeneral">
-                            <param id="0" name="Size (pt)">20</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="6331363873309937" type="TextGeneral">
-                            <param id="0" name="Instance variable">id</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="-3" name="Create object" sid="8957176713812797" type="System">
-                            <param id="0" name="Object to create">TextGeneral</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="X">-500</param>
-                            <param id="3" name="Y">-500</param>
-                        </action>
-                        <action id="-7" name="Set size" sid="1609915341010504" type="TextGeneral">
-                            <param id="0" name="Width">160</param>
-                            <param id="1" name="Height">40</param>
-                        </action>
-                        <action id="-3" name="Set position" sid="4515562025132489" type="TextGeneral">
-                            <param id="0" name="X">0</param>
-                            <param id="1" name="Y">LayoutHeight - (Self.Height * 3)</param>
-                        </action>
-                        <action id="0" name="Set text" sid="1781275596300795" type="TextGeneral">
-                            <param id="0" name="Text">&quot;Steps: Infinity&quot;</param>
-                        </action>
-                        <action id="3" name="Set font size" sid="5660324635677795" type="TextGeneral">
-                            <param id="0" name="Size (pt)">20</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="9691113011670216" type="TextGeneral">
-                            <param id="0" name="Instance variable">id</param>
-                            <param id="1" name="Value">2</param>
-                        </action>
-                        <action id="-3" name="Create object" sid="1331207561005946" type="System">
-                            <param id="0" name="Object to create">TextGeneral</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="X">-500</param>
-                            <param id="3" name="Y">-500</param>
-                        </action>
-                        <action id="-7" name="Set size" sid="1762006483268937" type="TextGeneral">
-                            <param id="0" name="Width">160</param>
-                            <param id="1" name="Height">40</param>
-                        </action>
-                        <action id="-3" name="Set position" sid="7624921932491904" type="TextGeneral">
-                            <param id="0" name="X">0</param>
-                            <param id="1" name="Y">LayoutHeight - (Self.Height * 2)</param>
-                        </action>
-                        <action id="0" name="Set text" sid="8947677073032702" type="TextGeneral">
-                            <param id="0" name="Text">&quot;Time: Infinity&quot;</param>
-                        </action>
-                        <action id="3" name="Set font size" sid="7969139814271844" type="TextGeneral">
-                            <param id="0" name="Size (pt)">20</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="3349956823247675" type="TextGeneral">
-                            <param id="0" name="Instance variable">id</param>
-                            <param id="1" name="Value">3</param>
+                            <param id="0" name="X">Self.Width / 2</param>
+                            <param id="1" name="Y">160 + (Self.Height / 2) + (Self.Height)</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="824521734240794">
+                            <conditions>
+                                <condition id="6" name="Compare key value (as text)" sid="646865150948718" type="WebStorage">
+                                    <param id="0" name="Key">&quot;lang&quot;</param>
+                                    <param id="1" name="Text to compare">&quot;bi&quot;</param>
+                                    <param id="2" name="Case sensitivity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="1613756533628744" type="System">
+                                    <param id="0" name="Object to create">TextGeneral</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">-500</param>
+                                    <param id="3" name="Y">-500</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="7841652174178641" type="TextGeneral">
+                                    <param id="0" name="Width">120</param>
+                                    <param id="1" name="Height">40</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="292510874632233" type="TextGeneral">
+                                    <param id="0" name="X">160 - (Self.Width)</param>
+                                    <param id="1" name="Y">160</param>
+                                </action>
+                                <action id="0" name="Set text" sid="1440024136441599" type="TextGeneral">
+                                    <param id="0" name="Text">&quot;Multiply&quot;</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="2582915099360012" type="TextGeneral">
+                                    <param id="0" name="Size (pt)">20</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="2483387001636693" type="TextGeneral">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="8831989393719226" type="System">
+                                    <param id="0" name="Object to create">TextGeneral</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">-500</param>
+                                    <param id="3" name="Y">-500</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="1862118050741164" type="TextGeneral">
+                                    <param id="0" name="Width">120</param>
+                                    <param id="1" name="Height">40</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="1514420023908182" type="TextGeneral">
+                                    <param id="0" name="X">160 - Self.Width</param>
+                                    <param id="1" name="Y">160 + Self.Height</param>
+                                </action>
+                                <action id="0" name="Set text" sid="7287466369880574" type="TextGeneral">
+                                    <param id="0" name="Text">&quot;Plus&quot;</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="6156740087157029" type="TextGeneral">
+                                    <param id="0" name="Size (pt)">20</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="6331363873309937" type="TextGeneral">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="8957176713812797" type="System">
+                                    <param id="0" name="Object to create">TextGeneral</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">-500</param>
+                                    <param id="3" name="Y">-500</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="1609915341010504" type="TextGeneral">
+                                    <param id="0" name="Width">160</param>
+                                    <param id="1" name="Height">40</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="4515562025132489" type="TextGeneral">
+                                    <param id="0" name="X">0</param>
+                                    <param id="1" name="Y">LayoutHeight - (Self.Height * 3)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="1781275596300795" type="TextGeneral">
+                                    <param id="0" name="Text">&quot;Steps: Infinity&quot;</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="5660324635677795" type="TextGeneral">
+                                    <param id="0" name="Size (pt)">18</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="9691113011670216" type="TextGeneral">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="1331207561005946" type="System">
+                                    <param id="0" name="Object to create">TextGeneral</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">-500</param>
+                                    <param id="3" name="Y">-500</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="1762006483268937" type="TextGeneral">
+                                    <param id="0" name="Width">160</param>
+                                    <param id="1" name="Height">40</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="7624921932491904" type="TextGeneral">
+                                    <param id="0" name="X">0</param>
+                                    <param id="1" name="Y">LayoutHeight - (Self.Height * 2)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="8947677073032702" type="TextGeneral">
+                                    <param id="0" name="Text">&quot;Time: Infinity&quot;</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="7969139814271844" type="TextGeneral">
+                                    <param id="0" name="Size (pt)">18</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="3349956823247675" type="TextGeneral">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5476244647324864">
+                            <conditions>
+                                <condition id="6" name="Compare key value (as text)" sid="1853910733587531" type="WebStorage">
+                                    <param id="0" name="Key">&quot;lang&quot;</param>
+                                    <param id="1" name="Text to compare">&quot;bm&quot;</param>
+                                    <param id="2" name="Case sensitivity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="206166068233582" type="System">
+                                    <param id="0" name="Object to create">TextGeneral</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">-500</param>
+                                    <param id="3" name="Y">-500</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="5396561520279564" type="TextGeneral">
+                                    <param id="0" name="Width">120</param>
+                                    <param id="1" name="Height">40</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="74034244487856" type="TextGeneral">
+                                    <param id="0" name="X">160 - (Self.Width)</param>
+                                    <param id="1" name="Y">160</param>
+                                </action>
+                                <action id="0" name="Set text" sid="7255966701459926" type="TextGeneral">
+                                    <param id="0" name="Text">&quot;Darab&quot;</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="2766925220179232" type="TextGeneral">
+                                    <param id="0" name="Size (pt)">20</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="7274975862109002" type="TextGeneral">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="432934441294709" type="System">
+                                    <param id="0" name="Object to create">TextGeneral</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">-500</param>
+                                    <param id="3" name="Y">-500</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="2337428490444359" type="TextGeneral">
+                                    <param id="0" name="Width">120</param>
+                                    <param id="1" name="Height">40</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="428680543066379" type="TextGeneral">
+                                    <param id="0" name="X">160 - Self.Width</param>
+                                    <param id="1" name="Y">160 + Self.Height</param>
+                                </action>
+                                <action id="0" name="Set text" sid="8806918250679332" type="TextGeneral">
+                                    <param id="0" name="Text">&quot;Tambah&quot;</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="2234332404338136" type="TextGeneral">
+                                    <param id="0" name="Size (pt)">20</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="4113913846453769" type="TextGeneral">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="960079294725115" type="System">
+                                    <param id="0" name="Object to create">TextGeneral</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">-500</param>
+                                    <param id="3" name="Y">-500</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="3238729734339289" type="TextGeneral">
+                                    <param id="0" name="Width">160</param>
+                                    <param id="1" name="Height">40</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="8279187368372326" type="TextGeneral">
+                                    <param id="0" name="X">0</param>
+                                    <param id="1" name="Y">LayoutHeight - (Self.Height * 3)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="8285852283607038" type="TextGeneral">
+                                    <param id="0" name="Text">&quot;Langkah: Infiniti&quot;</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="6667470459580271" type="TextGeneral">
+                                    <param id="0" name="Size (pt)">18</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="1093490816502623" type="TextGeneral">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="9664327519790527" type="System">
+                                    <param id="0" name="Object to create">TextGeneral</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">-500</param>
+                                    <param id="3" name="Y">-500</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="8017907464009699" type="TextGeneral">
+                                    <param id="0" name="Width">160</param>
+                                    <param id="1" name="Height">40</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="5277957156129828" type="TextGeneral">
+                                    <param id="0" name="X">0</param>
+                                    <param id="1" name="Y">LayoutHeight - (Self.Height * 2)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="1579250094597246" type="TextGeneral">
+                                    <param id="0" name="Text">&quot;Masa: Infiniti&quot;</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="5539552656726933" type="TextGeneral">
+                                    <param id="0" name="Size (pt)">18</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="4252047921288124" type="TextGeneral">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -655,6 +975,9 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <variable constant="0" name="usedSwap" sid="9562058483860573" static="0" type="number">0</variable>
+        <variable constant="0" name="samePlus" sid="4152754540718925" static="0" type="number">0</variable>
+        <variable constant="0" name="sameMultiply" sid="2705075510196191" static="0" type="number">0</variable>
         <event-block sid="5302144927856665">
             <conditions>
                 <condition id="0" name="On function" sid="4494684434117577" type="Function">
@@ -703,6 +1026,10 @@
                         <action id="-9" name="Set value" sid="8883330722799947" type="System">
                             <param id="0" name="Variable">targetBlockId</param>
                             <param id="1" name="Value">blockColumn + ((blockRow - 1) * 6)</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="9065442633968676" type="System">
+                            <param id="0" name="Variable">usedSwap</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -812,7 +1139,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="5451748425918">
+                <event-block sid="5451748425918">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="4972305594865504" type="System">
                             <param id="0" name="Variable">direction</param>
@@ -842,6 +1169,13 @@
                         <action id="-9" name="Set value" sid="4331282397340936" type="System">
                             <param id="0" name="Variable">isEquationTrue</param>
                             <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="9210044153728288" type="Pipan">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4065176664391484" type="System">
+                            <param id="0" name="Variable">usedSwap</param>
+                            <param id="1" name="Value">0</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -873,7 +1207,16 @@
                                                     <param id="2" name="Value">0</param>
                                                 </condition>
                                             </conditions>
-                                            <actions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="2303256356513603" type="System">
+                                                    <param id="0" name="Variable">samePlus</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="8403917610061719" type="System">
+                                                    <param id="0" name="Variable">sameMultiply</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
                                             <sub-events>
                                                 <event-block sid="4564637681397666">
                                                     <conditions>
@@ -1033,7 +1376,16 @@
                                                     <param id="2" name="Value">1</param>
                                                 </condition>
                                             </conditions>
-                                            <actions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="7525733199600243" type="System">
+                                                    <param id="0" name="Variable">sameMultiply</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="9434843849317003" type="System">
+                                                    <param id="0" name="Variable">samePlus</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
                                             <sub-events>
                                                 <event-block sid="4545749819447613">
                                                     <conditions>
@@ -1217,7 +1569,16 @@
                                                     <param id="2" name="Value">0</param>
                                                 </condition>
                                             </conditions>
-                                            <actions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="5014191261722624" type="System">
+                                                    <param id="0" name="Variable">samePlus</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="8355255541585727" type="System">
+                                                    <param id="0" name="Variable">sameMultiply</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
                                             <sub-events>
                                                 <event-block sid="1532894908734309">
                                                     <conditions>
@@ -1377,7 +1738,16 @@
                                                     <param id="2" name="Value">1</param>
                                                 </condition>
                                             </conditions>
-                                            <actions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="5251319018534727" type="System">
+                                                    <param id="0" name="Variable">sameMultiply</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="5744357479014813" type="System">
+                                                    <param id="0" name="Variable">samePlus</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
                                             <sub-events>
                                                 <event-block sid="536815144269863">
                                                     <conditions>
@@ -1562,6 +1932,10 @@
                             <param id="0" name="Variable">targetBlockId</param>
                             <param id="1" name="Value">blockColumn + ((blockRow + 1) * 6)</param>
                         </action>
+                        <action id="-10" name="Add to" sid="2940362408646394" type="System">
+                            <param id="0" name="Variable">usedSwap</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="1001189242204193">
@@ -1670,7 +2044,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="2544120091592048">
+                <event-block sid="2544120091592048">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="4443138958872659" type="System">
                             <param id="0" name="Variable">direction</param>
@@ -1701,9 +2075,16 @@
                             <param id="0" name="Variable">isEquationTrue</param>
                             <param id="1" name="Value">1</param>
                         </action>
+                        <action id="5" name="Set frame" sid="9501655750201261" type="Pipan">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2159338838131285" type="System">
+                            <param id="0" name="Variable">usedSwap</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
                     </actions>
                     <sub-events>
-                        <event-block collapsed="1" sid="2040048188389986">
+                        <event-block sid="2040048188389986">
                             <conditions>
                                 <condition id="-14" name="Compare variable" sid="2298526400612099" type="System">
                                     <param id="0" name="Variable">blockColumn</param>
@@ -1731,7 +2112,16 @@
                                                     <param id="2" name="Value">0</param>
                                                 </condition>
                                             </conditions>
-                                            <actions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="1662388602542628" type="System">
+                                                    <param id="0" name="Variable">samePlus</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="2437294137670127" type="System">
+                                                    <param id="0" name="Variable">sameMultiply</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
                                             <sub-events>
                                                 <event-block sid="691172829515698">
                                                     <conditions>
@@ -1891,7 +2281,16 @@
                                                     <param id="2" name="Value">1</param>
                                                 </condition>
                                             </conditions>
-                                            <actions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="482273313658927" type="System">
+                                                    <param id="0" name="Variable">sameMultiply</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="5421774936983872" type="System">
+                                                    <param id="0" name="Variable">samePlus</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
                                             <sub-events>
                                                 <event-block sid="255314244681781">
                                                     <conditions>
@@ -2075,7 +2474,16 @@
                                                     <param id="2" name="Value">0</param>
                                                 </condition>
                                             </conditions>
-                                            <actions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="238509728921908" type="System">
+                                                    <param id="0" name="Variable">samePlus</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="1033316596043934" type="System">
+                                                    <param id="0" name="Variable">sameMultiply</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
                                             <sub-events>
                                                 <event-block sid="6220988547639344">
                                                     <conditions>
@@ -2235,7 +2643,16 @@
                                                     <param id="2" name="Value">1</param>
                                                 </condition>
                                             </conditions>
-                                            <actions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="4910151524533116" type="System">
+                                                    <param id="0" name="Variable">sameMultiply</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="5372710884282786" type="System">
+                                                    <param id="0" name="Variable">samePlus</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
                                             <sub-events>
                                                 <event-block sid="1217489809144598">
                                                     <conditions>
@@ -2420,6 +2837,10 @@
                             <param id="0" name="Variable">targetBlockId</param>
                             <param id="1" name="Value">(blockColumn - 1) + (blockRow * 6)</param>
                         </action>
+                        <action id="-10" name="Add to" sid="5854740471659864" type="System">
+                            <param id="0" name="Variable">usedSwap</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="215280175218348">
@@ -2528,7 +2949,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="6117459244040924">
+                <event-block sid="6117459244040924">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="9116365111857581" type="System">
                             <param id="0" name="Variable">direction</param>
@@ -2558,6 +2979,13 @@
                         <action id="-9" name="Set value" sid="409768142887674" type="System">
                             <param id="0" name="Variable">isEquationTrue</param>
                             <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="8455179655213365" type="Pipan">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8018125641750206" type="System">
+                            <param id="0" name="Variable">usedSwap</param>
+                            <param id="1" name="Value">0</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -2589,7 +3017,16 @@
                                                     <param id="2" name="Value">0</param>
                                                 </condition>
                                             </conditions>
-                                            <actions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="6515901539148526" type="System">
+                                                    <param id="0" name="Variable">samePlus</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="9237276444887884" type="System">
+                                                    <param id="0" name="Variable">sameMultiply</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
                                             <sub-events>
                                                 <event-block sid="5541306380592729">
                                                     <conditions>
@@ -2749,7 +3186,16 @@
                                                     <param id="2" name="Value">1</param>
                                                 </condition>
                                             </conditions>
-                                            <actions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="8928287018003191" type="System">
+                                                    <param id="0" name="Variable">sameMultiply</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="759484357233743" type="System">
+                                                    <param id="0" name="Variable">samePlus</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
                                             <sub-events>
                                                 <event-block sid="2848582504964488">
                                                     <conditions>
@@ -2933,7 +3379,16 @@
                                                     <param id="2" name="Value">0</param>
                                                 </condition>
                                             </conditions>
-                                            <actions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="5369289981632734" type="System">
+                                                    <param id="0" name="Variable">samePlus</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="3147792775637084" type="System">
+                                                    <param id="0" name="Variable">sameMultiply</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
                                             <sub-events>
                                                 <event-block sid="1216955638939985">
                                                     <conditions>
@@ -3093,7 +3548,16 @@
                                                     <param id="2" name="Value">1</param>
                                                 </condition>
                                             </conditions>
-                                            <actions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="6290803811931592" type="System">
+                                                    <param id="0" name="Variable">sameMultiply</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="848580589926186" type="System">
+                                                    <param id="0" name="Variable">samePlus</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
                                             <sub-events>
                                                 <event-block sid="5087245889110072">
                                                     <conditions>
@@ -3278,6 +3742,10 @@
                             <param id="0" name="Variable">targetBlockId</param>
                             <param id="1" name="Value">(blockColumn + 1) + (blockRow * 6)</param>
                         </action>
+                        <action id="-10" name="Add to" sid="4288399052278608" type="System">
+                            <param id="0" name="Variable">usedSwap</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="6376099666350453">
@@ -3386,7 +3854,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="4074103667699808">
+                <event-block sid="4074103667699808">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="5939045025206705" type="System">
                             <param id="0" name="Variable">direction</param>
@@ -3416,6 +3884,13 @@
                         <action id="-9" name="Set value" sid="4525245804216921" type="System">
                             <param id="0" name="Variable">isEquationTrue</param>
                             <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="484607863341558" type="Pipan">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="5777571747266427" type="System">
+                            <param id="0" name="Variable">usedSwap</param>
+                            <param id="1" name="Value">0</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -3447,7 +3922,16 @@
                                                     <param id="2" name="Value">0</param>
                                                 </condition>
                                             </conditions>
-                                            <actions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="9273832687317255" type="System">
+                                                    <param id="0" name="Variable">samePlus</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="9718681586033687" type="System">
+                                                    <param id="0" name="Variable">sameMultiply</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
                                             <sub-events>
                                                 <event-block sid="5121748528461612">
                                                     <conditions>
@@ -3607,7 +4091,16 @@
                                                     <param id="2" name="Value">1</param>
                                                 </condition>
                                             </conditions>
-                                            <actions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="4442071731838284" type="System">
+                                                    <param id="0" name="Variable">sameMultiply</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="7221328645163269" type="System">
+                                                    <param id="0" name="Variable">samePlus</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
                                             <sub-events>
                                                 <event-block sid="1268197341078217">
                                                     <conditions>
@@ -3791,7 +4284,16 @@
                                                     <param id="2" name="Value">0</param>
                                                 </condition>
                                             </conditions>
-                                            <actions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="9199722930560124" type="System">
+                                                    <param id="0" name="Variable">samePlus</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="2987167741017947" type="System">
+                                                    <param id="0" name="Variable">sameMultiply</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
                                             <sub-events>
                                                 <event-block sid="6041239570918433">
                                                     <conditions>
@@ -3951,7 +4453,16 @@
                                                     <param id="2" name="Value">1</param>
                                                 </condition>
                                             </conditions>
-                                            <actions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="3778152643282531" type="System">
+                                                    <param id="0" name="Variable">sameMultiply</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="349434283676203" type="System">
+                                                    <param id="0" name="Variable">samePlus</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
                                             <sub-events>
                                                 <event-block sid="4878696772790704">
                                                     <conditions>
@@ -4136,6 +4647,21 @@
                     </conditions>
                     <actions />
                     <sub-events>
+                        <event-block sid="8656565396435689">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="1080763950352089" type="Block">
+                                    <param id="0" name="Instance variable">number</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">999</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="3302830001512602" type="System">
+                                    <param id="0" name="Variable">isGameover</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="6167638125807112">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="8662065290342964" type="Block">
@@ -4158,7 +4684,7 @@
         <variable constant="0" name="usedMultiply" sid="7913014937763145" static="0" type="number">0</variable>
         <variable constant="0" name="usedPlus" sid="1807757478244678" static="0" type="number">0</variable>
         <variable constant="0" name="points" sid="3063185174432047" static="0" type="number">0</variable>
-        <event-block sid="5574821137427357">
+        <event-block collapsed="1" sid="5574821137427357">
             <conditions>
                 <condition id="0" name="On function" sid="8546489305842212" type="Function">
                     <param id="0" name="Name">&quot;CalcPoints&quot;</param>
@@ -4193,6 +4719,154 @@
                         <action id="-9" name="Set value" sid="6401251162073155" type="System">
                             <param id="0" name="Variable">points</param>
                             <param id="1" name="Value">(usedMultiply * 5) + (usedPlus * 10) - timer - steps</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="7411100773146729">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="5317881652430732" type="System">
+                                    <param id="0" name="Variable">points</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="9590880182845404" type="System">
+                                    <param id="0" name="Variable">points</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="4252154354038211">
+            <conditions>
+                <condition id="0" name="On function" sid="7611257916648718" type="Function">
+                    <param id="0" name="Name">&quot;Pipan&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="4989820547839152" type="Pipan">
+                    <param id="0" name="Instance variable">depress</param>
+                    <param id="1" name="Value">floor(random(0, (100 - (steps * 100))))</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="7208744836527814">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="4018286474124759" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="5276071086026967" type="Pipan">
+                            <param id="0" name="Instance variable">normal</param>
+                            <param id="1" name="Value">floor(random(0, 5))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3230483468392678">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="5823975668599039" type="System">
+                            <param id="0" name="Variable">usedSwap</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="2854338706194619" type="System">
+                            <param id="0" name="Variable">usedSwap</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="9687226713287869" type="Pipan">
+                            <param id="0" name="Frame number">4</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7859303869861989">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="2428696150455395" type="System">
+                            <param id="0" name="Variable">usedSwap</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="239832030943667" type="Pipan">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6044322357743709" type="System">
+                            <param id="0" name="Variable">usedSwap</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7279085396071668">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="6597775209467168" type="System">
+                            <param id="0" name="Variable">sameMultiply</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="7351701454203788" type="System">
+                            <param id="0" name="Variable">sameMultiply</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="5909595261319906" type="Pipan">
+                            <param id="0" name="Frame number">5</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1996576605461432">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="9673867073568487" type="System">
+                            <param id="0" name="Variable">samePlus</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="5308248718733716" type="System">
+                            <param id="0" name="Variable">samePlus</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="9749140191573565" type="Pipan">
+                            <param id="0" name="Frame number">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8248764513688562">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7830011612354599" type="Pipan">
+                            <param id="0" name="Instance variable">normal</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="9812428157622076" type="Pipan">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2902193979054474">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="4323861451599232" type="Pipan">
+                            <param id="0" name="Instance variable">depress</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="9608935772241798" type="Pipan">
+                            <param id="0" name="Frame number">3</param>
                         </action>
                     </actions>
                 </event-block>

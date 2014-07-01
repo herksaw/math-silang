@@ -29,6 +29,10 @@
                     <param id="0" name="Layer">2</param>
                     <param id="1" name="Visibility">0</param>
                 </action>
+                <action id="-4" name="Set layer visible" sid="9233221399857754" type="System">
+                    <param id="0" name="Layer">3</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
                 <action id="0" name="Call function" sid="6807320562052301" type="Function">
                     <param id="0" name="Name">&quot;CreateLine&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
@@ -100,6 +104,16 @@
         </event-block>
         <event-group description="" sid="2761475922112337" title="Debug">
             <sub-events>
+                <event-block sid="5361884807395171">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="7413227890670598" type="Keyboard">
+                            <param id="0" name="Key">219 ([)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Clear local storage" sid="3408193046908877" type="WebStorage" />
+                    </actions>
+                </event-block>
                 <event-block sid="4301242349881267">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="9658135417599296" type="Keyboard">
@@ -113,22 +127,58 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="6386446914995151">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="7513608081348419" type="Keyboard">
+                            <param id="0" name="Key">79 (O)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="7538750895428945" type="System">
+                            <param id="0" name="Variable">isWon</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="1602702457954702">
                     <conditions>
+                        <condition id="-18" name="Is in preview" sid="1458255253819616" type="System" />
                         <condition id="-1" name="Every tick" sid="6960496216191239" type="System" />
                     </conditions>
                     <actions>
-                        <action id="0" name="Set text" sid="6371562876099198" type="BoxDebug">
+                        <action id="-15" name="Set visible" sid="4269792959076734" type="BoxDebug">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action disabled="1" id="0" name="Set text" sid="6371562876099198" type="BoxDebug">
                             <param id="0" name="Text">points</param>
                         </action>
-                        <action disabled="1" id="0" name="Set text" sid="5401652318388602" type="BoxDebug">
+                        <action id="0" name="Set text" sid="5401652318388602" type="BoxDebug">
                             <param id="0" name="Text">floor(touchStartX) &amp; &quot; &quot; &amp; floor(touchStartY)</param>
                         </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7783653216326253">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="2315246985309091" type="System" />
+                    </conditions>
+                    <actions>
                         <action id="-16" name="Set opacity" sid="9644502968776278" type="Block">
                             <param id="0" name="Opacity">25</param>
                         </action>
                         <action id="-16" name="Set opacity" sid="1556733456327803" type="Line">
                             <param id="0" name="Opacity">50</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="717061187441158" type="TextBlock">
+                            <param id="0" name="Opacity">80</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="1566848619222339" type="TextGeneral">
+                            <param id="0" name="Opacity">80</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="473494981526203" type="BoxAnswer">
+                            <param id="0" name="Opacity">80</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="7401227699282844" type="BoxUpdate">
+                            <param id="0" name="Opacity">80</param>
                         </action>
                     </actions>
                 </event-block>
@@ -148,42 +198,97 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="4952266530828485">
+                <event-block sid="5005503005901663">
                     <conditions>
-                        <condition id="5" name="Is downloading update" sid="1302924713834448" type="Browser" />
+                        <condition id="6" name="Compare key value (as text)" sid="7094143272893406" type="WebStorage">
+                            <param id="0" name="Key">&quot;lang&quot;</param>
+                            <param id="1" name="Text to compare">&quot;bi&quot;</param>
+                            <param id="2" name="Case sensitivity">0</param>
+                        </condition>
                     </conditions>
-                    <actions>
-                        <action id="0" name="Set text" sid="2695006686434876" type="BoxUpdate">
-                            <param id="0" name="Text">&quot;Downloading updates...&quot;</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="4952266530828485">
+                            <conditions>
+                                <condition id="5" name="Is downloading update" sid="1302924713834448" type="Browser" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="2695006686434876" type="BoxUpdate">
+                                    <param id="0" name="Text">&quot;Downloading updates...&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7029122297162694">
+                            <conditions>
+                                <condition id="5" inverted="1" name="Is downloading update" sid="9727641130341722" type="Browser" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="1039706263759409" type="BoxUpdate">
+                                    <param id="0" name="Text">&quot;No updates found.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7588567968951094">
+                            <conditions>
+                                <condition id="6" name="On update ready" sid="7200767584759452" type="Browser" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Alert" sid="3820639701663758" type="Browser">
+                                    <param id="0" name="Message">&quot;Math Silang has installed the updates, please reload your game now.&quot;</param>
+                                </action>
+                                <action id="9" name="Reload" sid="6173868428439071" type="Browser" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
-                <event-block sid="7029122297162694">
+                <event-block sid="8442007064821038">
                     <conditions>
-                        <condition id="5" inverted="1" name="Is downloading update" sid="9727641130341722" type="Browser" />
+                        <condition id="6" name="Compare key value (as text)" sid="9256857634354845" type="WebStorage">
+                            <param id="0" name="Key">&quot;lang&quot;</param>
+                            <param id="1" name="Text to compare">&quot;bm&quot;</param>
+                            <param id="2" name="Case sensitivity">0</param>
+                        </condition>
                     </conditions>
-                    <actions>
-                        <action id="0" name="Set text" sid="1039706263759409" type="BoxUpdate">
-                            <param id="0" name="Text">&quot;No updates found.&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="7588567968951094">
-                    <conditions>
-                        <condition id="6" name="On update ready" sid="7200767584759452" type="Browser" />
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Alert" sid="3820639701663758" type="Browser">
-                            <param id="0" name="Message">&quot;Math Silang has installed the updates, please reload your game now.&quot;</param>
-                        </action>
-                        <action id="9" name="Reload" sid="6173868428439071" type="Browser" />
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="2384519792866635">
+                            <conditions>
+                                <condition id="5" name="Is downloading update" sid="8445742615173813" type="Browser" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="4471703186210413" type="BoxUpdate">
+                                    <param id="0" name="Text">&quot;Memuat turun kemas kini...&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4112617263696723">
+                            <conditions>
+                                <condition id="5" inverted="1" name="Is downloading update" sid="8647371112226778" type="Browser" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="4529959382458478" type="BoxUpdate">
+                                    <param id="0" name="Text">&quot;Tiada kemas kini didapati.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4234595835511788">
+                            <conditions>
+                                <condition id="6" name="On update ready" sid="9616022519230049" type="Browser" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Alert" sid="7992396278540467" type="Browser">
+                                    <param id="0" name="Message">&quot;Math Silang telah memasang kemas kini, sila memuat semula game anda sekarang.&quot;</param>
+                                </action>
+                                <action id="9" name="Reload" sid="8639547859930281" type="Browser" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="6522022210876391" title="Level">
             <sub-events>
-                <event-block collapsed="1" sid="2912411878224558">
+                <event-block sid="2912411878224558">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="9376531668784264" type="System">
                             <param id="0" name="Variable">isPaused</param>
@@ -215,6 +320,10 @@
                                     <param id="0" name="Name">&quot;CalcPoints&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
+                                <action id="0" name="Call function" sid="2376334863245505" type="Function">
+                                    <param id="0" name="Name">&quot;Pipan&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
                             </actions>
                             <sub-events>
                                 <event-block sid="9879927050572966">
@@ -225,11 +334,37 @@
                                             <param id="2" name="Value">2</param>
                                         </condition>
                                     </conditions>
-                                    <actions>
-                                        <action id="0" name="Set text" sid="5374763467653411" type="TextGeneral">
-                                            <param id="0" name="Text">&quot;Steps: &quot; &amp; Steps</param>
-                                        </action>
-                                    </actions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="3278449634396695">
+                                            <conditions>
+                                                <condition id="6" name="Compare key value (as text)" sid="2767648881309587" type="WebStorage">
+                                                    <param id="0" name="Key">&quot;lang&quot;</param>
+                                                    <param id="1" name="Text to compare">&quot;bi&quot;</param>
+                                                    <param id="2" name="Case sensitivity">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Set text" sid="5374763467653411" type="TextGeneral">
+                                                    <param id="0" name="Text">&quot;Steps: &quot; &amp; Steps</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block bookmark="1" sid="4694176987052634">
+                                            <conditions>
+                                                <condition id="6" name="Compare key value (as text)" sid="7592241434264303" type="WebStorage">
+                                                    <param id="0" name="Key">&quot;lang&quot;</param>
+                                                    <param id="1" name="Text to compare">&quot;bm&quot;</param>
+                                                    <param id="2" name="Case sensitivity">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Set text" sid="4289288345266728" type="TextGeneral">
+                                                    <param id="0" name="Text">&quot;Langkah: &quot; &amp; steps</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                                 <event-block sid="5436868387816064">
                                     <conditions>
@@ -421,28 +556,31 @@
                         <condition id="-4" name="Trigger once while true" sid="3112747069767587" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-3" name="Create object" sid="155653546831479" type="System">
+                        <action disabled="1" id="-3" name="Create object" sid="155653546831479" type="System">
                             <param id="0" name="Object to create">TextGeneral</param>
                             <param id="1" name="Layer">&quot;Game&quot;</param>
                             <param id="2" name="X">-500</param>
                             <param id="3" name="Y">-500</param>
                         </action>
-                        <action id="0" name="Set text" sid="9571209736208457" type="TextGeneral">
+                        <action disabled="1" id="0" name="Set text" sid="9571209736208457" type="TextGeneral">
                             <param id="0" name="Text">&quot;Game over&quot;</param>
                         </action>
-                        <action id="-7" name="Set size" sid="5456587491771517" type="TextGeneral">
+                        <action disabled="1" id="-7" name="Set size" sid="5456587491771517" type="TextGeneral">
                             <param id="0" name="Width">400</param>
                             <param id="1" name="Height">100</param>
                         </action>
-                        <action id="3" name="Set font size" sid="626785621840467" type="TextGeneral">
+                        <action disabled="1" id="3" name="Set font size" sid="626785621840467" type="TextGeneral">
                             <param id="0" name="Size (pt)">48</param>
                         </action>
-                        <action id="-3" name="Set position" sid="3265393553597318" type="TextGeneral">
+                        <action disabled="1" id="-3" name="Set position" sid="3265393553597318" type="TextGeneral">
                             <param id="0" name="X">LayoutWidth / 2 - (Self.Width / 2)</param>
                             <param id="1" name="Y">0</param>
                         </action>
-                        <action id="4" name="Set font color" sid="9079123826164584" type="TextGeneral">
+                        <action disabled="1" id="4" name="Set font color" sid="9079123826164584" type="TextGeneral">
                             <param id="0" name="Color">rgb(255, 0, 0)</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="8452018078039252" type="Pipan">
+                            <param id="0" name="Frame number">4</param>
                         </action>
                         <action id="-13" name="Set time scale" sid="6576688869493608" type="System">
                             <param id="0" name="Time scale">0</param>
@@ -451,17 +589,37 @@
                             <param id="0" name="Variable">isPaused</param>
                             <param id="1" name="Value">1</param>
                         </action>
+                        <action id="-4" name="Set layer visible" sid="9958287727668531" type="System">
+                            <param id="0" name="Layer">3</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
                         <action id="-4" name="Set layer visible" sid="3974032740850416" type="System">
                             <param id="0" name="Layer">2</param>
-                            <param id="1" name="Visibility">1</param>
+                            <param id="1" name="Visibility">0</param>
                         </action>
                         <action id="-18" name="Set layer opacity" sid="9758409875511642" type="System">
                             <param id="0" name="Layer">1</param>
-                            <param id="1" name="Opacity">75</param>
+                            <param id="1" name="Opacity">25</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="7622258278309257">
+                            <conditions>
+                                <condition id="6" name="Compare key value (as text)" sid="8860018367503902" type="WebStorage">
+                                    <param id="0" name="Key">&quot;lang&quot;</param>
+                                    <param id="1" name="Text to compare">&quot;bm&quot;</param>
+                                    <param id="2" name="Case sensitivity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="4184165586599753" type="TextLose">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
-                <event-block bookmark="1" sid="7585832146009593">
+                <event-block sid="7585832146009593">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="1054472057346371" type="System">
                             <param id="0" name="Variable">isWon</param>
@@ -471,57 +629,37 @@
                         <condition id="-4" name="Trigger once while true" sid="8277248465386213" type="System" />
                     </conditions>
                     <actions>
+                        <action disabled="1" id="-3" name="Create object" sid="9590239825304602" type="System">
+                            <param id="0" name="Object to create">TextGeneral</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="X">-500</param>
+                            <param id="3" name="Y">-500</param>
+                        </action>
+                        <action disabled="1" id="0" name="Set text" sid="8867996241005497" type="TextGeneral">
+                            <param id="0" name="Text">&quot;You won!&quot;</param>
+                        </action>
+                        <action disabled="1" id="-7" name="Set size" sid="4890129100548998" type="TextGeneral">
+                            <param id="0" name="Width">400</param>
+                            <param id="1" name="Height">100</param>
+                        </action>
+                        <action disabled="1" id="3" name="Set font size" sid="7448064820387868" type="TextGeneral">
+                            <param id="0" name="Size (pt)">48</param>
+                        </action>
+                        <action disabled="1" id="-3" name="Set position" sid="1880633954308917" type="TextGeneral">
+                            <param id="0" name="X">LayoutWidth / 2 - (Self.Width / 2)</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                        <action disabled="1" id="4" name="Set font color" sid="35666886414424" type="TextGeneral">
+                            <param id="0" name="Color">rgb(0, 0, 255)</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="1915585838513428" type="Pipan">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
                         <action id="0" name="Play" sid="5946543971762274" type="Audio">
                             <param id="0" name="Audio file">won</param>
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">0</param>
                             <param id="1" name="Tag (optional)">&quot;won&quot;</param>
-                        </action>
-                        <action id="-3" name="Create object" sid="9590239825304602" type="System">
-                            <param id="0" name="Object to create">TextGeneral</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="X">-500</param>
-                            <param id="3" name="Y">-500</param>
-                        </action>
-                        <action id="0" name="Set text" sid="8867996241005497" type="TextGeneral">
-                            <param id="0" name="Text">&quot;You won!&quot;</param>
-                        </action>
-                        <action id="-7" name="Set size" sid="4890129100548998" type="TextGeneral">
-                            <param id="0" name="Width">400</param>
-                            <param id="1" name="Height">100</param>
-                        </action>
-                        <action id="3" name="Set font size" sid="7448064820387868" type="TextGeneral">
-                            <param id="0" name="Size (pt)">48</param>
-                        </action>
-                        <action id="-3" name="Set position" sid="1880633954308917" type="TextGeneral">
-                            <param id="0" name="X">LayoutWidth / 2 - (Self.Width / 2)</param>
-                            <param id="1" name="Y">0</param>
-                        </action>
-                        <action id="4" name="Set font color" sid="35666886414424" type="TextGeneral">
-                            <param id="0" name="Color">rgb(0, 0, 255)</param>
-                        </action>
-                        <action id="-3" name="Create object" sid="2664011718632443" type="System">
-                            <param id="0" name="Object to create">TextGeneral</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="X">-500</param>
-                            <param id="3" name="Y">-500</param>
-                        </action>
-                        <action id="0" name="Set text" sid="8264425678840885" type="TextGeneral">
-                            <param id="0" name="Text">&quot;Your score is &quot; &amp; points</param>
-                        </action>
-                        <action id="-7" name="Set size" sid="3355470791091717" type="TextGeneral">
-                            <param id="0" name="Width">600</param>
-                            <param id="1" name="Height">80</param>
-                        </action>
-                        <action id="3" name="Set font size" sid="5331741901928066" type="TextGeneral">
-                            <param id="0" name="Size (pt)">40</param>
-                        </action>
-                        <action id="-3" name="Set position" sid="3125652769166374" type="TextGeneral">
-                            <param id="0" name="X">LayoutWidth / 2 - (Self.Width / 2)</param>
-                            <param id="1" name="Y">Self.Height * 3 / 4</param>
-                        </action>
-                        <action id="4" name="Set font color" sid="3601699302964994" type="TextGeneral">
-                            <param id="0" name="Color">rgb(0, 0, 255)</param>
                         </action>
                         <action id="-13" name="Set time scale" sid="8318193255455292" type="System">
                             <param id="0" name="Time scale">0</param>
@@ -530,13 +668,126 @@
                             <param id="0" name="Variable">isPaused</param>
                             <param id="1" name="Value">1</param>
                         </action>
+                        <action id="-4" name="Set layer visible" sid="676761858618689" type="System">
+                            <param id="0" name="Layer">3</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
                         <action id="-4" name="Set layer visible" sid="8304243172337031" type="System">
                             <param id="0" name="Layer">2</param>
-                            <param id="1" name="Visibility">1</param>
+                            <param id="1" name="Visibility">0</param>
                         </action>
                         <action id="-18" name="Set layer opacity" sid="1647083940581936" type="System">
                             <param id="0" name="Layer">1</param>
-                            <param id="1" name="Opacity">75</param>
+                            <param id="1" name="Opacity">25</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="2563013194554573">
+                            <conditions>
+                                <condition id="6" name="Compare key value (as text)" sid="1026464782668912" type="WebStorage">
+                                    <param id="0" name="Key">&quot;lang&quot;</param>
+                                    <param id="1" name="Text to compare">&quot;bi&quot;</param>
+                                    <param id="2" name="Case sensitivity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="2664011718632443" type="System">
+                                    <param id="0" name="Object to create">TextGeneral</param>
+                                    <param id="1" name="Layer">&quot;Score Screen&quot;</param>
+                                    <param id="2" name="X">-500</param>
+                                    <param id="3" name="Y">-500</param>
+                                </action>
+                                <action id="0" name="Set text" sid="8264425678840885" type="TextGeneral">
+                                    <param id="0" name="Text">&quot;Your score is &quot; &amp; points</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="3355470791091717" type="TextGeneral">
+                                    <param id="0" name="Width">600</param>
+                                    <param id="1" name="Height">80</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="5331741901928066" type="TextGeneral">
+                                    <param id="0" name="Size (pt)">40</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="3125652769166374" type="TextGeneral">
+                                    <param id="0" name="X">LayoutWidth / 2 - (Self.Width / 2)</param>
+                                    <param id="1" name="Y">(LayoutHeight / 2) - (Self.Height)</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="3601699302964994" type="TextGeneral">
+                                    <param id="0" name="Color">rgb(0, 0, 255)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3154524644386689">
+                            <conditions>
+                                <condition id="6" name="Compare key value (as text)" sid="5279440015116772" type="WebStorage">
+                                    <param id="0" name="Key">&quot;lang&quot;</param>
+                                    <param id="1" name="Text to compare">&quot;bm&quot;</param>
+                                    <param id="2" name="Case sensitivity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="8279553590251802" type="System">
+                                    <param id="0" name="Object to create">TextGeneral</param>
+                                    <param id="1" name="Layer">&quot;Score Screen&quot;</param>
+                                    <param id="2" name="X">-500</param>
+                                    <param id="3" name="Y">-500</param>
+                                </action>
+                                <action id="0" name="Set text" sid="9081147432046604" type="TextGeneral">
+                                    <param id="0" name="Text">&quot;Skor anda ialah &quot; &amp; points</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="3123826771462418" type="TextGeneral">
+                                    <param id="0" name="Width">600</param>
+                                    <param id="1" name="Height">80</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="9943525625288096" type="TextGeneral">
+                                    <param id="0" name="Size (pt)">40</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="1474331948614107" type="TextGeneral">
+                                    <param id="0" name="X">LayoutWidth / 2 - (Self.Width / 2)</param>
+                                    <param id="1" name="Y">(LayoutHeight / 2) - (Self.Height)</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="980899590459586" type="TextGeneral">
+                                    <param id="0" name="Color">rgb(0, 0, 255)</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="3656797659853707" type="TextWin">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="6797734603533433">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="207058526219836" type="System">
+                            <param id="0" name="Variable">isGameover</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-10" name="Compare opacity" sid="9284328307059838" type="TextLose">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Opacity">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="3564328094816053" type="TextLose">
+                            <param id="0" name="Opacity">Self.Opacity + 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5017155910650397">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="9789038759400413" type="System">
+                            <param id="0" name="Variable">isWon</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-10" name="Compare opacity" sid="4998454895960036" type="TextLose">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Opacity">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="5415710378938098" type="TextWin">
+                            <param id="0" name="Opacity">Self.Opacity + 1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -660,6 +911,10 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="2" name="Set muted" sid="5250368931488122" type="Audio">
+                                    <param id="0" name="Tag">&quot;ingame&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
                                 <action id="-13" name="Set time scale" sid="5749290769663418" type="System">
                                     <param id="0" name="Time scale">0</param>
                                 </action>
@@ -675,6 +930,22 @@
                                     <param id="0" name="Layer">1</param>
                                     <param id="1" name="Opacity">75</param>
                                 </action>
+                                <action id="-9" name="Set value" sid="7776278394941323" type="System">
+                                    <param id="0" name="Variable">touchStartX</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="6916303738186718" type="System">
+                                    <param id="0" name="Variable">touchStartY</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="1330244056019666" type="System">
+                                    <param id="0" name="Variable">touchEndX</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="1246089048189367" type="System">
+                                    <param id="0" name="Variable">touchEndY</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
                             </actions>
                         </event-block>
                     </sub-events>
@@ -689,6 +960,37 @@
                     </conditions>
                     <actions />
                     <sub-events>
+                        <event-block sid="1915845443516909">
+                            <conditions>
+                                <condition id="3" name="On touched object" sid="7505333410095143" type="Touch">
+                                    <param id="0" name="Object">ButtonRetry</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="33" name="Stop all" sid="8266795981192084" type="Audio" />
+                                <action id="-13" name="Set time scale" sid="3497398127361863" type="System">
+                                    <param id="0" name="Time scale">1.0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="3528311789753392" type="System">
+                                    <param id="0" name="Variable">isPaused</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="2867429554924122" type="System">
+                                    <param id="0" name="Layer">3</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="2032822407633949" type="System">
+                                    <param id="0" name="Layer">2</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="-18" name="Set layer opacity" sid="7400294445984043" type="System">
+                                    <param id="0" name="Layer">1</param>
+                                    <param id="1" name="Opacity">100</param>
+                                </action>
+                                <action id="-21" name="Reset global variables" sid="4792278811847686" type="System" />
+                                <action id="-26" name="Restart layout" sid="3564027978149946" type="System" />
+                            </actions>
+                        </event-block>
                         <event-block sid="7026385866983446">
                             <conditions>
                                 <condition id="3" name="On touched object" sid="3420674450396114" type="Touch">
@@ -704,6 +1006,10 @@
                                     <param id="0" name="Variable">isPaused</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
+                                <action id="-4" name="Set layer visible" sid="1459580137608768" type="System">
+                                    <param id="0" name="Layer">3</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
                                 <action id="-4" name="Set layer visible" sid="1632821897626778" type="System">
                                     <param id="0" name="Layer">2</param>
                                     <param id="1" name="Visibility">0</param>
@@ -718,90 +1024,37 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="8899894132179821">
+                        <event-block sid="2173921917504285">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="8157432552323484" type="System">
-                                    <param id="0" name="Variable">isGameover</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                                <condition id="-14" name="Compare variable" sid="2143240966189166" type="System">
-                                    <param id="0" name="Variable">isWon</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">0</param>
+                                <condition id="3" name="On touched object" sid="7803175394055744" type="Touch">
+                                    <param id="0" name="Object">ButtonPlay</param>
                                 </condition>
                             </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="2173921917504285">
-                                    <conditions>
-                                        <condition id="3" name="On touched object" sid="7803175394055744" type="Touch">
-                                            <param id="0" name="Object">ButtonPlay</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-13" name="Set time scale" sid="2423087393185981" type="System">
-                                            <param id="0" name="Time scale">1.0</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="834560072300007" type="System">
-                                            <param id="0" name="Variable">isPaused</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                        <action id="-4" name="Set layer visible" sid="9764970359396911" type="System">
-                                            <param id="0" name="Layer">2</param>
-                                            <param id="1" name="Visibility">0</param>
-                                        </action>
-                                        <action id="-18" name="Set layer opacity" sid="7589699418999066" type="System">
-                                            <param id="0" name="Layer">1</param>
-                                            <param id="1" name="Opacity">100</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block any="1" sid="4027050181868834">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="2445850125251168" type="System">
-                                    <param id="0" name="Variable">isGameover</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
-                                <condition id="-14" name="Compare variable" sid="1256282581739682" type="System">
-                                    <param id="0" name="Variable">isWon</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="1915845443516909">
-                                    <conditions>
-                                        <condition id="3" name="On touched object" sid="7505333410095143" type="Touch">
-                                            <param id="0" name="Object">ButtonPlay</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="33" name="Stop all" sid="8266795981192084" type="Audio" />
-                                        <action id="-13" name="Set time scale" sid="3497398127361863" type="System">
-                                            <param id="0" name="Time scale">1.0</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="3528311789753392" type="System">
-                                            <param id="0" name="Variable">isPaused</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                        <action id="-4" name="Set layer visible" sid="2032822407633949" type="System">
-                                            <param id="0" name="Layer">2</param>
-                                            <param id="1" name="Visibility">0</param>
-                                        </action>
-                                        <action id="-18" name="Set layer opacity" sid="7400294445984043" type="System">
-                                            <param id="0" name="Layer">1</param>
-                                            <param id="1" name="Opacity">100</param>
-                                        </action>
-                                        <action id="-21" name="Reset global variables" sid="4792278811847686" type="System" />
-                                        <action id="-26" name="Restart layout" sid="3564027978149946" type="System" />
-                                    </actions>
-                                </event-block>
-                            </sub-events>
+                            <actions>
+                                <action id="2" name="Set muted" sid="9559064115352088" type="Audio">
+                                    <param id="0" name="Tag">&quot;ingame&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-13" name="Set time scale" sid="2423087393185981" type="System">
+                                    <param id="0" name="Time scale">1.0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="834560072300007" type="System">
+                                    <param id="0" name="Variable">isPaused</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="3848592842952127" type="System">
+                                    <param id="0" name="Layer">3</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="9764970359396911" type="System">
+                                    <param id="0" name="Layer">2</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="-18" name="Set layer opacity" sid="7589699418999066" type="System">
+                                    <param id="0" name="Layer">1</param>
+                                    <param id="1" name="Opacity">100</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
