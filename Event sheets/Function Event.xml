@@ -5,7 +5,63 @@
     <events>
         <variable constant="0" name="hasMultiply" sid="5393780986590095" static="0" type="number">0</variable>
         <variable constant="0" name="hasPlus" sid="7476899182527314" static="0" type="number">0</variable>
-        <event-block collapsed="1" sid="7847704301276059">
+        <event-block sid="9527290064739111">
+            <conditions>
+                <condition id="0" name="On function" sid="9677595517435795" type="Function">
+                    <param id="0" name="Name">&quot;TestWebFonts&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="7014198517181095" type="System">
+                    <param id="0" name="Object to create">TextGeneral</param>
+                    <param id="1" name="Layer">&quot;Background&quot;</param>
+                    <param id="2" name="X">-500</param>
+                    <param id="3" name="Y">-500</param>
+                </action>
+                <action id="5" name="Set web font" sid="3756862523455763" type="TextGeneral">
+                    <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
+                    <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
+                </action>
+                <action id="-3" name="Create object" sid="8421782261268249" type="System">
+                    <param id="0" name="Object to create">TextBlock</param>
+                    <param id="1" name="Layer">&quot;Background&quot;</param>
+                    <param id="2" name="X">-500</param>
+                    <param id="3" name="Y">-500</param>
+                </action>
+                <action id="5" name="Set web font" sid="5293992099734667" type="TextBlock">
+                    <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
+                    <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
+                </action>
+                <action id="-3" name="Create object" sid="4894884087526354" type="System">
+                    <param id="0" name="Object to create">BoxAnswer</param>
+                    <param id="1" name="Layer">&quot;Background&quot;</param>
+                    <param id="2" name="X">-500</param>
+                    <param id="3" name="Y">-500</param>
+                </action>
+                <action id="5" name="Set web font" sid="7875954538746589" type="BoxAnswer">
+                    <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
+                    <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
+                </action>
+                <action id="-3" name="Create object" sid="2084741277825813" type="System">
+                    <param id="0" name="Object to create">BoxUpdate</param>
+                    <param id="1" name="Layer">&quot;Background&quot;</param>
+                    <param id="2" name="X">-500</param>
+                    <param id="3" name="Y">-500</param>
+                </action>
+                <action id="5" name="Set web font" sid="8900523019313094" type="BoxUpdate">
+                    <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
+                    <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="3523334496832114" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="6930757667892043" type="TextGeneral" />
+                <action id="-9" name="Destroy" sid="2489810495008969" type="TextBlock" />
+                <action id="-9" name="Destroy" sid="4586323287623321" type="BoxAnswer" />
+                <action id="-9" name="Destroy" sid="6801907707475995" type="BoxUpdate" />
+            </actions>
+        </event-block>
+        <event-block sid="7847704301276059">
             <conditions>
                 <condition id="0" name="On function" sid="1660230770847467" type="Function">
                     <param id="0" name="Name">&quot;CreateLine&quot;</param>
@@ -22,134 +78,6 @@
                 </action>
             </actions>
             <sub-events>
-                <event-block collapsed="1" disabled="1" sid="4096116694758613">
-                    <conditions>
-                        <condition id="-10" name="For" sid="1275225305712797" type="System">
-                            <param id="0" name="Name">&quot;createLine&quot;</param>
-                            <param id="1" name="Start index">100</param>
-                            <param id="2" name="End index">103</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-3" name="Create object" sid="7508991403575765" type="System">
-                            <param id="0" name="Object to create">Line</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="X">LayoutWidth / 2</param>
-                            <param id="3" name="Y">LayoutHeight / 2</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="4818062841682851" type="Line">
-                            <param id="0" name="Instance variable">id</param>
-                            <param id="1" name="Value">loopindex(&quot;createLine&quot;)</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="97970804358969" type="Line">
-                            <param id="0" name="Instance variable">type</param>
-                            <param id="1" name="Value">floor(random(0, 2))</param>
-                        </action>
-                        <action id="5" name="Set frame" sid="7473033914208479" type="Line">
-                            <param id="0" name="Frame number">Self.type</param>
-                        </action>
-                    </actions>
-                    <sub-events>
-                        <event-block sid="8383567459978575">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="6788784842004527" type="Line">
-                                    <param id="0" name="Instance variable">type</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="6583518941577534" type="System">
-                                    <param id="0" name="Variable">hasMultiply</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="6831046011471482">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="109613710824067" type="Line">
-                                    <param id="0" name="Instance variable">type</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="7878632196014399" type="System">
-                                    <param id="0" name="Variable">hasPlus</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="5191608887785445">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="2902659985183628" type="Line">
-                                    <param id="0" name="Instance variable">id</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">100</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-7" name="Set size" sid="6702379261794759" type="Line">
-                                    <param id="0" name="Width">(LayoutWidth / 2) - 160</param>
-                                    <param id="1" name="Height">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="7042336872670534">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="1561717188159904" type="Line">
-                                    <param id="0" name="Instance variable">id</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">101</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-7" name="Set size" sid="9870769955543549" type="Line">
-                                    <param id="0" name="Width">1</param>
-                                    <param id="1" name="Height">LayoutHeight / 2</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="1375974388147796">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="2676560677130436" type="Line">
-                                    <param id="0" name="Instance variable">id</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">102</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-3" name="Set position" sid="1122676729223096" type="Line">
-                                    <param id="0" name="X">(LayoutWidth / 2) + (LayoutHeight / 2)</param>
-                                    <param id="1" name="Y">LayoutHeight / 2</param>
-                                </action>
-                                <action id="-7" name="Set size" sid="7783049453825542" type="Line">
-                                    <param id="0" name="Width">(LayoutWidth / 2) - 160</param>
-                                    <param id="1" name="Height">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="4348613717283613">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="9780395293645768" type="Line">
-                                    <param id="0" name="Instance variable">id</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">103</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-3" name="Set position" sid="8582588772532647" type="Line">
-                                    <param id="0" name="X">LayoutWidth / 2</param>
-                                    <param id="1" name="Y">LayoutHeight</param>
-                                </action>
-                                <action id="-7" name="Set size" sid="6910444514011066" type="Line">
-                                    <param id="0" name="Width">1</param>
-                                    <param id="1" name="Height">LayoutHeight / 2</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
                 <event-block collapsed="1" sid="6163447326505219">
                     <conditions>
                         <condition id="-10" name="For" sid="4384017168776436" type="System">
@@ -442,7 +370,7 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-group description="" sid="55345920831412" title="HUD">
+        <event-group collapsed="1" description="" sid="55345920831412" title="HUD">
             <sub-events>
                 <event-block sid="5579713382432342">
                     <conditions>
@@ -520,6 +448,10 @@
                                     <param id="0" name="Instance variable">id</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
+                                <action id="5" name="Set web font" sid="3877620974197448" type="TextGeneral">
+                                    <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
+                                </action>
                                 <action id="-3" name="Create object" sid="8831989393719226" type="System">
                                     <param id="0" name="Object to create">TextGeneral</param>
                                     <param id="1" name="Layer">&quot;Game&quot;</param>
@@ -543,6 +475,10 @@
                                 <action id="-10" name="Set value" sid="6331363873309937" type="TextGeneral">
                                     <param id="0" name="Instance variable">id</param>
                                     <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="5" name="Set web font" sid="1182820171521424" type="TextGeneral">
+                                    <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
                                 </action>
                                 <action id="-3" name="Create object" sid="8957176713812797" type="System">
                                     <param id="0" name="Object to create">TextGeneral</param>
@@ -568,6 +504,10 @@
                                     <param id="0" name="Instance variable">id</param>
                                     <param id="1" name="Value">2</param>
                                 </action>
+                                <action id="5" name="Set web font" sid="5367285380622747" type="TextGeneral">
+                                    <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
+                                </action>
                                 <action id="-3" name="Create object" sid="1331207561005946" type="System">
                                     <param id="0" name="Object to create">TextGeneral</param>
                                     <param id="1" name="Layer">&quot;Game&quot;</param>
@@ -591,6 +531,10 @@
                                 <action id="-10" name="Set value" sid="3349956823247675" type="TextGeneral">
                                     <param id="0" name="Instance variable">id</param>
                                     <param id="1" name="Value">3</param>
+                                </action>
+                                <action id="5" name="Set web font" sid="2942053115111291" type="TextGeneral">
+                                    <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -627,6 +571,10 @@
                                     <param id="0" name="Instance variable">id</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
+                                <action id="5" name="Set web font" sid="8529704733772395" type="TextGeneral">
+                                    <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
+                                </action>
                                 <action id="-3" name="Create object" sid="432934441294709" type="System">
                                     <param id="0" name="Object to create">TextGeneral</param>
                                     <param id="1" name="Layer">&quot;Game&quot;</param>
@@ -650,6 +598,10 @@
                                 <action id="-10" name="Set value" sid="4113913846453769" type="TextGeneral">
                                     <param id="0" name="Instance variable">id</param>
                                     <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="5" name="Set web font" sid="5386495006235075" type="TextGeneral">
+                                    <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
                                 </action>
                                 <action id="-3" name="Create object" sid="960079294725115" type="System">
                                     <param id="0" name="Object to create">TextGeneral</param>
@@ -675,6 +627,10 @@
                                     <param id="0" name="Instance variable">id</param>
                                     <param id="1" name="Value">2</param>
                                 </action>
+                                <action id="5" name="Set web font" sid="9363328249543136" type="TextGeneral">
+                                    <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
+                                </action>
                                 <action id="-3" name="Create object" sid="9664327519790527" type="System">
                                     <param id="0" name="Object to create">TextGeneral</param>
                                     <param id="1" name="Layer">&quot;Game&quot;</param>
@@ -699,36 +655,17 @@
                                     <param id="0" name="Instance variable">id</param>
                                     <param id="1" name="Value">3</param>
                                 </action>
+                                <action id="5" name="Set web font" sid="5432459260830368" type="TextGeneral">
+                                    <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
+                                </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block collapsed="1" sid="3177114849783795">
-            <conditions>
-                <condition id="0" name="On function" sid="4759895970707982" type="Function">
-                    <param id="0" name="Name">&quot;ResetCell&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="1448825433121687">
-                    <conditions>
-                        <condition id="3" name="For each element" sid="8196636356713914" type="Array">
-                            <param id="0" name="Axes">2</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="2" name="Set at X" sid="6903950233734208" type="Array">
-                            <param id="0" name="X">Array.CurX</param>
-                            <param id="1" name="Value">floor(random(1, 3))</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block collapsed="1" sid="6009579964405382">
+        <event-block sid="6009579964405382">
             <conditions>
                 <condition id="0" name="On function" sid="258729592730322" type="Function">
                     <param id="0" name="Name">&quot;PutBlock&quot;</param>
@@ -775,6 +712,10 @@
                                 <action id="-10" name="Set value" sid="3647814674196119" type="TextBlock">
                                     <param id="0" name="Instance variable">id</param>
                                     <param id="1" name="Value">loopindex(&quot;putBlockX&quot;) + (loopindex(&quot;putBlockY&quot;) * 6)</param>
+                                </action>
+                                <action id="5" name="Set web font" sid="4288629084890697" type="TextBlock">
+                                    <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
                                 </action>
                                 <action id="-3" name="Create object" sid="7173233427626213" type="System">
                                     <param id="0" name="Object to create">Block</param>

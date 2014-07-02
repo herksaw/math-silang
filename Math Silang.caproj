@@ -10,7 +10,6 @@
     <unique-id>16w06lp6jdgf9</unique-id>
     <saved-with-version>17300</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
@@ -22,7 +21,10 @@
         <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="DragnDrop" version="1">Drag &amp; Drop</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="wrap" version="1">Wrap</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -58,9 +60,6 @@
         </object-type>
         <object-type name="Keyboard" sid="3460474654619341">
             <plugin id="Keyboard" />
-        </object-type>
-        <object-type global="1" name="Array" sid="6913934530528296">
-            <plugin id="Arr" />
         </object-type>
         <object-type name="Function" sid="5667957012975135">
             <plugin id="Function" />
@@ -149,8 +148,7 @@
         <object-type name="ButtonPause" sid="5515387875562181">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="6656413454316326" speed="0">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="6656413454316326" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
@@ -158,8 +156,7 @@
         <object-type name="ButtonPlay" sid="8119760520644606">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="3615620091548248" speed="0">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="3615620091548248" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
@@ -167,8 +164,7 @@
         <object-type name="ButtonMenu" sid="3607204928493236">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="4450276939231133" speed="0">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="4450276939231133" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
@@ -202,9 +198,7 @@
         <object-type name="ButtonAudio" sid="9917766737796449">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="4154845470725125" speed="0">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="4154845470725125" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
@@ -269,6 +263,81 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="KingHerks" sid="5546352350635423">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="normal" sid="4196910303159083" type="number" />
+                <instance-variable name="angry" sid="2688731855390104" type="number" />
+                <instance-variable name="left" sid="1357792810740526" type="number" />
+            </instance-variables>
+            <animation-folder expanded="1">
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="3709304278546262" speed="0">
+                    <frame duration="1" hotspotX="0.502618" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501639" />
+                    <frame duration="1" hotspotX="0.502618" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Herks" sid="9351049011250537">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="normal" sid="2781668043066858" type="number" />
+                <instance-variable name="right" sid="391101866212347" type="number" />
+            </instance-variables>
+            <animation-folder expanded="1">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="3482596452048401" speed="0">
+                    <frame duration="1" hotspotX="0.50289" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501792">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="MathSilang" sid="9927802967719552">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1983295233070032" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.503597" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TextMultiply" sid="9834171343366271">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7474056654443049" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TextPlus" sid="4468309860458768">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4654797135916518" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.509804" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TextOne" sid="2919575074860597">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4069562499693778" speed="5">
+                    <frame duration="1" hotspotX="0.521739" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TextTwo" sid="4559232324198476">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="66515248781639" speed="5">
+                    <frame duration="1" hotspotX="0.510638" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Objects" plugin-id="Sprite" sid="8802063782826458">
@@ -288,6 +357,25 @@
             <instance-variables>
                 <instance-variable name="type" sid="8565267408775596" type="number" />
             </instance-variables>
+        </family>
+        <family name="Texts" plugin-id="Sprite" sid="4390641426304809">
+            <members>
+                <member>TextMultiply</member>
+                <member>TextOne</member>
+                <member>TextPlus</member>
+                <member>TextTwo</member>
+            </members>
+            <behaviors>
+                <behavior-type name="DragDrop" sid="7750714568189331">
+                    <behavior id="DragnDrop" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="1891702195584591">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Wrap" sid="6441854658532216">
+                    <behavior id="wrap" />
+                </behavior-type>
+            </behaviors>
         </family>
     </families>
     <layout-folder expanded="1">
@@ -354,5 +442,10 @@
             <file name="icon-256.png" />
             <file name="loading-logo.png" />
         </file-folder>
+        <file name="Conv_SourceSansPro-Regular.css" />
+        <file name="SourceSansPro-Regular.eot" />
+        <file name="SourceSansPro-Regular.svg" />
+        <file name="SourceSansPro-Regular.ttf" />
+        <file name="SourceSansPro-Regular.woff" />
     </files-folder>
 </c2project>

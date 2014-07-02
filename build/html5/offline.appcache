@@ -1,5 +1,5 @@
 ﻿CACHE MANIFEST
-#1404222649
+#1404284644
 index.html
 c2runtime.js
 jquery-2.0.0.min.js
@@ -8,15 +8,13 @@ images\line-sheet0.png
 images\buttontext-sheet0.png
 images\buttonback-sheet0.png
 images\buttonpause-sheet0.png
-images\buttonpause-sheet1.png
 images\buttonplay-sheet0.png
-images\buttonplay-sheet1.png
 images\buttonmenu-sheet0.png
-images\buttonmenu-sheet1.png
 images\buttonfullscreen-sheet0.png
 images\backgroundimage-sheet0.png
 images\backgroundimage-sheet1.png
 images\buttonaudio-sheet0.png
+images\buttonaudio-sheet1.png
 images\textlose-sheet0.png
 images\textwin-sheet0.png
 images\buttonretry-sheet0.png
@@ -24,6 +22,13 @@ images\buttonlanguage-sheet0.png
 images\buttoncredit-sheet0.png
 images\pipan-sheet0.png
 images\pipan-sheet1.png
+images\kingherks-sheet0.png
+images\herks-sheet0.png
+images\mathsilang-sheet0.png
+images\textmultiply-sheet0.png
+images\textplus-sheet0.png
+images\textone-sheet0.png
+images\texttwo-sheet0.png
 media\swap.m4a
 media\swap.ogg
 media\won.m4a
@@ -38,5 +43,10 @@ icon-114.png
 icon-128.png
 icon-256.png
 loading-logo.png
+conv_sourcesanspro-regular.css
+sourcesanspro-regular.eot
+sourcesanspro-regular.svg
+sourcesanspro-regular.ttf
+sourcesanspro-regular.woff
 NETWORK:
 *

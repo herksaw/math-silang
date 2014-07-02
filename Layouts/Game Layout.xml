@@ -401,14 +401,6 @@
             <effects />
         </layer>
     </layers>
-    <nonworld-instances>
-        <instance type="Array" uid="4">
-            <properties>
-                <width>36</width>
-                <height>1</height>
-                <depth>1</depth>
-            </properties>
-        </instance>
-    </nonworld-instances>
+    <nonworld-instances />
     <effects />
 </c2layout>
