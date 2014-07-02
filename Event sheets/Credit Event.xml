@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Credit Event</name>
+    <events>
+        <variable constant="0" name="firstTouch" sid="218193003465783" static="0" type="number">0</variable>
+        <variable constant="0" name="moveSpeed" sid="8737491246280405" static="0" type="number">1</variable>
+        <event-block sid="5631857452730791">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="89954520027096" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="994097537917649" type="BackgroundImage">
+                    <param id="0" name="Frame number">2</param>
+                </action>
+                <action id="5" name="Set web font" sid="571047939173194" type="TextGeneral">
+                    <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
+                    <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1375151602910051">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="8790699259065624" type="System" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="3501669603683225" type="TextGeneral">
+                    <param id="0" name="Y">Self.Y + moveSpeed</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="431535291936727">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="3115391429310386" type="TextGeneral">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Y co-ordinate">LayoutHeight + Self.Height</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="6590717172657611" type="TextGeneral" />
+            </actions>
+        </event-block>
+        <event-block sid="1451243948915427">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="9681503145575893" type="System">
+                    <param id="0" name="First value">TextGeneral.Count</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Fade" id="1" name="Start fade" sid="2065980261588129" type="BackgroundImage" />
+            </actions>
+        </event-block>
+        <event-block sid="2526329161944914">
+            <conditions>
+                <condition behavior="Fade" id="0" name="On fade out finished" sid="4894644490171006" type="BackgroundImage" />
+            </conditions>
+            <actions>
+                <action id="-21" name="Reset global variables" sid="331981675295812" type="System" />
+                <action id="-2" name="Go to layout" sid="8946219005158729" type="System">
+                    <param id="0" name="Layout">Main Menu Layout</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8133095522165714">
+            <conditions>
+                <condition id="1" name="On any touch end" sid="853261387294647" type="Touch" />
+                <condition id="-14" name="Compare variable" sid="4135254871997252" type="System">
+                    <param id="0" name="Variable">firstTouch</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Fade" id="1" name="Start fade" sid="1554677617737456" type="BackgroundImage" />
+                <action behavior="Fade" id="1" name="Start fade" sid="6405637722532387" type="TextGeneral" />
+            </actions>
+        </event-block>
+        <event-block sid="770977546813067">
+            <conditions>
+                <condition id="1" name="On any touch end" sid="7415554430055414" type="Touch" />
+                <condition id="-14" name="Compare variable" sid="1300970367311277" type="System">
+                    <param id="0" name="Variable">firstTouch</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="6942464667493997" type="System">
+                    <param id="0" name="Variable">firstTouch</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

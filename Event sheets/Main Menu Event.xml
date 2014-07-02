@@ -9,6 +9,28 @@
                 <condition id="-2" name="On start of layout" sid="9612791999538457" type="System" />
             </conditions>
             <actions>
+                <action id="0" name="Call function" sid="585815335642153" type="Function">
+                    <param id="0" name="Name">&quot;TestWebFonts&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="5" name="Set frame" sid="5107976888529107" type="BackgroundImage">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="-40" name="Set fullscreen scaling" sid="4236933953955193" type="System">
+                    <param id="0" name="Fullscreen scaling">1</param>
+                </action>
+                <action id="4" name="Preload" sid="4179639746453231" type="Audio">
+                    <param id="0" name="Audio file">swap</param>
+                </action>
+                <action id="4" name="Preload" sid="2598984054557196" type="Audio">
+                    <param id="0" name="Audio file">won</param>
+                </action>
+                <action id="4" name="Preload" sid="3351717341899568" type="Audio">
+                    <param id="0" name="Audio file">ingame</param>
+                </action>
+                <action id="4" name="Preload" sid="8268791717335348" type="Audio">
+                    <param id="0" name="Audio file">menu</param>
+                </action>
                 <action id="-4" name="Set layer visible" sid="3161610187628237" type="System">
                     <param id="0" name="Layer">1</param>
                     <param id="1" name="Visibility">1</param>
@@ -24,8 +46,27 @@
                 <action id="-15" name="Set visible" sid="3310068816830386" type="ButtonBack">
                     <param id="0" name="Visibility">0</param>
                 </action>
-                <action id="-40" name="Set fullscreen scaling" sid="4236933953955193" type="System">
-                    <param id="0" name="Fullscreen scaling">1</param>
+                <action id="0" name="Play" sid="7830203373887114" type="Audio">
+                    <param id="0" name="Audio file">menu</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;looping&quot;</param>
+                </action>
+                <action id="-1" name="Set X" sid="956496537924954" type="TextMultiply">
+                    <param id="0" name="X">random(100, LayoutWidth - 100)</param>
+                </action>
+                <action id="-1" name="Set X" sid="6877555759185938" type="TextPlus">
+                    <param id="0" name="X">random(100, LayoutWidth - 100)</param>
+                </action>
+                <action id="-1" name="Set X" sid="7318516821355558" type="TextOne">
+                    <param id="0" name="X">random(100, LayoutWidth - 100)</param>
+                </action>
+                <action id="-1" name="Set X" sid="7683425631221886" type="TextTwo">
+                    <param id="0" name="X">random(100, LayoutWidth - 100)</param>
+                </action>
+                <action id="5" name="Set web font" sid="2495247018759082" type="TextGeneral">
+                    <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
+                    <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
                 </action>
             </actions>
             <sub-events>
@@ -42,7 +83,312 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="2103321056759926">
+                    <conditions>
+                        <condition id="3" inverted="1" name="Local key exists" sid="1872464981032104" type="WebStorage">
+                            <param id="0" name="Key">&quot;audio&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="6213621271877642" type="WebStorage">
+                            <param id="0" name="Key">&quot;audio&quot;</param>
+                            <param id="1" name="Value">&quot;on&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9947232181235246">
+                    <conditions>
+                        <condition id="3" inverted="1" name="Local key exists" sid="5713959414010192" type="WebStorage">
+                            <param id="0" name="Key">&quot;lang&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="379114165349132" type="WebStorage">
+                            <param id="0" name="Key">&quot;lang&quot;</param>
+                            <param id="1" name="Value">&quot;bi&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9749250181910693">
+                    <conditions>
+                        <condition id="6" name="Compare key value (as text)" sid="9875181381497835" type="WebStorage">
+                            <param id="0" name="Key">&quot;audio&quot;</param>
+                            <param id="1" name="Text to compare">&quot;on&quot;</param>
+                            <param id="2" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="8" name="Set silent" sid="284834779080668" type="Audio">
+                            <param id="0" name="Mode">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="2070318681044674" type="ButtonAudio">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6107888520720673">
+                    <conditions>
+                        <condition id="6" name="Compare key value (as text)" sid="1222886905404139" type="WebStorage">
+                            <param id="0" name="Key">&quot;audio&quot;</param>
+                            <param id="1" name="Text to compare">&quot;off&quot;</param>
+                            <param id="2" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="8" name="Set silent" sid="9335024601844591" type="Audio">
+                            <param id="0" name="Mode">0</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="3783017643532679" type="ButtonAudio">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
+        </event-block>
+        <event-block sid="5470793278177782">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="8017837105813294" type="System" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="7329472121738644" type="ButtonText">
+                    <param id="0" name="Opacity">50</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="7028906906154297" type="TextGeneral">
+                    <param id="0" name="Opacity">75</param>
+                </action>
+                <action id="-25" name="Move to bottom" sid="4771927324141503" type="KingHerks" />
+                <action id="-25" name="Move to bottom" sid="7055705855223642" type="Herks" />
+                <action id="-29" name="Move to object" sid="4746807666098422" type="KingHerks">
+                    <param id="0" name="Where">0</param>
+                    <param id="1" name="Object">BackgroundImage</param>
+                </action>
+                <action id="-29" name="Move to object" sid="3727854590509408" type="Herks">
+                    <param id="0" name="Where">0</param>
+                    <param id="1" name="Object">BackgroundImage</param>
+                </action>
+                <action id="-25" name="Move to bottom" sid="8399503569278271" type="Texts" />
+                <action id="-29" name="Move to object" sid="416907051067096" type="Texts">
+                    <param id="0" name="Where">1</param>
+                    <param id="1" name="Object">KingHerks</param>
+                </action>
+                <action id="-29" name="Move to object" sid="9722921973281769" type="Texts">
+                    <param id="0" name="Where">1</param>
+                    <param id="1" name="Object">Herks</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="6208541918604688" type="Texts">
+                    <param id="0" name="Opacity">50</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block collapsed="1" sid="166352843600116">
+            <conditions>
+                <condition id="6" name="Compare key value (as text)" sid="6852025675064482" type="WebStorage">
+                    <param id="0" name="Key">&quot;lang&quot;</param>
+                    <param id="1" name="Text to compare">&quot;bi&quot;</param>
+                    <param id="2" name="Case sensitivity">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="2213713037961948">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="8812472937104502" type="TextGeneral">
+                            <param id="0" name="Instance variable">id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="3349788540718063" type="TextGeneral">
+                            <param id="0" name="Text">&quot;Start&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9364637294320072">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="8812535371934206" type="TextGeneral">
+                            <param id="0" name="Instance variable">id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="8388604592351734" type="TextGeneral">
+                            <param id="0" name="Text">&quot;Help&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1184666851319372">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="2362070427091196" type="TextGeneral">
+                            <param id="0" name="Instance variable">id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="8718940527551093" type="TextGeneral">
+                            <param id="0" name="Text">&quot;Quit&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8069128496852778">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="1460982212349054" type="TextGeneral">
+                            <param id="0" name="Instance variable">id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="1560148737727036" type="TextGeneral">
+                            <param id="0" name="Text">&quot;Free&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7268235331622846">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="642175970431908" type="TextGeneral">
+                            <param id="0" name="Instance variable">id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="7878913662560423" type="TextGeneral">
+                            <param id="0" name="Text">&quot;Time&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5264953917281135">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="2275662221090643" type="TextGeneral">
+                            <param id="0" name="Instance variable">id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">7</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="1365773211755549" type="TextGeneral">
+                            <param id="0" name="Text">&quot;Tutorial&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block collapsed="1" sid="8239810345962661">
+            <conditions>
+                <condition id="6" name="Compare key value (as text)" sid="3440917437829425" type="WebStorage">
+                    <param id="0" name="Key">&quot;lang&quot;</param>
+                    <param id="1" name="Text to compare">&quot;bm&quot;</param>
+                    <param id="2" name="Case sensitivity">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="8319214136618871">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="5353036406510819" type="TextGeneral">
+                            <param id="0" name="Instance variable">id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="4769748876513406" type="TextGeneral">
+                            <param id="0" name="Text">&quot;Mula&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7974799287439783">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="404134176668702" type="TextGeneral">
+                            <param id="0" name="Instance variable">id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="4619860852139081" type="TextGeneral">
+                            <param id="0" name="Text">&quot;Bantuan&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5942222302752376">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="4391228427037371" type="TextGeneral">
+                            <param id="0" name="Instance variable">id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="4777087521740277" type="TextGeneral">
+                            <param id="0" name="Text">&quot;Keluar&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3298795612022126">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="6960983254185146" type="TextGeneral">
+                            <param id="0" name="Instance variable">id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="3372296649406105" type="TextGeneral">
+                            <param id="0" name="Text">&quot;Bebas&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4911871312850878">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="4468553301775029" type="TextGeneral">
+                            <param id="0" name="Instance variable">id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="9446580665958295" type="TextGeneral">
+                            <param id="0" name="Text">&quot;Masa&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8073505535663877">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="359949214395037" type="TextGeneral">
+                            <param id="0" name="Instance variable">id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">7</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="9589750879962643" type="TextGeneral">
+                            <param id="0" name="Text">&quot;Tutorial&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="2230903389427932">
+            <conditions>
+                <condition id="4" inverted="1" name="Is any playing" sid="1923660910170369" type="Audio" />
+                <condition id="6" name="Compare key value (as text)" sid="8799958970459261" type="WebStorage">
+                    <param id="0" name="Key">&quot;audio&quot;</param>
+                    <param id="1" name="Text to compare">&quot;on&quot;</param>
+                    <param id="2" name="Case sensitivity">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="5556468001100131" type="Audio">
+                    <param id="0" name="Audio file">menu</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;looping&quot;</param>
+                </action>
+            </actions>
         </event-block>
         <event-block sid="3825419819951351">
             <conditions>
@@ -65,6 +411,9 @@
                     <param id="0" name="Instance variable">id</param>
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="6234830692190185" type="System">
+                    <param id="0" name="Layer">1</param>
                 </condition>
             </conditions>
             <actions>
@@ -89,23 +438,25 @@
                 <action id="-26" name="Move to layer" sid="3349053995835491" type="ButtonFullscreen">
                     <param id="0" name="Layer">2</param>
                 </action>
+                <action id="-26" name="Move to layer" sid="9129432322707769" type="ButtonAudio">
+                    <param id="0" name="Layer">2</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="9284100982107069" type="ButtonLanguage">
+                    <param id="0" name="Layer">2</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="1892297887423734" type="ButtonCredit">
+                    <param id="0" name="Layer">2</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="1612164622594443" type="KingHerks">
+                    <param id="0" name="Layer">2</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="5815189254392203" type="Herks">
+                    <param id="0" name="Layer">2</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="2715569473060826" type="MathSilang">
+                    <param id="0" name="Layer">2</param>
+                </action>
             </actions>
-            <sub-events>
-                <event-block sid="6649486979576036">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="9618767171506937" type="TextGeneral">
-                            <param id="0" name="Instance variable">id</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">-1</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-26" name="Move to layer" sid="8881977045454137" type="TextGeneral">
-                            <param id="0" name="Layer">2</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
         </event-block>
         <event-block sid="3214969366867213">
             <conditions>
@@ -116,6 +467,9 @@
                     <param id="0" name="Instance variable">id</param>
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="1926096459684065" type="System">
+                    <param id="0" name="Layer">1</param>
                 </condition>
             </conditions>
             <actions>
@@ -140,23 +494,25 @@
                 <action id="-26" name="Move to layer" sid="3554047853129411" type="ButtonFullscreen">
                     <param id="0" name="Layer">3</param>
                 </action>
+                <action id="-26" name="Move to layer" sid="8244943786588419" type="ButtonAudio">
+                    <param id="0" name="Layer">3</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="4570986706255516" type="ButtonLanguage">
+                    <param id="0" name="Layer">3</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="3572895528923429" type="ButtonCredit">
+                    <param id="0" name="Layer">3</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="5733428589222021" type="KingHerks">
+                    <param id="0" name="Layer">3</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="9601557461387584" type="Herks">
+                    <param id="0" name="Layer">3</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="3375641105530015" type="MathSilang">
+                    <param id="0" name="Layer">3</param>
+                </action>
             </actions>
-            <sub-events>
-                <event-block sid="81255460666124">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="170558066761692" type="TextGeneral">
-                            <param id="0" name="Instance variable">id</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">-1</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-26" name="Move to layer" sid="2824486810190416" type="TextGeneral">
-                            <param id="0" name="Layer">3</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
         </event-block>
         <event-block sid="775098991803137">
             <conditions>
@@ -167,6 +523,9 @@
                     <param id="0" name="Instance variable">id</param>
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">3</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="7131846852614491" type="System">
+                    <param id="0" name="Layer">1</param>
                 </condition>
             </conditions>
             <actions />
@@ -193,8 +552,12 @@
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">4</param>
                 </condition>
+                <condition id="-9" name="Layer is visible" sid="892215424221925" type="System">
+                    <param id="0" name="Layer">2</param>
+                </condition>
             </conditions>
             <actions>
+                <action id="33" name="Stop all" sid="5467269354742129" type="Audio" />
                 <action id="0" name="Set local value" sid="5205841388735193" type="WebStorage">
                     <param id="0" name="Key">&quot;gameMode&quot;</param>
                     <param id="1" name="Value">&quot;free&quot;</param>
@@ -215,36 +578,18 @@
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">5</param>
                 </condition>
+                <condition id="-9" name="Layer is visible" sid="6680489790853594" type="System">
+                    <param id="0" name="Layer">2</param>
+                </condition>
             </conditions>
             <actions>
+                <action id="33" name="Stop all" sid="9857748108598992" type="Audio" />
                 <action id="0" name="Set local value" sid="8690503770521515" type="WebStorage">
                     <param id="0" name="Key">&quot;gameMode&quot;</param>
                     <param id="1" name="Value">&quot;time&quot;</param>
                 </action>
                 <action id="-21" name="Reset global variables" sid="8478616886569529" type="System" />
                 <action id="-2" name="Go to layout" sid="8077494545782299" type="System">
-                    <param id="0" name="Layout">Game Layout</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="9809444763135972">
-            <conditions>
-                <condition id="3" name="On touched object" sid="1797960796434508" type="Touch">
-                    <param id="0" name="Object">ButtonText</param>
-                </condition>
-                <condition id="-7" name="Compare instance variable" sid="5948368245605501" type="ButtonText">
-                    <param id="0" name="Instance variable">id</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">6</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Set local value" sid="8706729011834492" type="WebStorage">
-                    <param id="0" name="Key">&quot;gameMode&quot;</param>
-                    <param id="1" name="Value">&quot;challenge&quot;</param>
-                </action>
-                <action id="-21" name="Reset global variables" sid="4718887168967946" type="System" />
-                <action id="-2" name="Go to layout" sid="3377185669265799" type="System">
                     <param id="0" name="Layout">Game Layout</param>
                 </action>
             </actions>
@@ -278,6 +623,24 @@
                 <action id="-26" name="Move to layer" sid="9867239906479576" type="ButtonFullscreen">
                     <param id="0" name="Layer">1</param>
                 </action>
+                <action id="-26" name="Move to layer" sid="6899291638809291" type="ButtonAudio">
+                    <param id="0" name="Layer">1</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="4332307453308066" type="ButtonLanguage">
+                    <param id="0" name="Layer">1</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="836566944507514" type="ButtonCredit">
+                    <param id="0" name="Layer">1</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="4682797930027749" type="KingHerks">
+                    <param id="0" name="Layer">1</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="6001827525157771" type="Herks">
+                    <param id="0" name="Layer">1</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="4314656298173711" type="MathSilang">
+                    <param id="0" name="Layer">1</param>
+                </action>
             </actions>
             <sub-events>
                 <event-block sid="6206381308701181">
@@ -306,6 +669,253 @@
             <actions>
                 <action id="10" name="Request fullscreen" sid="9948043806678341" type="Browser">
                     <param id="0" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block collapsed="1" sid="2385229500288807">
+            <conditions>
+                <condition id="3" name="On touched object" sid="2012363176226863" type="Touch">
+                    <param id="0" name="Object">ButtonAudio</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="3516532400035471">
+                    <conditions>
+                        <condition id="6" name="Compare key value (as text)" sid="2436768014323617" type="WebStorage">
+                            <param id="0" name="Key">&quot;audio&quot;</param>
+                            <param id="1" name="Text to compare">&quot;on&quot;</param>
+                            <param id="2" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="2837993440117381" type="ButtonAudio">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="850615895752855" type="WebStorage">
+                            <param id="0" name="Key">&quot;audio&quot;</param>
+                            <param id="1" name="Value">&quot;off&quot;</param>
+                        </action>
+                        <action id="8" name="Set silent" sid="960103355898436" type="Audio">
+                            <param id="0" name="Mode">0</param>
+                        </action>
+                        <action id="14" name="Log" sid="1920274546558485" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;off&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6884585592949589">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="6607861052076885" type="System" />
+                        <condition id="6" name="Compare key value (as text)" sid="4072917530938171" type="WebStorage">
+                            <param id="0" name="Key">&quot;audio&quot;</param>
+                            <param id="1" name="Text to compare">&quot;off&quot;</param>
+                            <param id="2" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="6133296226111743" type="ButtonAudio">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="6388120453480911" type="WebStorage">
+                            <param id="0" name="Key">&quot;audio&quot;</param>
+                            <param id="1" name="Value">&quot;on&quot;</param>
+                        </action>
+                        <action id="8" name="Set silent" sid="6853183645567138" type="Audio">
+                            <param id="0" name="Mode">1</param>
+                        </action>
+                        <action id="14" name="Log" sid="3126213888852231" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;on&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block collapsed="1" sid="4430364684867483">
+            <conditions>
+                <condition id="3" name="On touched object" sid="2141069229619301" type="Touch">
+                    <param id="0" name="Object">ButtonLanguage</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="7060024988038953">
+                    <conditions>
+                        <condition id="6" name="Compare key value (as text)" sid="2177858043947427" type="WebStorage">
+                            <param id="0" name="Key">&quot;lang&quot;</param>
+                            <param id="1" name="Text to compare">&quot;bi&quot;</param>
+                            <param id="2" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="6474958897875509" type="WebStorage">
+                            <param id="0" name="Key">&quot;lang&quot;</param>
+                            <param id="1" name="Value">&quot;bm&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="131768764738258">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="7918031416639622" type="System" />
+                        <condition id="6" name="Compare key value (as text)" sid="4564155375002971" type="WebStorage">
+                            <param id="0" name="Key">&quot;lang&quot;</param>
+                            <param id="1" name="Text to compare">&quot;bm&quot;</param>
+                            <param id="2" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="860979025652435" type="WebStorage">
+                            <param id="0" name="Key">&quot;lang&quot;</param>
+                            <param id="1" name="Value">&quot;bi&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="2644125404238981">
+            <conditions>
+                <condition id="3" name="On touched object" sid="4118308393851752" type="Touch">
+                    <param id="0" name="Object">ButtonCredit</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="33" name="Stop all" sid="9508259638745075" type="Audio" />
+                <action id="-21" name="Reset global variables" sid="3875468525929568" type="System" />
+                <action id="-2" name="Go to layout" sid="3071712747159088" type="System">
+                    <param id="0" name="Layout">Credit Layout</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4249185394956027">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="544832314138688" type="System">
+                    <param id="0" name="Interval (seconds)">0.4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="5648947926738509" type="KingHerks">
+                    <param id="0" name="Instance variable">normal</param>
+                    <param id="1" name="Value">floor(random(0, 10))</param>
+                </action>
+                <action id="-10" name="Set value" sid="1835428476521681" type="Herks">
+                    <param id="0" name="Instance variable">normal</param>
+                    <param id="1" name="Value">floor(random(0, 10))</param>
+                </action>
+                <action id="-10" name="Set value" sid="8200579523618227" type="KingHerks">
+                    <param id="0" name="Instance variable">left</param>
+                    <param id="1" name="Value">floor(random(0, 15))</param>
+                </action>
+                <action id="-10" name="Set value" sid="2321997386346391" type="Herks">
+                    <param id="0" name="Instance variable">right</param>
+                    <param id="1" name="Value">floor(random(0, 15))</param>
+                </action>
+                <action id="-10" name="Set value" sid="9266921713997034" type="KingHerks">
+                    <param id="0" name="Instance variable">angry</param>
+                    <param id="1" name="Value">floor(random(0, 15))</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3774333900132911">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="6912537526427432" type="KingHerks">
+                    <param id="0" name="Instance variable">angry</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="1365643581211755" type="KingHerks">
+                    <param id="0" name="Frame number">2</param>
+                </action>
+                <action id="-10" name="Set value" sid="4832245209197467" type="KingHerks">
+                    <param id="0" name="Instance variable">normal</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="7850942461355412" type="KingHerks">
+                    <param id="0" name="Instance variable">left</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9956302358209437">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="7106024021134421" type="KingHerks">
+                    <param id="0" name="Instance variable">left</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="880996311592454" type="KingHerks">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="9054098220888757" type="KingHerks">
+                    <param id="0" name="Instance variable">normal</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="7194100352097601" type="KingHerks">
+                    <param id="0" name="Instance variable">angry</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7018278168973633">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="8989576054052111" type="Herks">
+                    <param id="0" name="Instance variable">right</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="2378172249470153" type="Herks">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="5814693641014396" type="Herks">
+                    <param id="0" name="Instance variable">normal</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5730975525617635">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="8361374560227192" type="KingHerks">
+                    <param id="0" name="Instance variable">normal</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="5258126381290887" type="KingHerks">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="4148682938241706" type="KingHerks">
+                    <param id="0" name="Instance variable">left</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="2888987047160591" type="KingHerks">
+                    <param id="0" name="Instance variable">angry</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8458300451280805">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="8861112348005288" type="Herks">
+                    <param id="0" name="Instance variable">normal</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="3123680003634496" type="Herks">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="2747382332313624" type="Herks">
+                    <param id="0" name="Instance variable">right</param>
+                    <param id="1" name="Value">1</param>
                 </action>
             </actions>
         </event-block>

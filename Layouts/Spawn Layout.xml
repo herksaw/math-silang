@@ -68,6 +68,10 @@
                     <instance-variables>
                         <id>0</id>
                         <number>0</number>
+                        <moveRate>0</moveRate>
+                        <moveDirection></moveDirection>
+                        <speed>20</speed>
+                        <isEmpty>0</isEmpty>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -104,8 +108,8 @@
                         <width>1</width>
                         <height>1</height>
                         <depth>0</depth>
-                        <hotspotX>1</hotspotX>
-                        <hotspotY>1</hotspotY>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.533333361</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -125,6 +129,17 @@
                     <instance-variables>
                         <id>0</id>
                     </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>No</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>0</wait-time>
+                                <fade-out-time>1</fade-out-time>
+                                <destroy>After fade out</destroy>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
