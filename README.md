@@ -6,4 +6,4 @@ A project for LRK 2014.
 Status
 ------
 
-Beta phase.
+In beta phase currently.
