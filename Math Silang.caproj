@@ -3,7 +3,7 @@
     <name>Math Silang</name>
     <description>A project for LRK 2014.</description>
     <version>1.0.0.0</version>
-    <author>Domicon</author>
+    <author>Domicon Productions</author>
     <author-email>herksaw@gmail.com</author-email>
     <author-website>http://www.herksaw.com/</author-website>
     <app-id>com.domicon.madmonyet</app-id>
@@ -98,13 +98,11 @@
         <object-type name="Line" sid="9226603644732136">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="9965454245260725" speed="0">
+                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="9965454245260725" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.533333" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.533333" />
                     <frame duration="1" hotspotX="0.533333" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.533333" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="1" hotspotY="1" />
-                    <frame duration="1" hotspotX="1" hotspotY="1" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -383,12 +381,14 @@
         <layout>Spawn Layout.xml</layout>
         <layout>Main Menu Layout.xml</layout>
         <layout>Credit Layout.xml</layout>
+        <layout>Help Layout.xml</layout>
     </layout-folder>
     <event-folder expanded="1">
         <event-sheet>Game Event.xml</event-sheet>
         <event-sheet>Function Event.xml</event-sheet>
         <event-sheet>Main Menu Event.xml</event-sheet>
         <event-sheet>Credit Event.xml</event-sheet>
+        <event-sheet>Help Event.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Mouse" uid="1" />

@@ -112,42 +112,6 @@
         </event-block>
         <event-group description="" sid="2761475922112337" title="Debug">
             <sub-events>
-                <event-block sid="5361884807395171">
-                    <conditions>
-                        <condition id="0" name="On key pressed" sid="7413227890670598" type="Keyboard">
-                            <param id="0" name="Key">219 ([)</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="4" name="Clear local storage" sid="3408193046908877" type="WebStorage" />
-                    </actions>
-                </event-block>
-                <event-block sid="4301242349881267">
-                    <conditions>
-                        <condition id="0" name="On key pressed" sid="9658135417599296" type="Keyboard">
-                            <param id="0" name="Key">80 (P)</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="6278267555115482" type="System">
-                            <param id="0" name="Variable">isGameover</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="6386446914995151">
-                    <conditions>
-                        <condition id="0" name="On key pressed" sid="7513608081348419" type="Keyboard">
-                            <param id="0" name="Key">79 (O)</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="7538750895428945" type="System">
-                            <param id="0" name="Variable">isWon</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <event-block sid="1602702457954702">
                     <conditions>
                         <condition id="-18" name="Is in preview" sid="1458255253819616" type="System" />
@@ -164,6 +128,44 @@
                             <param id="0" name="Text">floor(touchStartX) &amp; &quot; &quot; &amp; floor(touchStartY)</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="5361884807395171">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="7413227890670598" type="Keyboard">
+                                    <param id="0" name="Key">219 ([)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Clear local storage" sid="3408193046908877" type="WebStorage" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="4301242349881267">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="9658135417599296" type="Keyboard">
+                                    <param id="0" name="Key">80 (P)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="6278267555115482" type="System">
+                                    <param id="0" name="Variable">isGameover</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6386446914995151">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="7513608081348419" type="Keyboard">
+                                    <param id="0" name="Key">79 (O)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="7538750895428945" type="System">
+                                    <param id="0" name="Variable">isWon</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="7783653216326253">
                     <conditions>
@@ -857,7 +859,7 @@
                                                 <action id="0" name="Play" sid="9896026657889678" type="Audio">
                                                     <param id="0" name="Audio file">swap</param>
                                                     <param id="2" name="Loop">0</param>
-                                                    <param id="3" name="Volume">10</param>
+                                                    <param id="3" name="Volume">20</param>
                                                     <param id="1" name="Tag (optional)">&quot;swap&quot;</param>
                                                 </action>
                                                 <action id="0" name="Call function" sid="7202446483798257" type="Function">

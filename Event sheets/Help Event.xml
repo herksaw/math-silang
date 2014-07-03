@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Help Event</name>
+    <events>
+        <event-block sid="8145927381117355">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="6459860601640483" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set web font" sid="9469059019420424" type="TextGeneral">
+                    <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
+                    <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="9817082109310075">
+                    <conditions>
+                        <condition id="6" name="Compare key value (as text)" sid="2008073908301914" type="WebStorage">
+                            <param id="0" name="Key">&quot;lang&quot;</param>
+                            <param id="1" name="Text to compare">&quot;bi&quot;</param>
+                            <param id="2" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="8816364782300625" type="TextGeneral">
+                            <param id="0" name="Text">&quot;Move your finger or mouse to move the blocks. The available actions are block&apos;s positions changing and conducting a mathematic equation while acrossing the orange and blue lines. Try to win with getting the exact number in answer box or finish the game in time trial. Pipan will has different expressions that&apos;s depending on your actions!&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="236339238115285">
+                    <conditions>
+                        <condition id="6" name="Compare key value (as text)" sid="6394134460160789" type="WebStorage">
+                            <param id="0" name="Key">&quot;lang&quot;</param>
+                            <param id="1" name="Text to compare">&quot;bm&quot;</param>
+                            <param id="2" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="4554554989187828" type="TextGeneral">
+                            <param id="0" name="Text">&quot;Gunakan jari anda atau tetikus untuk menggerakkan block-block. Tindakan yang dapat diambil ialah penukaran block dan menjalankan persamaan matematik melalui garisan kelabu dan garisan biru. Cubalah menang dengan mendapatkan nombor  yang terdapat dalam kotak jawapan atau siapkan dalam masa yang ditetapkan. Pipan akan mempunyai pelbagai emosi yang tergantung kepada tindakan anda!&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="8910564795759273">
+            <conditions>
+                <condition id="3" name="On touched object" sid="2440534038977847" type="Touch">
+                    <param id="0" name="Object">ButtonBack</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-21" name="Reset global variables" sid="9281285437638929" type="System" />
+                <action id="-2" name="Go to layout" sid="4844511413011921" type="System">
+                    <param id="0" name="Layout">Main Menu Layout</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

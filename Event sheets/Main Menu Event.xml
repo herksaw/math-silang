@@ -39,10 +39,6 @@
                     <param id="0" name="Layer">2</param>
                     <param id="1" name="Visibility">0</param>
                 </action>
-                <action id="-4" name="Set layer visible" sid="9001622074542109" type="System">
-                    <param id="0" name="Layer">3</param>
-                    <param id="1" name="Visibility">0</param>
-                </action>
                 <action id="-15" name="Set visible" sid="3310068816830386" type="ButtonBack">
                     <param id="0" name="Visibility">0</param>
                 </action>
@@ -425,10 +421,6 @@
                     <param id="0" name="Layer">2</param>
                     <param id="1" name="Visibility">1</param>
                 </action>
-                <action id="-4" name="Set layer visible" sid="6613166546259607" type="System">
-                    <param id="0" name="Layer">3</param>
-                    <param id="1" name="Visibility">0</param>
-                </action>
                 <action id="-15" name="Set visible" sid="2474444871002736" type="ButtonBack">
                     <param id="0" name="Visibility">1</param>
                 </action>
@@ -473,44 +465,10 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-4" name="Set layer visible" sid="8825514264508375" type="System">
-                    <param id="0" name="Layer">1</param>
-                    <param id="1" name="Visibility">0</param>
-                </action>
-                <action id="-4" name="Set layer visible" sid="3479942323761992" type="System">
-                    <param id="0" name="Layer">2</param>
-                    <param id="1" name="Visibility">0</param>
-                </action>
-                <action id="-4" name="Set layer visible" sid="9053242757982776" type="System">
-                    <param id="0" name="Layer">3</param>
-                    <param id="1" name="Visibility">1</param>
-                </action>
-                <action id="-15" name="Set visible" sid="1464965396886116" type="ButtonBack">
-                    <param id="0" name="Visibility">1</param>
-                </action>
-                <action id="-26" name="Move to layer" sid="6464268497967829" type="ButtonBack">
-                    <param id="0" name="Layer">3</param>
-                </action>
-                <action id="-26" name="Move to layer" sid="3554047853129411" type="ButtonFullscreen">
-                    <param id="0" name="Layer">3</param>
-                </action>
-                <action id="-26" name="Move to layer" sid="8244943786588419" type="ButtonAudio">
-                    <param id="0" name="Layer">3</param>
-                </action>
-                <action id="-26" name="Move to layer" sid="4570986706255516" type="ButtonLanguage">
-                    <param id="0" name="Layer">3</param>
-                </action>
-                <action id="-26" name="Move to layer" sid="3572895528923429" type="ButtonCredit">
-                    <param id="0" name="Layer">3</param>
-                </action>
-                <action id="-26" name="Move to layer" sid="5733428589222021" type="KingHerks">
-                    <param id="0" name="Layer">3</param>
-                </action>
-                <action id="-26" name="Move to layer" sid="9601557461387584" type="Herks">
-                    <param id="0" name="Layer">3</param>
-                </action>
-                <action id="-26" name="Move to layer" sid="3375641105530015" type="MathSilang">
-                    <param id="0" name="Layer">3</param>
+                <action id="33" name="Stop all" sid="9299818242897953" type="Audio" />
+                <action id="-21" name="Reset global variables" sid="9040403048682955" type="System" />
+                <action id="-2" name="Go to layout" sid="5666900521822582" type="System">
+                    <param id="0" name="Layout">Help Layout</param>
                 </action>
             </actions>
         </event-block>
@@ -608,10 +566,6 @@
                 </action>
                 <action id="-4" name="Set layer visible" sid="4163144677098707" type="System">
                     <param id="0" name="Layer">2</param>
-                    <param id="1" name="Visibility">0</param>
-                </action>
-                <action id="-4" name="Set layer visible" sid="4871793110946571" type="System">
-                    <param id="0" name="Layer">3</param>
                     <param id="1" name="Visibility">0</param>
                 </action>
                 <action id="-15" name="Set visible" sid="6973339829667959" type="ButtonBack">
