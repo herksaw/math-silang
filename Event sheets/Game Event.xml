@@ -45,7 +45,7 @@
                     <param id="0" name="Name">&quot;PutBlock&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
-                <action id="0" name="Play" sid="4355730051975519" type="Audio">
+                <action disabled="1" id="0" name="Play" sid="4355730051975519" type="Audio">
                     <param id="0" name="Audio file">ingame</param>
                     <param id="2" name="Loop">1</param>
                     <param id="3" name="Volume">0</param>
@@ -62,6 +62,13 @@
                 <action id="5" name="Set web font" sid="8037528096725408" type="BoxUpdate">
                     <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
                     <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="3456828330925437" type="BoxVersion">
+                    <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
+                    <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="8858749152539099" type="BoxVersion">
+                    <param id="0" name="Text">&quot;Version: &quot; &amp; projectversion</param>
                 </action>
             </actions>
             <sub-events>
@@ -190,6 +197,9 @@
                         <action id="-16" name="Set opacity" sid="7401227699282844" type="BoxUpdate">
                             <param id="0" name="Opacity">80</param>
                         </action>
+                        <action id="-16" name="Set opacity" sid="4893261093511824" type="BoxVersion">
+                            <param id="0" name="Opacity">80</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
@@ -293,6 +303,56 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block sid="4958416965724411">
+                    <conditions>
+                        <condition id="7" name="Compare key value (as number)" sid="544490569693829" type="WebStorage">
+                            <param id="0" name="Key">&quot;steinsgate&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="7105678115354207" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="3885817284824767" type="BackgroundImage">
+                            <param id="0" name="Frame number">3</param>
+                        </action>
+                        <action id="4" name="Set font color" sid="8514121235661181" type="BoxAnswer">
+                            <param id="0" name="Color">rgb(255, 255, 255)</param>
+                        </action>
+                        <action id="4" name="Set font color" sid="529061133710008" type="BoxVersion">
+                            <param id="0" name="Color">rgb(255, 255, 255)</param>
+                        </action>
+                        <action id="4" name="Set font color" sid="7428308044968674" type="BoxUpdate">
+                            <param id="0" name="Color">rgb(255, 255, 255)</param>
+                        </action>
+                        <action id="4" name="Set font color" sid="213021297957135" type="TextBlock">
+                            <param id="0" name="Color">rgb(255, 255, 255)</param>
+                        </action>
+                        <action id="4" name="Set font color" sid="9907441640883628" type="TextGeneral">
+                            <param id="0" name="Color">rgb(255, 255, 255)</param>
+                        </action>
+                        <action id="33" name="Stop all" sid="6788736640327558" type="Audio" />
+                        <action id="0" name="Play" sid="9805071618556029" type="Audio">
+                            <param id="0" name="Audio file">steinsgate</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;steinsgate&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7892240779879105">
+                    <conditions>
+                        <condition id="4" inverted="1" name="Is any playing" sid="293318730681459" type="Audio" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="8205022379003395" type="Audio">
+                            <param id="0" name="Audio file">ingame</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;ingame&quot;</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>

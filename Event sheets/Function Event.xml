@@ -370,7 +370,7 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-group collapsed="1" description="" sid="55345920831412" title="HUD">
+        <event-group description="" sid="55345920831412" title="HUD">
             <sub-events>
                 <event-block sid="5579713382432342">
                     <conditions>
@@ -452,6 +452,9 @@
                                     <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
                                     <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
                                 </action>
+                                <action disabled="1" id="4" name="Set font color" sid="782199398631831" type="TextGeneral">
+                                    <param id="0" name="Color">rgb(255, 255, 255)</param>
+                                </action>
                                 <action id="-3" name="Create object" sid="8831989393719226" type="System">
                                     <param id="0" name="Object to create">TextGeneral</param>
                                     <param id="1" name="Layer">&quot;Game&quot;</param>
@@ -479,6 +482,9 @@
                                 <action id="5" name="Set web font" sid="1182820171521424" type="TextGeneral">
                                     <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
                                     <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
+                                </action>
+                                <action disabled="1" id="4" name="Set font color" sid="7997300374607685" type="TextGeneral">
+                                    <param id="0" name="Color">rgb(255, 255, 255)</param>
                                 </action>
                                 <action id="-3" name="Create object" sid="8957176713812797" type="System">
                                     <param id="0" name="Object to create">TextGeneral</param>
@@ -508,6 +514,9 @@
                                     <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
                                     <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
                                 </action>
+                                <action disabled="1" id="4" name="Set font color" sid="9735546643121898" type="TextGeneral">
+                                    <param id="0" name="Color">rgb(255, 255, 255)</param>
+                                </action>
                                 <action id="-3" name="Create object" sid="1331207561005946" type="System">
                                     <param id="0" name="Object to create">TextGeneral</param>
                                     <param id="1" name="Layer">&quot;Game&quot;</param>
@@ -535,6 +544,9 @@
                                 <action id="5" name="Set web font" sid="2942053115111291" type="TextGeneral">
                                     <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
                                     <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
+                                </action>
+                                <action disabled="1" id="4" name="Set font color" sid="2698934152928043" type="TextGeneral">
+                                    <param id="0" name="Color">rgb(255, 255, 255)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -575,6 +587,9 @@
                                     <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
                                     <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
                                 </action>
+                                <action disabled="1" id="4" name="Set font color" sid="5661383645830675" type="TextGeneral">
+                                    <param id="0" name="Color">rgb(255, 255, 255)</param>
+                                </action>
                                 <action id="-3" name="Create object" sid="432934441294709" type="System">
                                     <param id="0" name="Object to create">TextGeneral</param>
                                     <param id="1" name="Layer">&quot;Game&quot;</param>
@@ -602,6 +617,9 @@
                                 <action id="5" name="Set web font" sid="5386495006235075" type="TextGeneral">
                                     <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
                                     <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
+                                </action>
+                                <action disabled="1" id="4" name="Set font color" sid="336271613381993" type="TextGeneral">
+                                    <param id="0" name="Color">rgb(255, 255, 255)</param>
                                 </action>
                                 <action id="-3" name="Create object" sid="960079294725115" type="System">
                                     <param id="0" name="Object to create">TextGeneral</param>
@@ -631,6 +649,9 @@
                                     <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
                                     <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
                                 </action>
+                                <action disabled="1" id="4" name="Set font color" sid="3293693354380276" type="TextGeneral">
+                                    <param id="0" name="Color">rgb(255, 255, 255)</param>
+                                </action>
                                 <action id="-3" name="Create object" sid="9664327519790527" type="System">
                                     <param id="0" name="Object to create">TextGeneral</param>
                                     <param id="1" name="Layer">&quot;Game&quot;</param>
@@ -658,6 +679,9 @@
                                 <action id="5" name="Set web font" sid="5432459260830368" type="TextGeneral">
                                     <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
                                     <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
+                                </action>
+                                <action disabled="1" id="4" name="Set font color" sid="2948035417653938" type="TextGeneral">
+                                    <param id="0" name="Color">rgb(255, 255, 255)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -716,6 +740,9 @@
                                 <action id="5" name="Set web font" sid="4288629084890697" type="TextBlock">
                                     <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
                                     <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
+                                </action>
+                                <action disabled="1" id="4" name="Set font color" sid="3128074375811733" type="TextBlock">
+                                    <param id="0" name="Color">rgb(255, 255, 255)</param>
                                 </action>
                                 <action id="-3" name="Create object" sid="7173233427626213" type="System">
                                     <param id="0" name="Object to create">Block</param>

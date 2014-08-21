@@ -2,11 +2,11 @@
 <c2project>
     <name>Math Silang</name>
     <description>A project for LRK 2014.</description>
-    <version>1.0.0.0</version>
-    <author>Domicon Productions</author>
+    <version>1.0.0.1 Build 18</version>
+    <author>Domicon Entertainment</author>
     <author-email>herksaw@gmail.com</author-email>
     <author-website>http://www.herksaw.com/</author-website>
-    <app-id>com.domicon.madmonyet</app-id>
+    <app-id>com.domicon.mathsilang</app-id>
     <unique-id>16w06lp6jdgf9</unique-id>
     <saved-with-version>17300</saved-with-version>
     <used-plugins>
@@ -183,7 +183,8 @@
                 </behavior-type>
             </behaviors>
             <animation-folder expanded="1">
-                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="3740115004986449" speed="0">
+                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="3740115004986449" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -336,6 +337,9 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="BoxVersion" sid="2893565849615561">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families>
         <family name="Objects" plugin-id="Sprite" sid="8802063782826458">
@@ -420,18 +424,16 @@
     <sounds-folder expanded="1">
         <file name="swap.m4a" />
         <file name="swap.ogg" />
-        <file name="swap.wav" />
         <file name="won.m4a" />
         <file name="won.ogg" />
-        <file name="won.wav" />
     </sounds-folder>
     <music-folder expanded="1">
         <file name="ingame.m4a" />
         <file name="ingame.ogg" />
-        <file name="ingame.wav" />
         <file name="menu.m4a" />
         <file name="menu.ogg" />
-        <file name="menu.wav" />
+        <file name="steinsgate.m4a" />
+        <file name="steinsgate.ogg" />
     </music-folder>
     <files-folder expanded="1">
         <file-folder expanded="0" name="Icons">
