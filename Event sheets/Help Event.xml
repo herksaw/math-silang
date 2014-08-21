@@ -24,7 +24,7 @@
                     </conditions>
                     <actions>
                         <action id="0" name="Set text" sid="8816364782300625" type="TextGeneral">
-                            <param id="0" name="Text">&quot;Move your finger or mouse to move the blocks. The available actions are block&apos;s positions changing and conducting a mathematic equation while acrossing the orange and blue lines. Try to win with getting the exact number in answer box or finish the game in time trial. Pipan will has different expressions that&apos;s depending on your actions!&quot;</param>
+                            <param id="0" name="Text">&quot;Move your finger or mouse to move the blocks. The available actions are block&apos;s positions changing and conducting a mathematic equation while acrossing the orange and blue lines. Try to win the game by getting the exact number in answer box or finish the game within time trial. Pipan will has different expressions depending on your actions!&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -38,7 +38,7 @@
                     </conditions>
                     <actions>
                         <action id="0" name="Set text" sid="4554554989187828" type="TextGeneral">
-                            <param id="0" name="Text">&quot;Gunakan jari anda atau tetikus untuk menggerakkan block-block. Tindakan yang dapat diambil ialah penukaran block dan menjalankan persamaan matematik melalui garisan kelabu dan garisan biru. Cubalah menang dengan mendapatkan nombor  yang terdapat dalam kotak jawapan atau siapkan dalam masa yang ditetapkan. Pipan akan mempunyai pelbagai emosi yang tergantung kepada tindakan anda!&quot;</param>
+                            <param id="0" name="Text">&quot;Gunakan jari anda atau tetikus untuk menggerakkan block-block. Tindakan yang disediakan ialah penukaran block dan menjalankan persamaan matematik melalui garisan kelabu dan garisan biru. Cubalah menang dengan mendapatkan nombor  yang terdapat dalam kotak jawapan atau siapkan dalam masa yang ditetapkan. Pipan akan mempunyai pelbagai emosi yang tergantung kepada tindakan anda!&quot;</param>
                         </action>
                     </actions>
                 </event-block>

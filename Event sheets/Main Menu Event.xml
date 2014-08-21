@@ -3,8 +3,10 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Main Menu Event</name>
     <events>
+        <variable constant="0" name="IsSteinsGate" sid="9873081936799442" static="0" type="number">0</variable>
+        <variable constant="0" name="SteinsGateCounter" sid="6542975167658362" static="0" type="number">0</variable>
         <variable constant="0" name="fadeRate" sid="520185246054441" static="0" type="number">5</variable>
-        <event-block sid="1841280723655441">
+        <event-block collapsed="1" sid="1841280723655441">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="9612791999538457" type="System" />
             </conditions>
@@ -63,6 +65,10 @@
                 <action id="5" name="Set web font" sid="2495247018759082" type="TextGeneral">
                     <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
                     <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
+                </action>
+                <action id="0" name="Set local value" sid="216209400365494" type="WebStorage">
+                    <param id="0" name="Key">&quot;steinsgate&quot;</param>
+                    <param id="1" name="Value">&quot;0&quot;</param>
                 </action>
             </actions>
             <sub-events>
@@ -173,6 +179,32 @@
                 </action>
                 <action id="-16" name="Set opacity" sid="6208541918604688" type="Texts">
                     <param id="0" name="Opacity">50</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5153689624074069">
+            <conditions>
+                <condition id="1" name="On any touch end" sid="1114831850464289" type="Touch" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="842767289553574" type="System">
+                    <param id="0" name="Variable">SteinsGateCounter</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="785986796327489">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="6424353376921686" type="System">
+                    <param id="0" name="Variable">SteinsGateCounter</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set local value" sid="850637958646149" type="WebStorage">
+                    <param id="0" name="Key">&quot;steinsgate&quot;</param>
+                    <param id="1" name="Value">&quot;1&quot;</param>
                 </action>
             </actions>
         </event-block>
@@ -368,17 +400,36 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-block sid="2230903389427932">
+        <event-block sid="1423379937503143">
             <conditions>
-                <condition id="4" inverted="1" name="Is any playing" sid="1923660910170369" type="Audio" />
-                <condition id="6" name="Compare key value (as text)" sid="8799958970459261" type="WebStorage">
+                <condition id="7" name="Compare key value (as number)" sid="2548666029042402" type="WebStorage">
+                    <param id="0" name="Key">&quot;steinsgate&quot;</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="8788056969629147" type="System" />
+            </conditions>
+            <actions>
+                <action id="33" name="Stop all" sid="3823227111294357" type="Audio" />
+                <action id="0" name="Play" sid="9017591833093035" type="Audio">
+                    <param id="0" name="Audio file">steinsgate</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;looping&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="505636938602484">
+            <conditions>
+                <condition id="4" inverted="1" name="Is any playing" sid="8918987488217456" type="Audio" />
+                <condition id="6" name="Compare key value (as text)" sid="7011015579220527" type="WebStorage">
                     <param id="0" name="Key">&quot;audio&quot;</param>
                     <param id="1" name="Text to compare">&quot;on&quot;</param>
                     <param id="2" name="Case sensitivity">0</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="0" name="Play" sid="5556468001100131" type="Audio">
+                <action id="0" name="Play" sid="9181076763249985" type="Audio">
                     <param id="0" name="Audio file">menu</param>
                     <param id="2" name="Loop">1</param>
                     <param id="3" name="Volume">0</param>
