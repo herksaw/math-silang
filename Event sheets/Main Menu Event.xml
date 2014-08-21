@@ -198,7 +198,7 @@
                 <condition id="-14" name="Compare variable" sid="6424353376921686" type="System">
                     <param id="0" name="Variable">SteinsGateCounter</param>
                     <param id="1" name="Comparison">5</param>
-                    <param id="2" name="Value">5</param>
+                    <param id="2" name="Value">18</param>
                 </condition>
             </conditions>
             <actions>
