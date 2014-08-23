@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Time Travel Event</name>
+    <events>
+        <variable constant="0" name="isClocked" sid="494871937169151" static="0" type="number">0</variable>
+        <event-block sid="7824593375698848">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="173354674070748" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="3578134142096416" type="Audio">
+                    <param id="0" name="Audio file">2_flow</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">100</param>
+                    <param id="1" name="Tag (optional)">&quot;2_flow&quot;</param>
+                </action>
+                <action id="3" name="Start" sid="7062166699052301" type="BackgroundTimeTravel">
+                    <param id="0" name="From">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7645279380542553">
+            <conditions>
+                <condition id="4" name="On finished" sid="4804010697606369" type="BackgroundTimeTravel">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="8256534874601815" type="System">
+                    <param id="0" name="Variable">isClocked</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Fader" id="1" name="Start fade" sid="1468666890780718" type="BackgroundTimeTravel" />
+            </actions>
+        </event-block>
+        <event-block sid="1281559664762318">
+            <conditions>
+                <condition behavior="Fader" id="0" name="On fade out finished" sid="2947725726373156" type="BackgroundTimeTravel" />
+                <condition id="-14" name="Compare variable" sid="3407207789607667" type="System">
+                    <param id="0" name="Variable">isClocked</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="3626931373736387" type="Audio">
+                    <param id="0" name="Audio file">clock</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">100</param>
+                    <param id="1" name="Tag (optional)">&quot;clock&quot;</param>
+                </action>
+                <action id="0" name="Play" sid="2812545170953594" type="Audio">
+                    <param id="0" name="Audio file">heart_beat</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">100</param>
+                    <param id="1" name="Tag (optional)">&quot;heart_beat&quot;</param>
+                </action>
+                <action id="3" name="Start" sid="5047609290690424" type="BackgroundWorldLine">
+                    <param id="0" name="From">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2502266193680014">
+            <conditions>
+                <condition id="4" name="On finished" sid="6062540692779493" type="BackgroundWorldLine">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="8062304837948254" type="System">
+                    <param id="0" name="Object to create">BackgroundTimeTravel</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">LayoutWidth / 2</param>
+                    <param id="3" name="Y">LayoutHeight / 2</param>
+                </action>
+                <action id="-25" name="Move to bottom" sid="1535379385625672" type="BackgroundTimeTravel" />
+                <action behavior="Fader" id="1" name="Start fade" sid="1426370421270324" type="BackgroundWorldLine" />
+                <action id="-9" name="Set value" sid="1858303782778106" type="System">
+                    <param id="0" name="Variable">isClocked</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="6" name="Stop" sid="1308498302816312" type="Audio">
+                    <param id="0" name="Tag">&quot;clock&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1166141868010503">
+            <conditions>
+                <condition behavior="Fader" id="0" name="On fade out finished" sid="5198224060667223" type="BackgroundWorldLine" />
+            </conditions>
+            <actions>
+                <action id="33" name="Stop all" sid="9377201304559758" type="Audio" />
+                <action id="0" name="Play" sid="5088928450127657" type="Audio">
+                    <param id="0" name="Audio file">2_flow</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">100</param>
+                    <param id="1" name="Tag (optional)">&quot;2_flow&quot;</param>
+                </action>
+                <action id="3" name="Start" sid="5829917741769225" type="BackgroundTimeTravel">
+                    <param id="0" name="From">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7815783794040299">
+            <conditions>
+                <condition id="4" name="On finished" sid="6084952129285877" type="BackgroundTimeTravel">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="4218942706268067" type="System">
+                    <param id="0" name="Variable">isClocked</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="7906118441502062" type="Audio">
+                    <param id="0" name="Audio file">3_reverse</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">100</param>
+                    <param id="1" name="Tag (optional)">&quot;3_reverse&quot;</param>
+                </action>
+                <action behavior="Fader" id="1" name="Start fade" sid="6423025484984117" type="BackgroundTimeTravel" />
+            </actions>
+        </event-block>
+        <event-block sid="3409831541692499">
+            <conditions>
+                <condition behavior="Fader" id="0" name="On fade out finished" sid="6179113916919315" type="BackgroundTimeTravel" />
+                <condition id="-14" name="Compare variable" sid="6749126248298547" type="System">
+                    <param id="0" name="Variable">isClocked</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set local value" sid="9298337154929858" type="WebStorage">
+                    <param id="0" name="Key">&quot;backFromTravel&quot;</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-21" name="Reset global variables" sid="2935807066784283" type="System" />
+                <action id="-2" name="Go to layout" sid="8129877096608493" type="System">
+                    <param id="0" name="Layout">Main Menu Layout</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
