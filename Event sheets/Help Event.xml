@@ -51,9 +51,247 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="33" name="Stop all" sid="9330979787590237" type="Audio" />
                 <action id="-21" name="Reset global variables" sid="9281285437638929" type="System" />
                 <action id="-2" name="Go to layout" sid="4844511413011921" type="System">
                     <param id="0" name="Layout">Main Menu Layout</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8461441464053951">
+            <conditions>
+                <condition id="7" name="Compare key value (as number)" sid="6137818702000819" type="WebStorage">
+                    <param id="0" name="Key">&quot;steinsgate&quot;</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="7" name="Compare key value (as number)" sid="1244412691187136" type="WebStorage">
+                    <param id="0" name="Key">&quot;backFromTravel&quot;</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="8501413392351806" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="6018664377016456" type="BackgroundImage">
+                    <param id="0" name="Frame number">6</param>
+                </action>
+                <action id="-2" name="Set Y" sid="1114245657504476" type="ButtonBack">
+                    <param id="0" name="Y">Self.Height * 1 / 4</param>
+                </action>
+                <action id="-1" name="Set X" sid="1490444022145163" type="ButtonBack">
+                    <param id="0" name="X">Self.Width / 2</param>
+                </action>
+                <action id="0" name="Play" sid="7477037184494151" type="Audio">
+                    <param id="0" name="Audio file">lively</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;lively&quot;</param>
+                </action>
+                <action id="0" name="Play" sid="625833453394348" type="Audio">
+                    <param id="0" name="Audio file">duduru</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">30</param>
+                    <param id="1" name="Tag (optional)">&quot;duduru&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="5418429305918809" type="PhoneButton">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-29" name="Move to object" sid="7327177675860998" type="PhoneButton">
+                    <param id="0" name="Where">1</param>
+                    <param id="1" name="Object">Phone</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3354928118161792">
+            <conditions>
+                <condition id="-20" inverted="1" name="Is on mobile device" sid="5387517974474568" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="7481008342479153">
+                    <conditions>
+                        <condition id="7" name="Compare key value (as number)" sid="4033986717064276" type="WebStorage">
+                            <param id="0" name="Key">&quot;steinsgate&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="7" name="Compare key value (as number)" sid="8734328897246253" type="WebStorage">
+                            <param id="0" name="Key">&quot;backFromTravel&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="3150833393335056">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="4250007170943739" type="Mouse">
+                                    <param id="0" name="Object">ButtonBack</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="521820866035467" type="ButtonBack">
+                                    <param id="0" name="Frame number">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6582026601195794">
+                            <conditions>
+                                <condition id="7" inverted="1" name="Cursor is over object" sid="5435716336484989" type="Mouse">
+                                    <param id="0" name="Object">ButtonBack</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="5591898386983544" type="ButtonBack">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3379406852805912">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="6071776745830155" type="System">
+                                    <param id="0" name="First value">Mouse.X</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">LayoutWidth - 1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="7952844047993522" type="System">
+                                    <param id="0" name="Variable">isPhone</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="813498287982977">
+                            <conditions>
+                                <condition id="2" name="Mouse button is down" sid="9774074000212465" type="Mouse">
+                                    <param id="0" name="Mouse button">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="6217523578348811" type="System">
+                                    <param id="0" name="Variable">isPhone</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="3564135145644815">
+            <conditions>
+                <condition id="-20" name="Is on mobile device" sid="5450540550632271" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="2897611447748814">
+                    <conditions>
+                        <condition id="7" name="Compare key value (as number)" sid="8214681866658164" type="WebStorage">
+                            <param id="0" name="Key">&quot;steinsgate&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="7" name="Compare key value (as number)" sid="2033762642284765" type="WebStorage">
+                            <param id="0" name="Key">&quot;backFromTravel&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="5078147262857361" type="ButtonBack">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="7044655904485007">
+            <conditions>
+                <condition id="3" name="On touched object" sid="4426641020854974" type="Touch">
+                    <param id="0" name="Object">PhoneButton</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="5369794724799205">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="8132210521866883" type="System">
+                            <param id="0" name="Variable">isPhone</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="1664187166557331" type="System">
+                            <param id="0" name="Variable">isPhone</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8122328142617358">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="2728897855726205" type="System" />
+                        <condition id="-14" name="Compare variable" sid="9834578779016879" type="System">
+                            <param id="0" name="Variable">isPhone</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="480582550402086" type="System">
+                            <param id="0" name="Variable">isPhone</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="7788811693150194">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="5872611051811407" type="System">
+                    <param id="0" name="Variable">isPhone</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Is visible" sid="4197516650227196" type="Phone" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="5779586927672962" type="Phone">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="5228636796188388" type="Phone">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5587693011144833">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2539497441752286" type="System">
+                    <param id="0" name="Variable">isPhone</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="3046085399613916" type="Phone" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="4509633380341296" type="Phone">
+                    <param id="0" name="Animation">&quot;Reverse&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="175982850122404">
+            <conditions>
+                <condition id="4" name="On finished" sid="1550758636192957" type="Phone">
+                    <param id="0" name="Animation">&quot;Reverse&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="4925379313108592" type="Phone">
+                    <param id="0" name="Visibility">0</param>
                 </action>
             </actions>
         </event-block>

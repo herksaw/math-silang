@@ -2,7 +2,7 @@
 <c2project>
     <name>Math Silang</name>
     <description>A project for LRK 2014.</description>
-    <version>1.0.0.1 Build 18</version>
+    <version>1.2.7.4 Build 30</version>
     <author>Domicon Entertainment</author>
     <author-email>herksaw@gmail.com</author-email>
     <author-website>http://www.herksaw.com/</author-website>
@@ -10,6 +10,7 @@
     <unique-id>16w06lp6jdgf9</unique-id>
     <saved-with-version>17300</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
@@ -126,17 +127,25 @@
         <object-type name="ButtonText" sid="3846348462621637">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="9352783836313601" speed="0">
+                <animation framecount="8" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="9352783836313601" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.510204" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.510204" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
         <object-type name="ButtonBack" sid="8118618177720441">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="7653518685315425" speed="0">
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="7653518685315425" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.52" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.52" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -173,17 +182,26 @@
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="1989460354868599" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
+                <animation framecount="8" loop="1" name="SteinsGate" pingpong="0" repeatcount="0" repeatto="0" sid="470433014248001" speed="8">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
             </animation-folder>
         </object-type>
         <object-type name="BackgroundImage" sid="9941759485502506">
             <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Fade" sid="4636574232973181">
-                    <behavior id="Fade" />
-                </behavior-type>
-            </behaviors>
             <animation-folder expanded="1">
-                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="3740115004986449" speed="0">
+                <animation framecount="8" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="3740115004986449" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -197,9 +215,11 @@
         <object-type name="ButtonAudio" sid="9917766737796449">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="4154845470725125" speed="0">
+                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="4154845470725125" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.513514" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.513514" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -240,8 +260,10 @@
         <object-type name="ButtonCredit" sid="5101706380347489">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="7105107729479045" speed="0">
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="7105107729479045" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.516129" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.516129" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -300,8 +322,9 @@
         <object-type name="MathSilang" sid="9927802967719552">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1983295233070032" speed="5">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="1983295233070032" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.503597" />
+                    <frame duration="1" hotspotX="0.500998" hotspotY="0.502732" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -339,6 +362,102 @@
         </object-type>
         <object-type name="BoxVersion" sid="2893565849615561">
             <plugin id="Text" />
+        </object-type>
+        <object-type name="AJAX" sid="3105182710077698">
+            <plugin id="AJAX" />
+        </object-type>
+        <object-type name="BackgroundTimeTravel" sid="3246303139006093">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="16" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="2354631625809726" speed="7.5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Choices" sid="9083048357856171">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="9603871431226441" speed="0">
+                    <frame duration="1" hotspotX="0.501433" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501433" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BackgroundWorldLine" sid="2394797405389309">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="6264784849074761" speed="0.4">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="NitroPlus" sid="872964732337787">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="8200571158903902">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5678118718033948" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Phone" sid="988694506800763">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="10" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="4483691711830512" speed="20">
+                    <frame duration="1" hotspotX="0.502041" hotspotY="0.501104" />
+                    <frame duration="1" hotspotX="0.502041" hotspotY="0.501104" />
+                    <frame duration="1" hotspotX="0.502041" hotspotY="0.501104" />
+                    <frame duration="1" hotspotX="0.502041" hotspotY="0.501104" />
+                    <frame duration="1" hotspotX="0.502041" hotspotY="0.501104" />
+                    <frame duration="1" hotspotX="0.502041" hotspotY="0.501104" />
+                    <frame duration="1" hotspotX="0.502041" hotspotY="0.501104" />
+                    <frame duration="1" hotspotX="0.502041" hotspotY="0.501104" />
+                    <frame duration="1" hotspotX="0.502041" hotspotY="0.501104" />
+                    <frame duration="1" hotspotX="0.502041" hotspotY="0.501104" />
+                </animation>
+                <animation framecount="10" loop="0" name="Reverse" pingpong="0" repeatcount="0" repeatto="0" sid="3004074176066998" speed="20">
+                    <frame duration="1" hotspotX="0.502041" hotspotY="0.501104" />
+                    <frame duration="1" hotspotX="0.502041" hotspotY="0.501104" />
+                    <frame duration="1" hotspotX="0.502041" hotspotY="0.501104" />
+                    <frame duration="1" hotspotX="0.502041" hotspotY="0.501104" />
+                    <frame duration="1" hotspotX="0.502041" hotspotY="0.501104" />
+                    <frame duration="1" hotspotX="0.502041" hotspotY="0.501104" />
+                    <frame duration="1" hotspotX="0.502041" hotspotY="0.501104" />
+                    <frame duration="1" hotspotX="0.502041" hotspotY="0.501104" />
+                    <frame duration="1" hotspotX="0.502041" hotspotY="0.501104" />
+                    <frame duration="1" hotspotX="0.502041" hotspotY="0.501104" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PhoneButton" sid="8822323507813564">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="3408397476291318" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families>
@@ -379,6 +498,19 @@
                 </behavior-type>
             </behaviors>
         </family>
+        <family name="FadeObjects" plugin-id="Sprite" sid="6890902273801797">
+            <members>
+                <member>BackgroundImage</member>
+                <member>BackgroundTimeTravel</member>
+                <member>BackgroundWorldLine</member>
+                <member>Choices</member>
+            </members>
+            <behaviors>
+                <behavior-type name="Fader" sid="8492047589840729">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </family>
     </families>
     <layout-folder expanded="1">
         <layout>Game Layout.xml</layout>
@@ -386,6 +518,7 @@
         <layout>Main Menu Layout.xml</layout>
         <layout>Credit Layout.xml</layout>
         <layout>Help Layout.xml</layout>
+        <layout>Time Travel Layout.xml</layout>
     </layout-folder>
     <event-folder expanded="1">
         <event-sheet>Game Event.xml</event-sheet>
@@ -393,6 +526,7 @@
         <event-sheet>Main Menu Event.xml</event-sheet>
         <event-sheet>Credit Event.xml</event-sheet>
         <event-sheet>Help Event.xml</event-sheet>
+        <event-sheet>Time Travel Event.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Mouse" uid="1" />
@@ -420,20 +554,103 @@
                 <doppler-factor>1</doppler-factor>
             </properties>
         </global-instance>
+        <global-instance type="AJAX" uid="32" />
     </global-instances>
     <sounds-folder expanded="1">
+        <file-folder expanded="0" name="Voices">
+            <file name="v_00_oka.m4a" />
+            <file name="v_00_oka.ogg" />
+            <file name="v_00_oka.wav" />
+            <file name="v_01_crs.m4a" />
+            <file name="v_01_crs.ogg" />
+            <file name="v_01_crs.wav" />
+            <file name="v_02_crs.m4a" />
+            <file name="v_02_crs.ogg" />
+            <file name="v_02_crs.wav" />
+            <file name="v_03_crs.m4a" />
+            <file name="v_03_crs.ogg" />
+            <file name="v_03_crs.wav" />
+            <file name="v_04_crs.m4a" />
+            <file name="v_04_crs.ogg" />
+            <file name="v_04_crs.wav" />
+            <file name="v_05_crs.m4a" />
+            <file name="v_05_crs.ogg" />
+            <file name="v_05_crs.wav" />
+            <file name="v_06_crs.m4a" />
+            <file name="v_06_crs.ogg" />
+            <file name="v_06_crs.wav" />
+            <file name="v_07_crs.m4a" />
+            <file name="v_07_crs.ogg" />
+            <file name="v_07_crs.wav" />
+            <file name="v_08_oka.m4a" />
+            <file name="v_08_oka.ogg" />
+            <file name="v_08_oka.wav" />
+            <file name="v_09_oka.m4a" />
+            <file name="v_09_oka.ogg" />
+            <file name="v_09_oka.wav" />
+            <file name="v_10_oka.m4a" />
+            <file name="v_10_oka.ogg" />
+            <file name="v_10_oka.wav" />
+            <file name="v_11_oka.m4a" />
+            <file name="v_11_oka.ogg" />
+            <file name="v_11_oka.wav" />
+            <file name="v_12_crs.m4a" />
+            <file name="v_12_crs.ogg" />
+            <file name="v_12_crs.wav" />
+            <file name="v_13_oka.m4a" />
+            <file name="v_13_oka.ogg" />
+            <file name="v_13_oka.wav" />
+            <file name="v_14_crs.m4a" />
+            <file name="v_14_crs.ogg" />
+            <file name="v_14_crs.wav" />
+            <file name="v_15_crs.m4a" />
+            <file name="v_15_crs.ogg" />
+            <file name="v_15_crs.wav" />
+            <file name="v_16_crs.m4a" />
+            <file name="v_16_crs.ogg" />
+            <file name="v_16_crs.wav" />
+            <file name="v_17_oka.m4a" />
+            <file name="v_17_oka.ogg" />
+            <file name="v_17_oka.wav" />
+            <file name="v_18_oka.m4a" />
+            <file name="v_18_oka.ogg" />
+            <file name="v_18_oka.wav" />
+        </file-folder>
         <file name="swap.m4a" />
         <file name="swap.ogg" />
         <file name="won.m4a" />
         <file name="won.ogg" />
+        <file name="1_electric.m4a" />
+        <file name="1_electric.ogg" />
+        <file name="2_flow.m4a" />
+        <file name="2_flow.ogg" />
+        <file name="3_reverse.m4a" />
+        <file name="3_reverse.ogg" />
+        <file name="duduru.m4a" />
+        <file name="duduru.ogg" />
+        <file name="heart_beat.m4a" />
+        <file name="heart_beat.ogg" />
+        <file name="clock.m4a" />
+        <file name="clock.ogg" />
+        <file name="clock.wav" />
     </sounds-folder>
     <music-folder expanded="1">
         <file name="ingame.m4a" />
         <file name="ingame.ogg" />
         <file name="menu.m4a" />
         <file name="menu.ogg" />
-        <file name="steinsgate.m4a" />
-        <file name="steinsgate.ogg" />
+        <file name="init.m4a" />
+        <file name="init.ogg" />
+        <file name="lively.m4a" />
+        <file name="lively.ogg" />
+        <file name="op.m4a" />
+        <file name="op.ogg" />
+        <file name="op_demo.m4a" />
+        <file name="op_demo.ogg" />
+        <file name="sad_1.m4a" />
+        <file name="sad_1.ogg" />
+        <file name="sad_2.m4a" />
+        <file name="sad_2.ogg" />
     </music-folder>
     <files-folder expanded="1">
         <file-folder expanded="0" name="Icons">

@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Credit Event</name>
     <events>
+        <variable constant="0" name="voiceVolume" sid="6055215567252244" static="0" type="number">10</variable>
         <variable constant="0" name="firstTouch" sid="218193003465783" static="0" type="number">0</variable>
         <variable constant="0" name="moveSpeed" sid="8737491246280405" static="0" type="number">1</variable>
         <event-block sid="5631857452730791">
@@ -28,6 +29,53 @@
                     <param id="0" name="Y">Self.Y + moveSpeed</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="3306759827887925">
+                    <conditions>
+                        <condition id="7" name="Compare key value (as number)" sid="5077764188233312" type="WebStorage">
+                            <param id="0" name="Key">&quot;steinsgate&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="7" name="Compare key value (as number)" sid="932277691096842" type="WebStorage">
+                            <param id="0" name="Key">&quot;backFromTravel&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="221479813723703">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="9866752355656911" type="NitroPlus">
+                                    <param id="0" name="Comparison">3</param>
+                                    <param id="1" name="Y co-ordinate">LayoutHeight / 2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Set Y" sid="9874617901348821" type="NitroPlus">
+                                    <param id="0" name="Y">Self.Y + moveSpeed</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4470967459050401">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="6837141022823404" type="NitroPlus">
+                                    <param id="0" name="Comparison">5</param>
+                                    <param id="1" name="Y co-ordinate">LayoutHeight / 2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="648159394964049" type="System">
+                                    <param id="0" name="Seconds">4.0</param>
+                                </action>
+                                <action behavior="Fade" id="1" name="Start fade" sid="8232754549718867" type="NitroPlus" />
+                                <action behavior="Fader" id="1" name="Start fade" sid="5879748098142658" type="BackgroundImage" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="431535291936727">
             <conditions>
@@ -47,16 +95,22 @@
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Second value">0</param>
                 </condition>
+                <condition id="7" name="Compare key value (as number)" sid="2921214662805876" type="WebStorage">
+                    <param id="0" name="Key">&quot;steinsgate&quot;</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
             </conditions>
             <actions>
-                <action behavior="Fade" id="1" name="Start fade" sid="2065980261588129" type="BackgroundImage" />
+                <action behavior="Fader" id="1" name="Start fade" sid="9408402467567987" type="BackgroundImage" />
             </actions>
         </event-block>
         <event-block sid="2526329161944914">
             <conditions>
-                <condition behavior="Fade" id="0" name="On fade out finished" sid="4894644490171006" type="BackgroundImage" />
+                <condition behavior="Fader" id="0" name="On fade out finished" sid="4905761203518521" type="BackgroundImage" />
             </conditions>
             <actions>
+                <action id="33" name="Stop all" sid="8245022851093458" type="Audio" />
                 <action id="-21" name="Reset global variables" sid="331981675295812" type="System" />
                 <action id="-2" name="Go to layout" sid="8946219005158729" type="System">
                     <param id="0" name="Layout">Main Menu Layout</param>
@@ -73,7 +127,8 @@
                 </condition>
             </conditions>
             <actions>
-                <action behavior="Fade" id="1" name="Start fade" sid="1554677617737456" type="BackgroundImage" />
+                <action behavior="Fade" id="1" name="Start fade" sid="1726422542194744" type="NitroPlus" />
+                <action behavior="Fader" id="1" name="Start fade" sid="9135634896508585" type="BackgroundImage" />
                 <action behavior="Fade" id="1" name="Start fade" sid="6405637722532387" type="TextGeneral" />
             </actions>
         </event-block>
@@ -90,6 +145,379 @@
                 <action id="-9" name="Set value" sid="6942464667493997" type="System">
                     <param id="0" name="Variable">firstTouch</param>
                     <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <variable constant="0" name="creditBgmVariation" sid="2901099325027901" static="0" type="number">0</variable>
+        <event-block sid="9635045841719807">
+            <conditions>
+                <condition id="7" name="Compare key value (as number)" sid="6661357216911598" type="WebStorage">
+                    <param id="0" name="Key">&quot;steinsgate&quot;</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="7" name="Compare key value (as number)" sid="3695582673152918" type="WebStorage">
+                    <param id="0" name="Key">&quot;backFromTravel&quot;</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="7055062868537658" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="9177458600600181" type="System">
+                    <param id="0" name="Variable">creditBgmVariation</param>
+                    <param id="1" name="Value">floor(random(0, 2))</param>
+                </action>
+                <action id="5" name="Set frame" sid="3425618429522155" type="BackgroundImage">
+                    <param id="0" name="Frame number">7</param>
+                </action>
+                <action id="-9" name="Set value" sid="6516166860460102" type="System">
+                    <param id="0" name="Variable">moveSpeed</param>
+                    <param id="1" name="Value">0.5</param>
+                </action>
+                <action id="-15" name="Set visible" sid="1571561875091983" type="NitroPlus">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="5074630099431643">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="1579803424286414" type="System">
+                            <param id="0" name="Variable">creditBgmVariation</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="33" name="Stop all" sid="6844996559059641" type="Audio" />
+                        <action id="0" name="Play" sid="5216867055170125" type="Audio">
+                            <param id="0" name="Audio file">sad_1</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">100</param>
+                            <param id="1" name="Tag (optional)">&quot;sad_1&quot;</param>
+                        </action>
+                        <action id="0" name="Play" sid="3539488450942485" type="Audio">
+                            <param id="0" name="Audio file">v_00_oka</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">voiceVolume</param>
+                            <param id="1" name="Tag (optional)">&quot;v_00_oka&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6214580436624612">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="7697518005567558" type="System">
+                            <param id="0" name="Variable">creditBgmVariation</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="33" name="Stop all" sid="2705142636117009" type="Audio" />
+                        <action id="0" name="Play" sid="774218635105023" type="Audio">
+                            <param id="0" name="Audio file">sad_2</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">100</param>
+                            <param id="1" name="Tag (optional)">&quot;sad_2&quot;</param>
+                        </action>
+                        <action id="0" name="Play" sid="9152672782115791" type="Audio">
+                            <param id="0" name="Audio file">v_00_oka</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">voiceVolume</param>
+                            <param id="1" name="Tag (optional)">&quot;v_00_oka&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="7466807903677897">
+            <conditions>
+                <condition id="0" name="On ended" sid="9024661090083278" type="Audio">
+                    <param id="0" name="Tag">&quot;v_00_oka&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="6036452862858154" type="System">
+                    <param id="0" name="Seconds">7.0</param>
+                </action>
+                <action id="0" name="Play" sid="3996962973367867" type="Audio">
+                    <param id="0" name="Audio file">v_01_crs</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">voiceVolume</param>
+                    <param id="1" name="Tag (optional)">&quot;v_01_crs&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5072536938503819">
+            <conditions>
+                <condition id="0" name="On ended" sid="5747205902569414" type="Audio">
+                    <param id="0" name="Tag">&quot;v_01_crs&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="2222754027615613" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="0" name="Play" sid="6454285615916812" type="Audio">
+                    <param id="0" name="Audio file">v_02_crs</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">voiceVolume</param>
+                    <param id="1" name="Tag (optional)">&quot;v_02_crs&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5862878504968931">
+            <conditions>
+                <condition id="0" name="On ended" sid="9882215683594696" type="Audio">
+                    <param id="0" name="Tag">&quot;v_02_crs&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="4747191943855484" type="Audio">
+                    <param id="0" name="Audio file">v_03_crs</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">voiceVolume</param>
+                    <param id="1" name="Tag (optional)">&quot;v_03_crs&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8202408982204895">
+            <conditions>
+                <condition id="0" name="On ended" sid="7998500460191213" type="Audio">
+                    <param id="0" name="Tag">&quot;v_03_crs&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="4498023915075019" type="Audio">
+                    <param id="0" name="Audio file">v_04_crs</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">voiceVolume</param>
+                    <param id="1" name="Tag (optional)">&quot;v_04_crs&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7193295786097419">
+            <conditions>
+                <condition id="0" name="On ended" sid="4728884567752739" type="Audio">
+                    <param id="0" name="Tag">&quot;v_04_crs&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="6008702368418243" type="Audio">
+                    <param id="0" name="Audio file">v_05_crs</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">voiceVolume</param>
+                    <param id="1" name="Tag (optional)">&quot;v_05_crs&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5182957126902887">
+            <conditions>
+                <condition id="0" name="On ended" sid="5426147937550078" type="Audio">
+                    <param id="0" name="Tag">&quot;v_05_crs&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="3962259588954321" type="Audio">
+                    <param id="0" name="Audio file">v_06_crs</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">voiceVolume</param>
+                    <param id="1" name="Tag (optional)">&quot;v_06_crs&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6911773371609683">
+            <conditions>
+                <condition id="0" name="On ended" sid="3915324781910185" type="Audio">
+                    <param id="0" name="Tag">&quot;v_06_crs&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="3668081968621444" type="Audio">
+                    <param id="0" name="Audio file">v_07_crs</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">voiceVolume</param>
+                    <param id="1" name="Tag (optional)">&quot;v_07_crs&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1039964243447803">
+            <conditions>
+                <condition id="0" name="On ended" sid="1901425758015571" type="Audio">
+                    <param id="0" name="Tag">&quot;v_07_crs&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="3865704599640786" type="System">
+                    <param id="0" name="Seconds">2.0</param>
+                </action>
+                <action id="0" name="Play" sid="8352160091644157" type="Audio">
+                    <param id="0" name="Audio file">v_08_oka</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">voiceVolume</param>
+                    <param id="1" name="Tag (optional)">&quot;v_08_oka&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6688628941006587">
+            <conditions>
+                <condition id="0" name="On ended" sid="1037943176979539" type="Audio">
+                    <param id="0" name="Tag">&quot;v_08_oka&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="4912364532257928" type="Audio">
+                    <param id="0" name="Audio file">v_09_oka</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">voiceVolume</param>
+                    <param id="1" name="Tag (optional)">&quot;v_09_oka&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4896103500298283">
+            <conditions>
+                <condition id="0" name="On ended" sid="4023167357874909" type="Audio">
+                    <param id="0" name="Tag">&quot;v_09_oka&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="673852450758335" type="Audio">
+                    <param id="0" name="Audio file">v_10_oka</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">voiceVolume</param>
+                    <param id="1" name="Tag (optional)">&quot;v_10_oka&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6582833877857712">
+            <conditions>
+                <condition id="0" name="On ended" sid="1264508090949183" type="Audio">
+                    <param id="0" name="Tag">&quot;v_10_oka&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="7284807119945126" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="0" name="Play" sid="8745178576245777" type="Audio">
+                    <param id="0" name="Audio file">v_11_oka</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">voiceVolume</param>
+                    <param id="1" name="Tag (optional)">&quot;v_11_oka&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7446412137831512">
+            <conditions>
+                <condition id="0" name="On ended" sid="7616561369592036" type="Audio">
+                    <param id="0" name="Tag">&quot;v_11_oka&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="841472581530083" type="Audio">
+                    <param id="0" name="Audio file">v_12_crs</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">voiceVolume</param>
+                    <param id="1" name="Tag (optional)">&quot;v_12_crs&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7582133677091222">
+            <conditions>
+                <condition id="0" name="On ended" sid="5818499107585544" type="Audio">
+                    <param id="0" name="Tag">&quot;v_12_crs&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="8839752003180716" type="Audio">
+                    <param id="0" name="Audio file">v_13_oka</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">voiceVolume</param>
+                    <param id="1" name="Tag (optional)">&quot;v_13_oka&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3505663245663426">
+            <conditions>
+                <condition id="0" name="On ended" sid="4506067622487858" type="Audio">
+                    <param id="0" name="Tag">&quot;v_13_oka&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="1672981288516944" type="Audio">
+                    <param id="0" name="Audio file">v_14_crs</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">voiceVolume</param>
+                    <param id="1" name="Tag (optional)">&quot;v_14_crs&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7973844459791053">
+            <conditions>
+                <condition id="0" name="On ended" sid="9339166602495113" type="Audio">
+                    <param id="0" name="Tag">&quot;v_14_crs&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="9650280033036511" type="System">
+                    <param id="0" name="Seconds">6.0</param>
+                </action>
+                <action id="0" name="Play" sid="5434277269135506" type="Audio">
+                    <param id="0" name="Audio file">v_15_crs</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">voiceVolume</param>
+                    <param id="1" name="Tag (optional)">&quot;v_15_crs&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7968470200525956">
+            <conditions>
+                <condition id="0" name="On ended" sid="367802576625421" type="Audio">
+                    <param id="0" name="Tag">&quot;v_15_crs&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="5290789667768892" type="Audio">
+                    <param id="0" name="Audio file">v_16_crs</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">voiceVolume</param>
+                    <param id="1" name="Tag (optional)">&quot;v_16_crs&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7974319064136601">
+            <conditions>
+                <condition id="0" name="On ended" sid="8200059426114981" type="Audio">
+                    <param id="0" name="Tag">&quot;v_16_crs&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="5781218996350176" type="System">
+                    <param id="0" name="Seconds">5.0</param>
+                </action>
+                <action id="0" name="Play" sid="7188227053926716" type="Audio">
+                    <param id="0" name="Audio file">v_17_oka</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">voiceVolume</param>
+                    <param id="1" name="Tag (optional)">&quot;v_17_oka&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1099026295536676">
+            <conditions>
+                <condition id="0" name="On ended" sid="2509937385030497" type="Audio">
+                    <param id="0" name="Tag">&quot;v_17_oka&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="695602430081895" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="0" name="Play" sid="7312263783960039" type="Audio">
+                    <param id="0" name="Audio file">v_18_oka</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">voiceVolume</param>
+                    <param id="1" name="Tag (optional)">&quot;v_18_oka&quot;</param>
                 </action>
             </actions>
         </event-block>
