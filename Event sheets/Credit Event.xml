@@ -166,10 +166,7 @@
             <actions>
                 <action id="-9" name="Set value" sid="9177458600600181" type="System">
                     <param id="0" name="Variable">creditBgmVariation</param>
-                    <param id="1" name="Value">floor(random(0, 2))</param>
-                </action>
-                <action id="5" name="Set frame" sid="3425618429522155" type="BackgroundImage">
-                    <param id="0" name="Frame number">7</param>
+                    <param id="1" name="Value">floor(random(0, 3))</param>
                 </action>
                 <action id="-9" name="Set value" sid="6516166860460102" type="System">
                     <param id="0" name="Variable">moveSpeed</param>
@@ -225,6 +222,88 @@
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">voiceVolume</param>
                             <param id="1" name="Tag (optional)">&quot;v_00_oka&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5531683419243858">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="6531076654034271" type="System">
+                            <param id="0" name="Variable">creditBgmVariation</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="33" name="Stop all" sid="9938682477004646" type="Audio" />
+                        <action id="0" name="Play" sid="6745296078292274" type="Audio">
+                            <param id="0" name="Audio file">ed</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;sad_2&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4847222186740406" type="System">
+                            <param id="0" name="Variable">moveSpeed</param>
+                            <param id="1" name="Value">0.30</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7140312989377326">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="1251334969546898" type="System">
+                            <param id="0" name="First value">Date.Hours</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">7</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="5519839966181301" type="System">
+                            <param id="0" name="First value">Date.Hours</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">17</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="8499172443828133" type="BackgroundImage">
+                            <param id="0" name="Frame number">6</param>
+                        </action>
+                        <action id="4" name="Set font color" sid="4501854667380116" type="TextGeneral">
+                            <param id="0" name="Color">rgb(0, 0, 0)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5625364598065255">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="2824774131387686" type="System">
+                            <param id="0" name="First value">Date.Hours</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">17</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="3711530971414266" type="System">
+                            <param id="0" name="First value">Date.Hours</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">20</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="7198886228816857" type="BackgroundImage">
+                            <param id="0" name="Frame number">7</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="8795236619272507">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="1301949520702404" type="System">
+                            <param id="0" name="First value">Date.Hours</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">20</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="1797392047870366" type="System">
+                            <param id="0" name="First value">Date.Hours</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">7</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="2622852580827542" type="BackgroundImage">
+                            <param id="0" name="Frame number">8</param>
                         </action>
                     </actions>
                 </event-block>

@@ -3,6 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Main Menu Event</name>
     <events>
+        <include>Function Event</include>
+        <variable constant="0" name="CurrentHours" sid="9921108835298244" static="0" type="number">0</variable>
         <variable constant="0" name="IsInputEnabled" sid="9843499265063479" static="0" type="number">1</variable>
         <variable constant="0" name="IsSteinsGate" sid="9873081936799442" static="0" type="number">0</variable>
         <variable constant="0" name="SteinsGateCounter" sid="6542975167658362" static="0" type="number">0</variable>
@@ -71,6 +73,20 @@
                 </action>
                 <action id="0" name="Set text" sid="7299573314396042" type="BoxVersion">
                     <param id="0" name="Text">&quot;Version: &quot; &amp; projectversion</param>
+                </action>
+                <action id="-9" name="Set value" sid="2903949485688085" type="System">
+                    <param id="0" name="Variable">CurrentHours</param>
+                    <param id="1" name="Value">Date.Hours</param>
+                </action>
+                <action id="-15" name="Set visible" sid="4873041998381903" type="PhoneObjects">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="4511534061809911" type="PhoneTexts">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="285997931488363" type="Phone">
+                    <param id="0" name="Animation">&quot;Reverse&quot;</param>
+                    <param id="1" name="From">1</param>
                 </action>
             </actions>
             <sub-events>
@@ -462,7 +478,7 @@
                 </action>
             </actions>
         </event-block>
-        <event-block collapsed="1" sid="5843365634122561">
+        <event-block sid="5843365634122561">
             <conditions>
                 <condition id="4" inverted="1" name="Is any playing" sid="2585240602242736" type="Audio" />
             </conditions>
@@ -485,6 +501,14 @@
                         <action id="-9" name="Set value" sid="1903444233297079" type="System">
                             <param id="0" name="Variable">IsInputEnabled</param>
                             <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2207927499079225" type="System">
+                            <param id="0" name="Variable">isPhoneInputEnabled</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="8372546756791608" type="WebStorage">
+                            <param id="0" name="Key">&quot;audio&quot;</param>
+                            <param id="1" name="Value">&quot;on&quot;</param>
                         </action>
                         <action id="33" name="Stop all" sid="2261595662888917" type="Audio" />
                         <action id="0" name="Play" sid="2981417860746792" type="Audio">
@@ -617,16 +641,20 @@
                 <action id="-2" name="Set Y" sid="8406549413897207" type="MathSilang">
                     <param id="0" name="Y">Self.Height / 2</param>
                 </action>
-                <action id="-15" name="Set visible" sid="7385059742990991" type="PhoneButton">
-                    <param id="0" name="Visibility">1</param>
-                </action>
-                <action id="-29" name="Move to object" sid="3170954480791176" type="PhoneButton">
-                    <param id="0" name="Where">1</param>
-                    <param id="1" name="Object">Phone</param>
-                </action>
                 <action id="-9" name="Destroy" sid="4060217834541193" type="Texts" />
                 <action id="-9" name="Destroy" sid="2486809284060701" type="Herks" />
                 <action id="-9" name="Destroy" sid="9931500370022653" type="KingHerks" />
+                <action id="-24" name="Move to top" sid="9357181514488244" type="Phone" />
+                <action id="0" name="Set local value" sid="2408820147072324" type="WebStorage">
+                    <param id="0" name="Key">&quot;audio&quot;</param>
+                    <param id="1" name="Value">&quot;on&quot;</param>
+                </action>
+                <action id="8" name="Set silent" sid="6657218270974419" type="Audio">
+                    <param id="0" name="Mode">1</param>
+                </action>
+                <action id="5" name="Set frame" sid="9648363881689857" type="ButtonAudio">
+                    <param id="0" name="Frame number">2</param>
+                </action>
             </actions>
             <sub-events>
                 <event-block sid="6691862322602534">
@@ -637,11 +665,47 @@
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="5" name="Set frame" sid="976171210166108" type="BackgroundImage">
-                            <param id="0" name="Frame number">4</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="3308494228058877">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="5626018758015627" type="System">
+                                    <param id="0" name="First value">Date.Hours</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">7</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="3220445472842916" type="System">
+                                    <param id="0" name="First value">Date.Hours</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">20</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="976171210166108" type="BackgroundImage">
+                                    <param id="0" name="Frame number">9</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="7518561989019727">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="6234726649551792" type="System">
+                                    <param id="0" name="First value">Date.Hours</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">20</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="5003109231730793" type="System">
+                                    <param id="0" name="First value">Date.Hours</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">7</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="6881514610052792" type="BackgroundImage">
+                                    <param id="0" name="Frame number">10</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="2432546171825908">
                     <conditions>
@@ -651,11 +715,47 @@
                             <param id="2" name="Value">1</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="5" name="Set frame" sid="7700265113994357" type="BackgroundImage">
-                            <param id="0" name="Frame number">5</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="6175294383844234">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="9071946093348796" type="System">
+                                    <param id="0" name="First value">Date.Hours</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">7</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="7564561525250467" type="System">
+                                    <param id="0" name="First value">Date.Hours</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">20</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="750179715505785" type="BackgroundImage">
+                                    <param id="0" name="Frame number">11</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="4345766871660688">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="1446026196398072" type="System">
+                                    <param id="0" name="First value">Date.Hours</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">20</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="3439683760884022" type="System">
+                                    <param id="0" name="First value">Date.Hours</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">7</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="4252423532748838" type="BackgroundImage">
+                                    <param id="0" name="Frame number">12</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="1224720082304311">
                     <conditions>
@@ -1086,7 +1186,10 @@
                     <param id="0" name="Layer">2</param>
                 </action>
                 <action id="-24" name="Move to top" sid="2358859662658754" type="Phone" />
-                <action id="-26" name="Move to layer" sid="1568713553652053" type="PhoneButton">
+                <action id="-26" name="Move to layer" sid="4979940983534083" type="PhoneObjects">
+                    <param id="0" name="Layer">2</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="6427993790465957" type="PhoneTexts">
                     <param id="0" name="Layer">2</param>
                 </action>
             </actions>
@@ -1244,7 +1347,7 @@
             </conditions>
             <actions />
             <sub-events>
-                <event-block sid="2330797223212544">
+                <event-block collapsed="1" sid="2330797223212544">
                     <conditions>
                         <condition id="7" name="Compare key value (as number)" sid="6974775461501359" type="WebStorage">
                             <param id="0" name="Key">&quot;steinsgate&quot;</param>
@@ -1497,56 +1600,1021 @@
                     <param id="0" name="Layer">1</param>
                 </action>
                 <action id="-24" name="Move to top" sid="100104111656946" type="Phone" />
-                <action id="-26" name="Move to layer" sid="6217710702214628" type="PhoneButton">
+                <action id="-26" name="Move to layer" sid="5574331372967316" type="PhoneObjects">
+                    <param id="0" name="Layer">1</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="9130570294799194" type="PhoneTexts">
                     <param id="0" name="Layer">1</param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="8046277084716672">
+        <variable constant="0" name="callingWaitTime" sid="6790845219059627" static="0" type="number">5</variable>
+        <variable constant="0" name="isPhoneInputEnabled" sid="9169226407535633" static="0" type="number">0</variable>
+        <variable constant="0" name="isPhone" sid="3269831393609204" static="0" type="number">0</variable>
+        <event-block sid="3781667914121872">
             <conditions>
-                <condition id="3" name="On touched object" sid="3077161042917872" type="Touch">
-                    <param id="0" name="Object">PhoneButton</param>
+                <condition id="-14" name="Compare variable" sid="5985201948339088" type="System">
+                    <param id="0" name="Variable">isBooted</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="7877846213606197" type="Function">
+                    <param id="0" name="Name">&quot;PhoneSystem&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="2183795594129533">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="814902332394072" type="System">
+                            <param id="0" name="Variable">isPhoneInputEnabled</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="4333912087917029">
+                            <conditions>
+                                <condition id="0" name="On click" sid="8133631342217976" type="Mouse">
+                                    <param id="0" name="Mouse button">2</param>
+                                    <param id="1" name="Click type">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="1022878951595349">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="4173228997654646" type="System">
+                                            <param id="0" name="Variable">phoneDirectory</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;off&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="2848304992155525" type="System">
+                                            <param id="0" name="Variable">isPhone</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="1456274481255567">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="6775996951688728" type="System">
+                                            <param id="0" name="Variable">phoneDirectory</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;standBy&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="804557938754569" type="PhoneObjects">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="3970358095786184" type="PhoneTexts">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="150780936894773" type="System">
+                                            <param id="0" name="Variable">phoneDirectory</param>
+                                            <param id="1" name="Value">&quot;off&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="8293305106504866">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="2681570758381539" type="System">
+                                            <param id="0" name="Variable">phoneDirectory</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;mainMenu&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="7249236472252265" type="PhoneObjects">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="5562705041621555" type="PhoneTexts">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="10606270983735" type="System">
+                                            <param id="0" name="Variable">phoneDirectory</param>
+                                            <param id="1" name="Value">&quot;standBy&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="1670594225068032">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="7976599316286363" type="System">
+                                            <param id="0" name="Variable">phoneDirectory</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;mailMenu&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="9670160163279663" type="PhoneObjects">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="2645271473404728" type="PhoneTexts">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="755852247450462" type="System">
+                                            <param id="0" name="Variable">phoneDirectory</param>
+                                            <param id="1" name="Value">&quot;mainMenu&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="7983323919937901">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="8459483310828719" type="System">
+                                            <param id="0" name="Variable">phoneDirectory</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;inboxScreen&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="2368162417035536" type="PhoneObjects">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="1587539072696706" type="PhoneTexts">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="8121403793313086" type="System">
+                                            <param id="0" name="Variable">phoneDirectory</param>
+                                            <param id="1" name="Value">&quot;mailMenu&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="3986896174070669">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="2974857215811743" type="System">
+                                            <param id="0" name="Variable">phoneDirectory</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;outboxScreen&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="355549588131398" type="PhoneObjects">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="622991249670422" type="PhoneTexts">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="8252415087271623" type="System">
+                                            <param id="0" name="Variable">phoneDirectory</param>
+                                            <param id="1" name="Value">&quot;mailMenu&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="4426181430340396">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="6539243180866753" type="System">
+                                            <param id="0" name="Variable">phoneDirectory</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;addressScreen&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="3604832523204957" type="PhoneObjects">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="4194119117010157" type="PhoneTexts">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="702602435452871" type="System">
+                                            <param id="0" name="Variable">phoneDirectory</param>
+                                            <param id="1" name="Value">&quot;mainMenu&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="9562254460584011">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="1224050890235636" type="System">
+                                            <param id="0" name="Variable">phoneDirectory</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;callMenu&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="7626330968827011" type="PhoneObjects">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="8700390701581873" type="PhoneTexts">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="7453289937624689" type="System">
+                                            <param id="0" name="Variable">phoneDirectory</param>
+                                            <param id="1" name="Value">&quot;addressScreen&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="82507381500824">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="3565592854787555" type="System">
+                                            <param id="0" name="Variable">phoneDirectory</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;callingScreen&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="5811901123959955" type="PhoneObjects">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="1026944504272852" type="PhoneTexts">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="6045399100546621" type="System">
+                                            <param id="0" name="Variable">phoneDirectory</param>
+                                            <param id="1" name="Value">&quot;callMenu&quot;</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="5332353036269586" type="System">
+                                            <param id="0" name="Variable">callingWaitTime</param>
+                                            <param id="1" name="Value">5</param>
+                                        </action>
+                                        <action id="6" name="Stop" sid="546362775966281" type="Audio">
+                                            <param id="0" name="Tag">&quot;calling&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="992431209598197">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="2257460944949071" type="System">
+                                            <param id="0" name="Variable">phoneDirectory</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;calledScreen&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="5552834326539182">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="7710319131641397" type="System">
+                                                    <param id="0" name="First value">len(TextTyping.Text)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-15" name="Set visible" sid="5805062617526281" type="PhoneObjects">
+                                                    <param id="0" name="Visibility">0</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="2022086883007363" type="PhoneTexts">
+                                                    <param id="0" name="Visibility">0</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="7410605536177258" type="System">
+                                                    <param id="0" name="Variable">phoneDirectory</param>
+                                                    <param id="1" name="Value">&quot;addressScreen&quot;</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="9171587712928838" type="System">
+                                                    <param id="0" name="Variable">callingWaitTime</param>
+                                                    <param id="1" name="Value">5</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="6673215182808187">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="5000878467821316" type="System">
+                                                    <param id="0" name="First value">len(TextTyping.Text)</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Second value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="1925330990496978" type="Audio">
+                                                    <param id="0" name="Audio file">phoneButton</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">50</param>
+                                                    <param id="1" name="Tag (optional)">&quot;selectChoice&quot;</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="5976399322299487" type="TextTyping">
+                                                    <param id="0" name="Text">left(Self.Text, len(Self.Text) - 1)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block collapsed="1" sid="9953013850535103">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="8899031945676676" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">Phone</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="1768558578762083">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="7528444808281766" type="System">
+                                            <param id="0" name="Variable">phoneDirectory</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;standBy&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="2452593293731709" type="System">
+                                            <param id="0" name="Variable">phoneDirectory</param>
+                                            <param id="1" name="Value">&quot;mainMenu&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="5824669699102005">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="5213971609477814" type="System">
+                                            <param id="0" name="Variable">phoneDirectory</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;off&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="998880563877128" type="System">
+                                            <param id="0" name="Variable">phoneDirectory</param>
+                                            <param id="1" name="Value">&quot;standBy&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="4700459022938336">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="971885386609881" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">ButtonMail</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="4438242316420281" type="ButtonMail" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="6413829243941847" type="Audio">
+                                    <param id="0" name="Audio file">phoneButton</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">50</param>
+                                    <param id="1" name="Tag (optional)">&quot;selectChoice&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="9114844652016254" type="System">
+                                    <param id="0" name="Variable">phoneDirectory</param>
+                                    <param id="1" name="Value">&quot;mailMenu&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8103716051541294">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="9677000085613784" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">ButtonAddress</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="1885507931192922" type="ButtonAddress" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="5769248625308553" type="Audio">
+                                    <param id="0" name="Audio file">phoneButton</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">50</param>
+                                    <param id="1" name="Tag (optional)">&quot;selectChoice&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="375488222827446" type="System">
+                                    <param id="0" name="Variable">phoneDirectory</param>
+                                    <param id="1" name="Value">&quot;addressScreen&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6305585823247501">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="851786971171093" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">ButtonInternet</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="2092714519779729" type="ButtonInternet" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="6408660345348602" type="Audio">
+                                    <param id="0" name="Audio file">phoneButton</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">50</param>
+                                    <param id="1" name="Tag (optional)">&quot;selectChoice&quot;</param>
+                                </action>
+                                <action id="8" name="Open URL in new window" sid="7043121791680497" type="Browser">
+                                    <param id="0" name="URL">&quot;http://elpsycongroo.herksaw.com/&quot;</param>
+                                    <param id="1" name="Tag">&quot;elpsycongroo&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9507748329445511">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="7234407021162429" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">ButtonSettings</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="1523088215372778" type="ButtonSettings" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="7410924217001344" type="Audio">
+                                    <param id="0" name="Audio file">phoneButton</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">50</param>
+                                    <param id="1" name="Tag (optional)">&quot;selectChoice&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8935838530554808">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="4879388503220355" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">TextInbox</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="1804222490638424" type="TextInbox" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="3702280368795796" type="Audio">
+                                    <param id="0" name="Audio file">phoneButton</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">50</param>
+                                    <param id="1" name="Tag (optional)">&quot;selectChoice&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="7752600336342958" type="System">
+                                    <param id="0" name="Variable">phoneDirectory</param>
+                                    <param id="1" name="Value">&quot;inboxScreen&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3378041504301606">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="3122395765536497" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">TextOutbox</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="9538582831488994" type="TextOutbox" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="3176972549630425" type="Audio">
+                                    <param id="0" name="Audio file">phoneButton</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">50</param>
+                                    <param id="1" name="Tag (optional)">&quot;selectChoice&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="2422666132073287" type="System">
+                                    <param id="0" name="Variable">phoneDirectory</param>
+                                    <param id="1" name="Value">&quot;outboxScreen&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9251041625063849">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="6334074018427122" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">TextPhoneMicrowave</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="6807892683938542" type="TextPhoneMicrowave" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="9633368899283689" type="Audio">
+                                    <param id="0" name="Audio file">phoneButton</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">50</param>
+                                    <param id="1" name="Tag (optional)">&quot;selectChoice&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="1612049279984919" type="System">
+                                    <param id="0" name="Variable">phoneDirectory</param>
+                                    <param id="1" name="Value">&quot;callMenu&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5993874124219854">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="6727865590450999" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">TextCall</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="1551907568318679" type="TextCall" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="8213925296952498" type="Audio">
+                                    <param id="0" name="Audio file">phoneButton</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">50</param>
+                                    <param id="1" name="Tag (optional)">&quot;selectChoice&quot;</param>
+                                </action>
+                                <action id="0" name="Play" sid="6348080168745115" type="Audio">
+                                    <param id="0" name="Audio file">calling</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">20</param>
+                                    <param id="1" name="Tag (optional)">&quot;calling&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="3856786599126977" type="System">
+                                    <param id="0" name="Variable">phoneDirectory</param>
+                                    <param id="1" name="Value">&quot;callingScreen&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="392826319922079">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="5877490387966885" type="System">
+                                    <param id="0" name="Variable">phoneDirectory</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;calledScreen&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block collapsed="1" sid="8281226277394944">
+                                    <conditions>
+                                        <condition id="6" name="On object clicked" sid="125449620656857" type="Mouse">
+                                            <param id="0" name="Mouse button">0</param>
+                                            <param id="1" name="Click type">0</param>
+                                            <param id="2" name="Object clicked">ButtonCall</param>
+                                        </condition>
+                                        <condition id="-9" name="Is visible" sid="6287995333174305" type="ButtonCall" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="1433761348637852" type="Audio">
+                                            <param id="0" name="Audio file">selectChoice</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;phoneButton&quot;</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block any="1" sid="1170070458050444">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="7059170984719334" type="System">
+                                                    <param id="0" name="First value">TextTyping.Text</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;120#&quot;</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="3254915171501744" type="System">
+                                                    <param id="0" name="First value">TextTyping.Text</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;2010&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="33" name="Stop all" sid="5955475910742695" type="Audio" />
+                                                <action id="0" name="Set local value" sid="25504675583679" type="WebStorage">
+                                                    <param id="0" name="Key">&quot;steinsgate&quot;</param>
+                                                    <param id="1" name="Value">&quot;1&quot;</param>
+                                                </action>
+                                                <action id="0" name="Set local value" sid="6374561779338526" type="WebStorage">
+                                                    <param id="0" name="Key">&quot;backFromTravel&quot;</param>
+                                                    <param id="1" name="Value">&quot;0&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="1828404989590959">
+                                    <conditions>
+                                        <condition id="6" name="On object clicked" sid="4578308564909267" type="Mouse">
+                                            <param id="0" name="Mouse button">0</param>
+                                            <param id="1" name="Click type">0</param>
+                                            <param id="2" name="Object clicked">ButtonMiddle</param>
+                                        </condition>
+                                        <condition id="-9" name="Is visible" sid="9191328855825867" type="ButtonMiddle" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="1087343872340871" type="Audio">
+                                            <param id="0" name="Audio file">selectChoice</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;phoneButton&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="1233577918587892">
+                                    <conditions>
+                                        <condition id="6" name="On object clicked" sid="4881111886871519" type="Mouse">
+                                            <param id="0" name="Mouse button">0</param>
+                                            <param id="1" name="Click type">0</param>
+                                            <param id="2" name="Object clicked">ButtonMessage</param>
+                                        </condition>
+                                        <condition id="-9" name="Is visible" sid="6309971519116615" type="ButtonMessage" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="7563951582930833" type="Audio">
+                                            <param id="0" name="Audio file">selectChoice</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;phoneButton&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="3819759671427074">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="7010446927418567" type="System">
+                                            <param id="0" name="First value">len(TextTyping.Text)</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">9</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="1878255554903536">
+                                            <conditions>
+                                                <condition id="6" name="On object clicked" sid="1250508796587606" type="Mouse">
+                                                    <param id="0" name="Mouse button">0</param>
+                                                    <param id="1" name="Click type">0</param>
+                                                    <param id="2" name="Object clicked">Button0</param>
+                                                </condition>
+                                                <condition id="-9" name="Is visible" sid="3020654636668416" type="Button0" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="9181828003666518" type="Audio">
+                                                    <param id="0" name="Audio file">selectChoice</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;phoneButton&quot;</param>
+                                                </action>
+                                                <action id="1" name="Append text" sid="3365822488675407" type="TextTyping">
+                                                    <param id="0" name="Text">&quot;0&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="53919871884533">
+                                            <conditions>
+                                                <condition id="6" name="On object clicked" sid="6025514101066216" type="Mouse">
+                                                    <param id="0" name="Mouse button">0</param>
+                                                    <param id="1" name="Click type">0</param>
+                                                    <param id="2" name="Object clicked">Button1</param>
+                                                </condition>
+                                                <condition id="-9" name="Is visible" sid="7012891361057612" type="Button1" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="7399353814511203" type="Audio">
+                                                    <param id="0" name="Audio file">selectChoice</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;phoneButton&quot;</param>
+                                                </action>
+                                                <action id="1" name="Append text" sid="1544474203471019" type="TextTyping">
+                                                    <param id="0" name="Text">&quot;1&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="3922739021110365">
+                                            <conditions>
+                                                <condition id="6" name="On object clicked" sid="4392149961461327" type="Mouse">
+                                                    <param id="0" name="Mouse button">0</param>
+                                                    <param id="1" name="Click type">0</param>
+                                                    <param id="2" name="Object clicked">Button2</param>
+                                                </condition>
+                                                <condition id="-9" name="Is visible" sid="8866753921464374" type="Button2" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="2953886695470856" type="Audio">
+                                                    <param id="0" name="Audio file">selectChoice</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;phoneButton&quot;</param>
+                                                </action>
+                                                <action id="1" name="Append text" sid="6216815240705354" type="TextTyping">
+                                                    <param id="0" name="Text">&quot;2&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="9961818372269357">
+                                            <conditions>
+                                                <condition id="6" name="On object clicked" sid="715474270672897" type="Mouse">
+                                                    <param id="0" name="Mouse button">0</param>
+                                                    <param id="1" name="Click type">0</param>
+                                                    <param id="2" name="Object clicked">Button3</param>
+                                                </condition>
+                                                <condition id="-9" name="Is visible" sid="4397995291801673" type="Button3" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="7796994061372607" type="Audio">
+                                                    <param id="0" name="Audio file">selectChoice</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;phoneButton&quot;</param>
+                                                </action>
+                                                <action id="1" name="Append text" sid="8593156062924921" type="TextTyping">
+                                                    <param id="0" name="Text">&quot;3&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="6923093294824792">
+                                            <conditions>
+                                                <condition id="6" name="On object clicked" sid="3606439694268315" type="Mouse">
+                                                    <param id="0" name="Mouse button">0</param>
+                                                    <param id="1" name="Click type">0</param>
+                                                    <param id="2" name="Object clicked">Button4</param>
+                                                </condition>
+                                                <condition id="-9" name="Is visible" sid="5488758976364316" type="Button4" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="9154625595591387" type="Audio">
+                                                    <param id="0" name="Audio file">selectChoice</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;phoneButton&quot;</param>
+                                                </action>
+                                                <action id="1" name="Append text" sid="6732344640686454" type="TextTyping">
+                                                    <param id="0" name="Text">&quot;4&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="936730467619794">
+                                            <conditions>
+                                                <condition id="6" name="On object clicked" sid="4509705719467286" type="Mouse">
+                                                    <param id="0" name="Mouse button">0</param>
+                                                    <param id="1" name="Click type">0</param>
+                                                    <param id="2" name="Object clicked">Button5</param>
+                                                </condition>
+                                                <condition id="-9" name="Is visible" sid="739959813816072" type="Button5" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="4736797938356966" type="Audio">
+                                                    <param id="0" name="Audio file">selectChoice</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;phoneButton&quot;</param>
+                                                </action>
+                                                <action id="1" name="Append text" sid="8958807046466542" type="TextTyping">
+                                                    <param id="0" name="Text">&quot;5&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="429023386225427">
+                                            <conditions>
+                                                <condition id="6" name="On object clicked" sid="882432440492685" type="Mouse">
+                                                    <param id="0" name="Mouse button">0</param>
+                                                    <param id="1" name="Click type">0</param>
+                                                    <param id="2" name="Object clicked">Button6</param>
+                                                </condition>
+                                                <condition id="-9" name="Is visible" sid="6346313765762885" type="Button6" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="3462967296995889" type="Audio">
+                                                    <param id="0" name="Audio file">selectChoice</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;phoneButton&quot;</param>
+                                                </action>
+                                                <action id="1" name="Append text" sid="3836450858158989" type="TextTyping">
+                                                    <param id="0" name="Text">&quot;6&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="9180183335265733">
+                                            <conditions>
+                                                <condition id="6" name="On object clicked" sid="8161977638509222" type="Mouse">
+                                                    <param id="0" name="Mouse button">0</param>
+                                                    <param id="1" name="Click type">0</param>
+                                                    <param id="2" name="Object clicked">Button7</param>
+                                                </condition>
+                                                <condition id="-9" name="Is visible" sid="418915252007792" type="Button7" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="754903850207609" type="Audio">
+                                                    <param id="0" name="Audio file">selectChoice</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;phoneButton&quot;</param>
+                                                </action>
+                                                <action id="1" name="Append text" sid="7446041139436203" type="TextTyping">
+                                                    <param id="0" name="Text">&quot;7&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="8402365848670706">
+                                            <conditions>
+                                                <condition id="6" name="On object clicked" sid="1872341472559406" type="Mouse">
+                                                    <param id="0" name="Mouse button">0</param>
+                                                    <param id="1" name="Click type">0</param>
+                                                    <param id="2" name="Object clicked">Button8</param>
+                                                </condition>
+                                                <condition id="-9" name="Is visible" sid="5170137396239311" type="Button8" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="9205261205930514" type="Audio">
+                                                    <param id="0" name="Audio file">selectChoice</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;phoneButton&quot;</param>
+                                                </action>
+                                                <action id="1" name="Append text" sid="9892434623545893" type="TextTyping">
+                                                    <param id="0" name="Text">&quot;8&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="4398333631260228">
+                                            <conditions>
+                                                <condition id="6" name="On object clicked" sid="839692519932222" type="Mouse">
+                                                    <param id="0" name="Mouse button">0</param>
+                                                    <param id="1" name="Click type">0</param>
+                                                    <param id="2" name="Object clicked">Button9</param>
+                                                </condition>
+                                                <condition id="-9" name="Is visible" sid="7906186701825197" type="Button9" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="5682640748596021" type="Audio">
+                                                    <param id="0" name="Audio file">selectChoice</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;phoneButton&quot;</param>
+                                                </action>
+                                                <action id="1" name="Append text" sid="8313717574035425" type="TextTyping">
+                                                    <param id="0" name="Text">&quot;9&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="6570126625610208">
+                                            <conditions>
+                                                <condition id="6" name="On object clicked" sid="6592939609542549" type="Mouse">
+                                                    <param id="0" name="Mouse button">0</param>
+                                                    <param id="1" name="Click type">0</param>
+                                                    <param id="2" name="Object clicked">ButtonAsterisk</param>
+                                                </condition>
+                                                <condition id="-9" name="Is visible" sid="1893513194186561" type="ButtonAsterisk" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="3367611380652993" type="Audio">
+                                                    <param id="0" name="Audio file">selectChoice</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;phoneButton&quot;</param>
+                                                </action>
+                                                <action id="1" name="Append text" sid="7655416200948343" type="TextTyping">
+                                                    <param id="0" name="Text">&quot;*&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="104886740189079">
+                                            <conditions>
+                                                <condition id="6" name="On object clicked" sid="5739996635640408" type="Mouse">
+                                                    <param id="0" name="Mouse button">0</param>
+                                                    <param id="1" name="Click type">0</param>
+                                                    <param id="2" name="Object clicked">ButtonHash</param>
+                                                </condition>
+                                                <condition id="-9" name="Is visible" sid="3269994628573976" type="ButtonHash" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="6602755674628204" type="Audio">
+                                                    <param id="0" name="Audio file">selectChoice</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;phoneButton&quot;</param>
+                                                </action>
+                                                <action id="1" name="Append text" sid="7572775146207155" type="TextTyping">
+                                                    <param id="0" name="Text">&quot;#&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="7414754726659643">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="6289168989175408" type="System">
+                    <param id="0" name="Variable">isPhone</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Is visible" sid="3210660258408948" type="Phone" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="652656131777599" type="Phone">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="6614674224137225" type="Phone">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1125689178492456">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="9581655930218943" type="System">
+                    <param id="0" name="Variable">isPhone</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="6752346591562839" type="Phone" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="8575099172095727" type="Phone">
+                    <param id="0" name="Animation">&quot;Reverse&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1773288397199703">
+            <conditions>
+                <condition id="4" name="On finished" sid="7457823392304211" type="Phone">
+                    <param id="0" name="Animation">&quot;Reverse&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="1787883290022308" type="Phone">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="8610256998366299" type="System">
+                    <param id="0" name="Variable">IsInputEnabled</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="2492329089884877" type="System">
+                    <param id="0" name="Variable">isPhoneInputEnabled</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8192891854510327">
+            <conditions>
+                <condition id="4" name="On finished" sid="602133177166792" type="Phone">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="9868237046719922" type="System">
+                    <param id="0" name="Variable">isBooted</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="8071713761846251" type="System">
+                    <param id="0" name="Variable">phoneDirectory</param>
+                    <param id="1" name="Value">&quot;standBy&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="4517751572286742" type="System">
+                    <param id="0" name="Variable">IsInputEnabled</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="7823757980599095" type="System">
+                    <param id="0" name="Variable">isPhoneInputEnabled</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4537824776331508">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="7817977825943502" type="System">
+                    <param id="0" name="First value">Mouse.X</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Second value">LayoutWidth - 1</param>
                 </condition>
             </conditions>
             <actions />
             <sub-events>
-                <event-block sid="5002910252863444">
+                <event-block sid="4111437540962963">
                     <conditions>
-                        <condition id="-14" name="Compare variable" sid="361872340615979" type="System">
-                            <param id="0" name="Variable">isPhone</param>
+                        <condition id="7" name="Compare key value (as number)" sid="9473477750132553" type="WebStorage">
+                            <param id="0" name="Key">&quot;steinsgate&quot;</param>
                             <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">0</param>
+                            <param id="2" name="Value">1</param>
                         </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="2767727669289614" type="System">
-                            <param id="0" name="Variable">isPhone</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="2238044429754965">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="3763972925696298" type="System" />
-                        <condition id="-14" name="Compare variable" sid="6304078762721949" type="System">
-                            <param id="0" name="Variable">isPhone</param>
+                        <condition id="7" name="Compare key value (as number)" sid="7632149019992044" type="WebStorage">
+                            <param id="0" name="Key">&quot;backFromTravel&quot;</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">1</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Set value" sid="7530627274009282" type="System">
+                        <action id="-9" name="Set value" sid="2348172953924019" type="System">
                             <param id="0" name="Variable">isPhone</param>
-                            <param id="1" name="Value">0</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="6273966002079177">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="3854215042996777" type="System">
+                            <param id="0" name="Variable">CurrentHours</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">12</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="7849918763632768" type="System">
+                            <param id="0" name="Variable">CurrentHours</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">18</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="2721366921675249" type="System">
+                            <param id="0" name="Variable">isPhone</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-block>
-        <variable constant="0" name="isPhone" sid="3269831393609204" static="0" type="number">0</variable>
         <event-block sid="7057741013515387">
             <conditions>
                 <condition id="-20" inverted="1" name="Is on mobile device" sid="4581146721172335" type="System" />
+                <condition id="-14" name="Compare variable" sid="9889285193463249" type="System">
+                    <param id="0" name="Variable">IsInputEnabled</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
             </conditions>
             <actions />
             <sub-events>
@@ -1805,84 +2873,9 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="2438992608165087">
-                            <conditions>
-                                <condition id="-8" name="Compare two values" sid="1082023303323762" type="System">
-                                    <param id="0" name="First value">Mouse.X</param>
-                                    <param id="1" name="Comparison">5</param>
-                                    <param id="2" name="Second value">LayoutWidth - 1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="3293166584829737" type="System">
-                                    <param id="0" name="Variable">isPhone</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="8858758092334376">
-                            <conditions>
-                                <condition id="2" name="Mouse button is down" sid="8177374782092223" type="Mouse">
-                                    <param id="0" name="Mouse button">2</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="1229605247384135" type="System">
-                                    <param id="0" name="Variable">isPhone</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
                     </sub-events>
                 </event-block>
             </sub-events>
-        </event-block>
-        <event-block sid="9560819709495413">
-            <conditions>
-                <condition id="-14" name="Compare variable" sid="2881228999148412" type="System">
-                    <param id="0" name="Variable">isPhone</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">1</param>
-                </condition>
-                <condition id="-9" inverted="1" name="Is visible" sid="5406903767761469" type="Phone" />
-            </conditions>
-            <actions>
-                <action id="-15" name="Set visible" sid="395314458213116" type="Phone">
-                    <param id="0" name="Visibility">1</param>
-                </action>
-                <action id="4" name="Set animation" sid="9283612324405389" type="Phone">
-                    <param id="0" name="Animation">&quot;Default&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="335115707620649">
-            <conditions>
-                <condition id="-14" name="Compare variable" sid="1587822723498365" type="System">
-                    <param id="0" name="Variable">isPhone</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-                <condition id="-9" name="Is visible" sid="7403477643998017" type="Phone" />
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="4047647089063606" type="Phone">
-                    <param id="0" name="Animation">&quot;Reverse&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="1391537396912729">
-            <conditions>
-                <condition id="4" name="On finished" sid="1563677387505707" type="Phone">
-                    <param id="0" name="Animation">&quot;Reverse&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-15" name="Set visible" sid="5747571166489901" type="Phone">
-                    <param id="0" name="Visibility">0</param>
-                </action>
-            </actions>
         </event-block>
         <event-block sid="4249185394956027">
             <conditions>

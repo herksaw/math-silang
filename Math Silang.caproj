@@ -2,7 +2,7 @@
 <c2project>
     <name>Math Silang</name>
     <description>A project for LRK 2014.</description>
-    <version>1.2.7.4 Build 30</version>
+    <version>1.3.7.4 Build 30</version>
     <author>Domicon Entertainment</author>
     <author-email>herksaw@gmail.com</author-email>
     <author-website>http://www.herksaw.com/</author-website>
@@ -16,6 +16,7 @@
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_Date" version="1">Date</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
@@ -40,12 +41,12 @@
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
-        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Downscaling">High quality</prop>
         <prop name="Enable WebGL">On</prop>
         <prop name="Fullscreen in browser">Letterbox scale</prop>
         <prop name="Fullscreen scaling">High quality</prop>
         <prop name="Loader style">Progress bar &amp; logo</prop>
-        <prop name="Orientations">Any</prop>
+        <prop name="Orientations">Landscape</prop>
         <prop name="Pause on unfocus">No</prop>
         <prop name="Physics engine">Box2D web</prop>
         <prop name="Preview browser">(default)</prop>
@@ -53,6 +54,320 @@
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder expanded="1">
+        <object-folder expanded="1" name="PhoneParts">
+            <object-type name="MenuMail" sid="3830775837386755">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6605918120621466" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.502242" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="HeaderMain" sid="3743908978762184">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="3267028114144255" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.526316" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.526316" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="HeaderIcon" sid="1242306780485551">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="3112117083121756" speed="0">
+                        <frame duration="1" hotspotX="0.52381" hotspotY="0.545455" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.545455" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.545455" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.545455" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Wallpaper" sid="152534703106369">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="3183404389035108" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.502564" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ButtonMail" sid="7369373561916057">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="1195551829888668" speed="0">
+                        <frame duration="1" hotspotX="0.515152" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.515152" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Title" sid="7445406603522838">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="6944497548018048" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ButtonInternet" sid="7555477271536913">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="6772531937525925" speed="0">
+                        <frame duration="1" hotspotX="0.515152" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.515152" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ButtonAddress" sid="8642040504799728">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="3431022607508126" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ButtonSettings" sid="2966455435977565">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="9949354120095615" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="BoxMail" sid="4694092532566553">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="2225734979666102" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.505263" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="CallMailBackground" sid="9279647422962317">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="891513830534009" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="HeaderSub" sid="400285856786643">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="6119377834056272" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="BoxCall" sid="5604187721714478">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="9545819485349264" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.505747" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="TextInbox" sid="4182346475503427">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="TextPhoneMicrowave" sid="6288955287823391">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="RedArrow" sid="5661520167382651">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7647569699738687" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="NumberPhoneMicrowave" sid="8493378419738501">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="8247534415148563" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="NamePhoneMicrowave" sid="3584304043361443">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="1977685846924396" speed="0">
+                        <frame duration="1" hotspotX="0.508772" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="TextCalling" sid="7714201345734381">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Loading" sid="2665117396141782">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="10" loop="1" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="3569810666981747" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="VoiceOnly" sid="3884918872111305">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="3030723902471027" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="BaseButton" sid="7935768844031403">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="4196356065430593" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Button1" sid="6519426986004195">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="6326013612563157" speed="0">
+                        <frame duration="1" hotspotX="0.509091" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Button2" sid="5024319624696117">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5977331259019137" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Button3" sid="1264442656084558">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5471732866956283" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Button4" sid="3851883336128046">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9058440740097456" speed="5">
+                        <frame duration="1" hotspotX="0.509091" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Button5" sid="6347722617901298">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7548117718048592" speed="5">
+                        <frame duration="1" hotspotX="0.509804" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Button6" sid="2100528304326605">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6707590134971111" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Button7" sid="9984345329915704">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4437081682373522" speed="5">
+                        <frame duration="1" hotspotX="0.509091" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Button8" sid="463671577433393">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5941860211168983" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Button9" sid="7915292066929852">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6907322784695517" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ButtonAsterisk" sid="2249795354901818">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3988992622041066" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Button0" sid="7623193344278956">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8193665674501052" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ButtonHash" sid="4672328393321189">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4133876674111912" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ButtonCall" sid="9651618821176346">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3268050119971768" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ButtonMiddle" sid="7063527949043051">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1988320343080018" speed="5">
+                        <frame duration="1" hotspotX="0.509804" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ButtonMessage" sid="3868075909619898">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9626523456594028" speed="5">
+                        <frame duration="1" hotspotX="0.509434" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="TextTyping" sid="6480504768260657">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="TextOutbox" sid="6273973095013112">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="TextFunction" sid="4573616300520566">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="TextCall" sid="1731039659104012">
+                <plugin id="Text" />
+            </object-type>
+        </object-folder>
         <object-type name="Mouse" sid="9601757437341936">
             <plugin id="Mouse" />
         </object-type>
@@ -197,7 +512,12 @@
         <object-type name="BackgroundImage" sid="9941759485502506">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="8" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="3740115004986449" speed="0">
+                <animation framecount="13" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="3740115004986449" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -369,7 +689,7 @@
         <object-type name="BackgroundTimeTravel" sid="3246303139006093">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="16" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="2354631625809726" speed="7.5">
+                <animation framecount="16" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="2354631625809726" speed="8">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -401,8 +721,7 @@
         <object-type name="BackgroundWorldLine" sid="2394797405389309">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="6264784849074761" speed="0.4">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="6264784849074761" speed="0.6">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -425,7 +744,8 @@
         <object-type name="Phone" sid="988694506800763">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="10" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="4483691711830512" speed="20">
+                <animation framecount="11" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="4483691711830512" speed="20">
+                    <frame duration="1" hotspotX="0.502041" hotspotY="0.501104" />
                     <frame duration="1" hotspotX="0.502041" hotspotY="0.501104" />
                     <frame duration="1" hotspotX="0.502041" hotspotY="0.501104" />
                     <frame duration="1" hotspotX="0.502041" hotspotY="0.501104" />
@@ -451,10 +771,29 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="PhoneButton" sid="8822323507813564">
+        <object-type global="1" name="Date" sid="1641670367453211">
+            <plugin id="Rex_Date" />
+        </object-type>
+        <object-type name="BackgroundGame" sid="1807573701054748">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="3408397476291318" speed="0">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="2111575110589633" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BackgroundGamePatch" sid="8032071641959346">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="3" loop="1" name="Day" pingpong="0" repeatcount="0" repeatto="0" sid="5095514538532159" speed="0.3">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="3" loop="1" name="Night" pingpong="0" repeatcount="0" repeatto="0" sid="6090855112835049" speed="0.3">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
@@ -510,6 +849,74 @@
                     <behavior id="Fade" />
                 </behavior-type>
             </behaviors>
+        </family>
+        <family name="ButtonPhone" plugin-id="Sprite" sid="5148250041434711">
+            <members>
+                <member>Button0</member>
+                <member>Button1</member>
+                <member>Button2</member>
+                <member>Button3</member>
+                <member>Button4</member>
+                <member>Button5</member>
+                <member>Button6</member>
+                <member>Button7</member>
+                <member>Button8</member>
+                <member>Button9</member>
+                <member>ButtonAsterisk</member>
+                <member>ButtonCall</member>
+                <member>ButtonHash</member>
+                <member>ButtonMessage</member>
+                <member>ButtonMiddle</member>
+            </members>
+        </family>
+        <family name="PhoneObjects" plugin-id="Sprite" sid="9211413031609605">
+            <members>
+                <member>BaseButton</member>
+                <member>BoxCall</member>
+                <member>BoxMail</member>
+                <member>Button0</member>
+                <member>Button1</member>
+                <member>Button2</member>
+                <member>Button3</member>
+                <member>Button4</member>
+                <member>Button5</member>
+                <member>Button6</member>
+                <member>Button7</member>
+                <member>Button8</member>
+                <member>Button9</member>
+                <member>ButtonAddress</member>
+                <member>ButtonAsterisk</member>
+                <member>ButtonCall</member>
+                <member>ButtonHash</member>
+                <member>ButtonInternet</member>
+                <member>ButtonMail</member>
+                <member>ButtonMessage</member>
+                <member>ButtonMiddle</member>
+                <member>ButtonSettings</member>
+                <member>CallMailBackground</member>
+                <member>HeaderIcon</member>
+                <member>HeaderMain</member>
+                <member>HeaderSub</member>
+                <member>Loading</member>
+                <member>MenuMail</member>
+                <member>NamePhoneMicrowave</member>
+                <member>NumberPhoneMicrowave</member>
+                <member>RedArrow</member>
+                <member>Title</member>
+                <member>VoiceOnly</member>
+                <member>Wallpaper</member>
+            </members>
+        </family>
+        <family name="PhoneTexts" plugin-id="Text" sid="389990075470908">
+            <members>
+                <member>TextCall</member>
+                <member>TextCalling</member>
+                <member>TextFunction</member>
+                <member>TextInbox</member>
+                <member>TextOutbox</member>
+                <member>TextPhoneMicrowave</member>
+                <member>TextTyping</member>
+            </members>
         </family>
     </families>
     <layout-folder expanded="1">
@@ -616,6 +1023,14 @@
             <file name="v_18_oka.ogg" />
             <file name="v_18_oka.wav" />
         </file-folder>
+        <file-folder expanded="1" name="Phone">
+            <file name="calling.m4a" />
+            <file name="calling.ogg" />
+            <file name="selectChoice.m4a" />
+            <file name="selectChoice.ogg" />
+            <file name="phoneButton.m4a" />
+            <file name="phoneButton.ogg" />
+        </file-folder>
         <file name="swap.m4a" />
         <file name="swap.ogg" />
         <file name="won.m4a" />
@@ -634,7 +1049,7 @@
         <file name="clock.ogg" />
         <file name="clock.wav" />
     </sounds-folder>
-    <music-folder expanded="1">
+    <music-folder expanded="0">
         <file name="ingame.m4a" />
         <file name="ingame.ogg" />
         <file name="menu.m4a" />
@@ -651,6 +1066,8 @@
         <file name="sad_1.ogg" />
         <file name="sad_2.m4a" />
         <file name="sad_2.ogg" />
+        <file name="ed.m4a" />
+        <file name="ed.ogg" />
     </music-folder>
     <files-folder expanded="1">
         <file-folder expanded="0" name="Icons">
@@ -661,7 +1078,7 @@
             <file name="icon-256.png" />
             <file name="loading-logo.png" />
         </file-folder>
-        <file name="Conv_SourceSansPro-Regular.css" />
+        <file name="ConvSourceSansPro-Regular.css" />
         <file name="SourceSansPro-Regular.eot" />
         <file name="SourceSansPro-Regular.svg" />
         <file name="SourceSansPro-Regular.ttf" />
