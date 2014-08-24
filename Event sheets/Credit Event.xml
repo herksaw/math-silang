@@ -16,7 +16,7 @@
                 </action>
                 <action id="5" name="Set web font" sid="571047939173194" type="TextGeneral">
                     <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
-                    <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
+                    <param id="1" name="CSS URL">&quot;ConvSourceSansPro-Regular.css&quot;</param>
                 </action>
             </actions>
         </event-block>
