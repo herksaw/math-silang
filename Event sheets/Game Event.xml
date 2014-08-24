@@ -47,19 +47,19 @@
                 </action>
                 <action id="5" name="Set web font" sid="5027632924434508" type="TextGeneral">
                     <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
-                    <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
+                    <param id="1" name="CSS URL">&quot;ConvSourceSansPro-Regular.css&quot;</param>
                 </action>
                 <action id="5" name="Set web font" sid="8871048237775588" type="BoxAnswer">
                     <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
-                    <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
+                    <param id="1" name="CSS URL">&quot;ConvSourceSansPro-Regular.css&quot;</param>
                 </action>
                 <action id="5" name="Set web font" sid="8037528096725408" type="BoxUpdate">
                     <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
-                    <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
+                    <param id="1" name="CSS URL">&quot;ConvSourceSansPro-Regular.css&quot;</param>
                 </action>
                 <action id="5" name="Set web font" sid="3456828330925437" type="BoxVersion">
                     <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
-                    <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
+                    <param id="1" name="CSS URL">&quot;ConvSourceSansPro-Regular.css&quot;</param>
                 </action>
                 <action id="0" name="Set text" sid="8858749152539099" type="BoxVersion">
                     <param id="0" name="Text">&quot;Version: &quot; &amp; projectversion</param>
@@ -842,7 +842,7 @@
                                 </action>
                                 <action id="5" name="Set web font" sid="9434424178727517" type="TextGeneral">
                                     <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
-                                    <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;ConvSourceSansPro-Regular.css&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -883,7 +883,7 @@
                                 </action>
                                 <action id="5" name="Set web font" sid="7632953557117719" type="TextGeneral">
                                     <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
-                                    <param id="1" name="CSS URL">&quot;Conv_SourceSansPro-Regular.css&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;ConvSourceSansPro-Regular.css&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
