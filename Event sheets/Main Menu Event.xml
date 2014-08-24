@@ -13,7 +13,7 @@
                 <condition id="-2" name="On start of layout" sid="9612791999538457" type="System" />
             </conditions>
             <actions>
-                <action id="0" name="Call function" sid="585815335642153" type="Function">
+                <action disabled="1" id="0" name="Call function" sid="585815335642153" type="Function">
                     <param id="0" name="Name">&quot;TestWebFonts&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
@@ -57,49 +57,6 @@
                 </action>
                 <action id="-1" name="Set X" sid="7683425631221886" type="TextTwo">
                     <param id="0" name="X">random(100, LayoutWidth - 100)</param>
-                </action>
-                <action id="5" name="Set web font" sid="2495247018759082" type="TextGeneral">
-                    <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
-                    <param id="1" name="CSS URL">&quot;ConvSourceSansPro-Regular.css&quot;</param>
-                </action>
-                <action id="5" name="Set web font" sid="127872329216032" type="BoxUpdate">
-                    <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
-                    <param id="1" name="CSS URL">&quot;ConvSourceSansPro-Regular.css&quot;</param>
-                </action>
-                <action id="5" name="Set web font" sid="6842193710371059" type="BoxVersion">
-                    <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
-                    <param id="1" name="CSS URL">&quot;ConvSourceSansPro-Regular.css&quot;</param>
-                </action>
-                <action id="0" name="Set text" sid="7299573314396042" type="BoxVersion">
-                    <param id="0" name="Text">&quot;Version: &quot; &amp; projectversion</param>
-                </action>
-                <action id="5" name="Set web font" sid="1409757158965475" type="TextCall">
-                    <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
-                    <param id="1" name="CSS URL">&quot;ConvSourceSansPro-Regular.css&quot;</param>
-                </action>
-                <action id="5" name="Set web font" sid="305897683736471" type="TextCalling">
-                    <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
-                    <param id="1" name="CSS URL">&quot;ConvSourceSansPro-Regular.css&quot;</param>
-                </action>
-                <action id="5" name="Set web font" sid="1418237310794759" type="TextFunction">
-                    <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
-                    <param id="1" name="CSS URL">&quot;ConvSourceSansPro-Regular.css&quot;</param>
-                </action>
-                <action id="5" name="Set web font" sid="6961904954203829" type="TextInbox">
-                    <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
-                    <param id="1" name="CSS URL">&quot;ConvSourceSansPro-Regular.css&quot;</param>
-                </action>
-                <action id="5" name="Set web font" sid="1545801287835003" type="TextOutbox">
-                    <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
-                    <param id="1" name="CSS URL">&quot;ConvSourceSansPro-Regular.css&quot;</param>
-                </action>
-                <action id="5" name="Set web font" sid="6490233659911106" type="TextPhoneMicrowave">
-                    <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
-                    <param id="1" name="CSS URL">&quot;ConvSourceSansPro-Regular.css&quot;</param>
-                </action>
-                <action id="5" name="Set web font" sid="4090686435155033" type="TextTyping">
-                    <param id="0" name="Family name">&quot;KaushanScriptRegular&quot;</param>
-                    <param id="1" name="CSS URL">&quot;ConvSourceSansPro-Regular.css&quot;</param>
                 </action>
                 <action id="-15" name="Set visible" sid="4873041998381903" type="PhoneObjects">
                     <param id="0" name="Visibility">0</param>

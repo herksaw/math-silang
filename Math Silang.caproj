@@ -1078,10 +1078,5 @@
             <file name="icon-256.png" />
             <file name="loading-logo.png" />
         </file-folder>
-        <file name="ConvSourceSansPro-Regular.css" />
-        <file name="SourceSansPro-Regular.eot" />
-        <file name="SourceSansPro-Regular.svg" />
-        <file name="SourceSansPro-Regular.ttf" />
-        <file name="SourceSansPro-Regular.woff" />
     </files-folder>
 </c2project>

@@ -14,8 +14,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layout>Game Layout</layout>
         <layout>Spawn Layout</layout>
         <layout>Help Layout</layout>
-        <event-sheet>Main Menu Event</event-sheet>
-        <event-sheet active="1">Game Event</event-sheet>
+        <event-sheet active="1">Main Menu Event</event-sheet>
+        <event-sheet>Game Event</event-sheet>
         <event-sheet>Function Event</event-sheet>
         <event-sheet>Credit Event</event-sheet>
         <event-sheet>Help Event</event-sheet>
