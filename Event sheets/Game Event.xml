@@ -321,7 +321,7 @@
                         </action>
                         <action id="2" name="Post to URL" sid="8599188895309076" type="AJAX">
                             <param id="0" name="Tag">&quot;beta_line&quot;</param>
-                            <param id="1" name="URL">&quot;https://www.herksaw.com/&quot;</param>
+                            <param id="1" name="URL">&quot;http://www.herksaw.com/&quot;</param>
                             <param id="2" name="Data">&quot;{&#x0D;&#x0A;  &apos;type&apos;: &apos;steinsgate&apos;,&#x0D;&#x0A;  &apos;title&apos;: &apos;有人成功进入Beta世界线&apos;,&#x0D;&#x0A;  &apos;message&apos;: &apos;This is the choice of Steins Gate. El. Psy. Congroo.&apos;&#x0D;&#x0A;}&quot;</param>
                             <param id="3" name="Method">&quot;POST&quot;</param>
                         </action>
