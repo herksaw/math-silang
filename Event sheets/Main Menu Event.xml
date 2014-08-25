@@ -68,6 +68,9 @@
                     <param id="0" name="Animation">&quot;Reverse&quot;</param>
                     <param id="1" name="From">1</param>
                 </action>
+                <action id="0" name="Set text" sid="8031163976300454" type="BoxVersion">
+                    <param id="0" name="Text">&quot;Version: &quot; &amp; projectversion</param>
+                </action>
             </actions>
             <sub-events>
                 <event-block sid="1121252386588777">

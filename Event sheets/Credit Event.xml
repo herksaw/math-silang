@@ -164,10 +164,6 @@
                     <param id="0" name="Variable">creditBgmVariation</param>
                     <param id="1" name="Value">floor(random(0, 3))</param>
                 </action>
-                <action id="-9" name="Set value" sid="6516166860460102" type="System">
-                    <param id="0" name="Variable">moveSpeed</param>
-                    <param id="1" name="Value">0.5</param>
-                </action>
                 <action id="-15" name="Set visible" sid="1571561875091983" type="NitroPlus">
                     <param id="0" name="Visibility">1</param>
                 </action>
@@ -195,6 +191,10 @@
                             <param id="3" name="Volume">voiceVolume</param>
                             <param id="1" name="Tag (optional)">&quot;v_00_oka&quot;</param>
                         </action>
+                        <action id="-9" name="Set value" sid="6516166860460102" type="System">
+                            <param id="0" name="Variable">moveSpeed</param>
+                            <param id="1" name="Value">0.48</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="6214580436624612">
@@ -218,6 +218,10 @@
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">voiceVolume</param>
                             <param id="1" name="Tag (optional)">&quot;v_00_oka&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1376508179906447" type="System">
+                            <param id="0" name="Variable">moveSpeed</param>
+                            <param id="1" name="Value">0.48</param>
                         </action>
                     </actions>
                 </event-block>
