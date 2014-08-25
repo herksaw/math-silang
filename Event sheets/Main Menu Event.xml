@@ -516,7 +516,6 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="33" name="Stop all" sid="3425926946647921" type="Audio" />
                         <action id="0" name="Play" sid="4926112754933211" type="Audio">
                             <param id="0" name="Audio file">init</param>
                             <param id="2" name="Loop">1</param>
