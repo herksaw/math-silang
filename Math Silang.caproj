@@ -367,6 +367,9 @@
             <object-type name="TextCall" sid="1731039659104012">
                 <plugin id="Text" />
             </object-type>
+            <object-type name="HeaderText" sid="646558170459303">
+                <plugin id="Text" />
+            </object-type>
         </object-folder>
         <object-type name="Mouse" sid="9601757437341936">
             <plugin id="Mouse" />
@@ -909,6 +912,7 @@
         </family>
         <family name="PhoneTexts" plugin-id="Text" sid="389990075470908">
             <members>
+                <member>HeaderText</member>
                 <member>TextCall</member>
                 <member>TextCalling</member>
                 <member>TextFunction</member>

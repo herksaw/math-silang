@@ -71,6 +71,12 @@
                 <action id="0" name="Set text" sid="8031163976300454" type="BoxVersion">
                     <param id="0" name="Text">&quot;Version: &quot; &amp; projectversion</param>
                 </action>
+                <action id="0" name="Set text" sid="8196390201969338" type="TextFunction">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="6390175107475825" type="HeaderText">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                </action>
             </actions>
             <sub-events>
                 <event-block sid="1121252386588777">
@@ -2106,7 +2112,7 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block collapsed="1" sid="8281226277394944">
+                                <event-block sid="8281226277394944">
                                     <conditions>
                                         <condition id="6" name="On object clicked" sid="125449620656857" type="Mouse">
                                             <param id="0" name="Mouse button">0</param>
@@ -2136,18 +2142,87 @@
                                                     <param id="1" name="Comparison">0</param>
                                                     <param id="2" name="Second value">&quot;2010&quot;</param>
                                                 </condition>
+                                                <condition id="-8" name="Compare two values" sid="9943240366737454" type="System">
+                                                    <param id="0" name="First value">TextTyping.Text</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;1997&quot;</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="2782103219194812" type="System">
+                                                    <param id="0" name="First value">TextTyping.Text</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;0210&quot;</param>
+                                                </condition>
                                             </conditions>
-                                            <actions>
-                                                <action id="33" name="Stop all" sid="5955475910742695" type="Audio" />
-                                                <action id="0" name="Set local value" sid="25504675583679" type="WebStorage">
-                                                    <param id="0" name="Key">&quot;steinsgate&quot;</param>
-                                                    <param id="1" name="Value">&quot;1&quot;</param>
-                                                </action>
-                                                <action id="0" name="Set local value" sid="6374561779338526" type="WebStorage">
-                                                    <param id="0" name="Key">&quot;backFromTravel&quot;</param>
-                                                    <param id="1" name="Value">&quot;0&quot;</param>
-                                                </action>
-                                            </actions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="2692655434920024">
+                                                    <conditions>
+                                                        <condition id="7" name="Compare key value (as number)" sid="5445380564694212" type="WebStorage">
+                                                            <param id="0" name="Key">&quot;steinsgate&quot;</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="7" name="Compare key value (as number)" sid="4952135672893242" type="WebStorage">
+                                                            <param id="0" name="Key">&quot;backFromTravel&quot;</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block any="1" sid="8771548885337246">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="9255920737430414" type="System">
+                                                                    <param id="0" name="First value">Date.Hours</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Second value">12</param>
+                                                                </condition>
+                                                                <condition id="-8" name="Compare two values" sid="6092471497564102" type="System">
+                                                                    <param id="0" name="First value">Date.Hours</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Second value">18</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="33" name="Stop all" sid="5955475910742695" type="Audio" />
+                                                                <action id="0" name="Set local value" sid="25504675583679" type="WebStorage">
+                                                                    <param id="0" name="Key">&quot;steinsgate&quot;</param>
+                                                                    <param id="1" name="Value">&quot;1&quot;</param>
+                                                                </action>
+                                                                <action id="0" name="Set local value" sid="6374561779338526" type="WebStorage">
+                                                                    <param id="0" name="Key">&quot;backFromTravel&quot;</param>
+                                                                    <param id="1" name="Value">&quot;0&quot;</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block sid="3560465389402321">
+                                                    <conditions>
+                                                        <condition id="7" name="Compare key value (as number)" sid="4400935298890667" type="WebStorage">
+                                                            <param id="0" name="Key">&quot;steinsgate&quot;</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                        <condition id="7" name="Compare key value (as number)" sid="6311456937832169" type="WebStorage">
+                                                            <param id="0" name="Key">&quot;backFromTravel&quot;</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="33" name="Stop all" sid="4933160845686253" type="Audio" />
+                                                        <action id="0" name="Set local value" sid="2307528774606672" type="WebStorage">
+                                                            <param id="0" name="Key">&quot;steinsgate&quot;</param>
+                                                            <param id="1" name="Value">&quot;1&quot;</param>
+                                                        </action>
+                                                        <action id="0" name="Set local value" sid="9440597661984238" type="WebStorage">
+                                                            <param id="0" name="Key">&quot;backFromTravel&quot;</param>
+                                                            <param id="1" name="Value">&quot;0&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
@@ -2545,9 +2620,14 @@
                     <param id="2" name="Second value">LayoutWidth - 1</param>
                 </condition>
             </conditions>
-            <actions />
+            <actions>
+                <action id="-9" name="Set value" sid="8698905401123041" type="System">
+                    <param id="0" name="Variable">isPhone</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
             <sub-events>
-                <event-block sid="4111437540962963">
+                <event-block disabled="1" sid="4111437540962963">
                     <conditions>
                         <condition id="7" name="Compare key value (as number)" sid="9473477750132553" type="WebStorage">
                             <param id="0" name="Key">&quot;steinsgate&quot;</param>
@@ -2567,7 +2647,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block any="1" sid="2356753092373129">
+                <event-block any="1" disabled="1" sid="2356753092373129">
                     <conditions>
                         <condition id="-8" name="Compare two values" sid="3382022556167968" type="System">
                             <param id="0" name="First value">Date.Hours</param>

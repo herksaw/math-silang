@@ -4884,7 +4884,7 @@
                                     <param id="0" name="Frame number">1</param>
                                 </action>
                                 <action id="0" name="Set text" sid="1676139260552403" type="TextFunction">
-                                    <param id="0" name="Text">&quot;Address Book&quot;</param>
+                                    <param id="0" name="Text">&quot;Address book&quot;</param>
                                 </action>
                                 <action id="5" name="Set frame" sid="3431015827644782" type="ButtonInternet">
                                     <param id="0" name="Frame number">0</param>
@@ -5021,6 +5021,13 @@
                             <param id="0" name="Visibility">1</param>
                         </action>
                         <action id="-24" name="Move to top" sid="9211405520985091" type="RedArrow" />
+                        <action id="-15" name="Set visible" sid="4536034881640256" type="HeaderText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="9582984127867687" type="HeaderText">
+                            <param id="0" name="Text">&quot;Mailbox&quot;</param>
+                        </action>
+                        <action id="-24" name="Move to top" sid="1668965185474574" type="HeaderText" />
                     </actions>
                     <sub-events>
                         <event-block sid="8983793595745742">
@@ -5106,6 +5113,13 @@
                             <param id="0" name="Frame number">1</param>
                         </action>
                         <action id="-24" name="Move to top" sid="9808693696263172" type="HeaderSub" />
+                        <action id="-15" name="Set visible" sid="166488865749291" type="HeaderText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="5667770341940633" type="HeaderText">
+                            <param id="0" name="Text">&quot;Inbox&quot;</param>
+                        </action>
+                        <action id="-24" name="Move to top" sid="3552843772805038" type="HeaderText" />
                     </actions>
                 </event-block>
                 <event-block sid="2809566278630465">
@@ -5145,6 +5159,13 @@
                             <param id="0" name="Frame number">1</param>
                         </action>
                         <action id="-24" name="Move to top" sid="2882063691243854" type="HeaderSub" />
+                        <action id="-15" name="Set visible" sid="7351921787269444" type="HeaderText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="6033265105173047" type="HeaderText">
+                            <param id="0" name="Text">&quot;Outbox&quot;</param>
+                        </action>
+                        <action id="-24" name="Move to top" sid="9033867725783528" type="HeaderText" />
                     </actions>
                 </event-block>
                 <event-block sid="1776335526704587">
@@ -5188,6 +5209,13 @@
                             <param id="0" name="Visibility">1</param>
                         </action>
                         <action id="-24" name="Move to top" sid="1979380905175485" type="TextPhoneMicrowave" />
+                        <action id="-15" name="Set visible" sid="7020421834625588" type="HeaderText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="2234384450369174" type="HeaderText">
+                            <param id="0" name="Text">&quot;Address book&quot;</param>
+                        </action>
+                        <action id="-24" name="Move to top" sid="2938723080153111" type="HeaderText" />
                     </actions>
                     <sub-events>
                         <event-block sid="194477603681313">
@@ -5255,6 +5283,13 @@
                             <param id="0" name="Visibility">1</param>
                         </action>
                         <action id="-24" name="Move to top" sid="2146131168657338" type="RedArrow" />
+                        <action id="-15" name="Set visible" sid="4676028100738538" type="HeaderText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="4919014078818207" type="HeaderText">
+                            <param id="0" name="Text">&quot;Address book&quot;</param>
+                        </action>
+                        <action id="-24" name="Move to top" sid="3355047112965023" type="HeaderText" />
                     </actions>
                     <sub-events>
                         <event-block sid="7207668756151579">
